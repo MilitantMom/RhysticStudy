@@ -1,0 +1,58 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff; /* White text for regular content */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #00FF00; /* Green for headers */
+    margin-top: 50px;
+}
+
+nav {
+    text-align: center;
+    background-color: #111;
+    padding: 10px 0;
+}
+
+nav a {
+    color: #00FF00; /* Green for navigation links */
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    color: #FF69B4; /* Pink on hover */
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Links for Discord and other external links */
+a {
+    color: #9B59B6; /* Purple for Discord and other important links */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FF69B4; /* Pink on hover */
+}
+
+/* Ensure the iframe fits well and is centered */
+iframe {
+    margin-top: 20px;
+    border: none;
+    max-width: 100%;
+    height: 500px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #aaa;
+}
