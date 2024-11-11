@@ -19,7 +19,7 @@ Rhystic Study is a hub for gamers and tech enthusiasts, where we offer a variety
 
 ## Setup
 
-1. **Purchase a License**: Before using, modifying, or redistributing this project, you must first purchase a license from our Discord server shop. Please visit our [Discord Server](#) for details on how to complete your purchase.
+1. **Purchase a License**: Before using, modifying, or redistributing this project, you must first purchase a license from our Discord server shop. Please visit our [Discord Server](https://discord.gg/w2vTMUYvaH) for details on how to complete your purchase.
    
 2. Clone this repository:
    ```bash
