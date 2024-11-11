@@ -4,112 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Rhystic Study</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file for consistency -->
     <style>
         body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            height: 100vh;
-            margin: 0;
             font-family: Arial, sans-serif;
             background-color: #000;
             color: #fff;
             text-align: center;
-            padding: 20px;
+            margin: 0;
+            padding: 0;
         }
         h1 {
             color: #00FF00; /* Green */
+            margin-top: 50px;
         }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-        nav ul li a {
-            color: #00FF00;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        section {
-            margin: 40px 0;
-            width: 100%;
+        .intro {
+            margin: 20px auto;
+            padding: 10px;
             max-width: 800px;
         }
-        .hero {
-            background-color: #333;
-            padding: 30px;
-            border-radius: 10px;
+        nav a {
+            color: #00FF00;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
         }
-        .about, .services, .contact {
-            background-color: #222;
-            padding: 20px;
-            border-radius: 10px;
-        }
-        .service-card {
-            background-color: #444;
-            margin-bottom: 20px;
-            padding: 15px;
-            border-radius: 10px;
+        nav a:hover {
+            text-decoration: underline;
         }
         footer {
-            margin-top: 20px;
+            margin-top: 50px;
+            font-size: 0.8em;
+            color: #aaa;
         }
     </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1049161528271728" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1049161528271728"
+     crossorigin="anonymous"></script>
 </head>
 <body>
+    <h1>Welcome to Rhystic Study</h1>
+    <div class="intro">
+        <p>Your hub for all things gaming, tech, and more. Explore our services, connect with the community, and stay updated with the latest content!</p>
+    </div>
+    <nav>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 
-    <!-- Navigation Bar -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Welcome to The Rhystic Study</h1>
-        <p>Your Portal to Understanding the Gamerverse</p>
-    </section>
-
-    <!-- About Section -->
-    <section class="about">
-        <h2>About Us</h2>
-        <p>We specialize in building and managing high-performance Minecraft servers, as well as offering tech consultation services to help you with all your tech needs.</p>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services">
-        <h2>Our Services</h2>
-        <div class="service-card">
-            <h3>Minecraft Server Consultation</h3>
-            <p>We offer expert advice on setting up, securing, and optimizing your Minecraft server.</p>
-        </div>
-        <div class="service-card">
-            <h3>Tech Consultation</h3>
-            <p>Helping you make the best tech decisions for your needs, from hardware setup to software recommendations.</p>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact">
-        <h2>Contact Us</h2>t
-        <p>Join us on Discord for all support and inquiries: <a href="https://discord.gg/w2vTMUYvaH" target="_blank">Discord</a></p>
-    </section>
-
-    <!-- Footer Section -->
     <footer>
-        <p>&copy; 2024 Rhystic Study</p>
+        <p>&copy; 2024 Rhystic Study. All rights reserved. | <a href="https://discord.gg/w2vTMUYvaH" target="_blank">Join our Discord</a></p>
     </footer>
-
 </body>
 </html>
