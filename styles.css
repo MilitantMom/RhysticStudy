@@ -1,92 +1,96 @@
-/* General Reset and Base Styles */
+/* General reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body */
 body {
     font-family: Arial, sans-serif;
     background-color: #000;
     color: #fff;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
 /* Navigation Bar */
-.top-nav {
-    background-color: #222;
-    padding: 15px 0;
-    text-align: center;
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
 }
 
-.top-nav a {
-    color: #00FF00;
-    margin: 0 20px;
+.left-nav {
+    display: flex;
+    gap: 15px;
+}
+
+.left-nav a {
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.1em;
 }
 
-.top-nav a:hover {
+.left-nav a.active {
+    color: #00FF00; /* Highlight active link */
+    pointer-events: none; /* Disable clicking on the active page */
+}
+
+.left-nav a:hover {
+    color: #FF69B4; /* Hover effect */
+}
+
+.right-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.right-nav a:hover {
     color: #FF69B4;
 }
 
-/* Hero Section */
-.hero {
+/* Centered Tagline */
+h1 {
     text-align: center;
-    padding: 60px 20px;
-    background-color: #111;
-}
-
-.hero h1 {
-    font-size: 2.5em;
+    margin: 50px 0;
     color: #00FF00;
-    margin-bottom: 10px;
+    font-size: 2.5rem;
 }
 
-.hero p {
-    font-size: 1.2em;
-    color: #ccc;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-/* Services Preview Section */
-.services-preview {
-    display: flex;
-    justify-content: space-around;
-    padding: 40px 20px;
-    background-color: #1a1a1a;
-}
-
-.services-preview .service, 
-.services-preview .community, 
-.services-preview .updates {
-    width: 30%;
+/* Description Section */
+.description {
     text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
 }
 
-.services-preview h2 {
-    color: #00FF00;
-    font-size: 1.8em;
-    margin-bottom: 10px;
+.projects {
+    list-style: none;
+    padding: 0;
 }
 
-.services-preview p {
-    color: #ccc;
-    font-size: 1em;
-    line-height: 1.5;
+.projects li {
+    margin: 15px 0;
 }
 
 /* Footer */
 footer {
-    background-color: #222;
+    background-color: #333;
     color: #aaa;
     text-align: center;
     padding: 15px 0;
-    margin-top: auto;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer a {
+    color: #9B59B6; /* Purple for links */
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #FF69B4; /* Pink hover for Discord link */
 }
