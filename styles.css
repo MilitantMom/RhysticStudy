@@ -1,152 +1,92 @@
-/* Base styling */
+/* General Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #000;
     color: #fff;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-}
-
-/* Heading styles */
-h1 {
-    color: #00FF00; /* Green for headers */
-    margin: 40px 0 20px;
-    text-align: center;
-}
-
-h2 {
-    color: #00FF00;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-/* Navigation bar */
-nav {
-    display: flex;
-    justify-content: center;
-    background-color: #111;
-    padding: 15px 0;
-    border-bottom: 2px solid #00FF00;
-}
-
-nav a {
-    color: #00FF00;
-    text-decoration: none;
-    margin: 0 20px;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #FF69B4; /* Pink on hover */
-}
-
-/* Container for main content */
-.main-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
+    min-height: 100vh;
 }
 
-/* Hero section */
-.hero {
+/* Navigation Bar */
+.top-nav {
     background-color: #222;
-    padding: 40px 20px;
-    margin-top: 20px;
-    border-radius: 8px;
-}
-
-.hero p {
-    font-size: 1.2em;
-    color: #ddd;
-    max-width: 700px;
-    margin: 20px auto;
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: #4CAF50;
-    color: #ffffff;
-    padding: 10px 20px;
-    margin-top: 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #FF69B4; /* Pink on hover */
-}
-
-/* Services overview and additional sections */
-.services-overview {
-    margin: 40px 0;
-    padding: 20px;
-    background-color: #333;
-    border-radius: 8px;
-}
-
-.explore-more {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 30px;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.explore-box {
-    background-color: #444;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 250px;
+    padding: 15px 0;
     text-align: center;
-    color: #ddd;
 }
 
-.explore-box h3 {
+.top-nav a {
+    color: #00FF00;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.top-nav a:hover {
+    color: #FF69B4;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #111;
+}
+
+.hero h1 {
+    font-size: 2.5em;
     color: #00FF00;
     margin-bottom: 10px;
 }
 
-/* Link styling */
-a {
-    color: #9B59B6; /* Purple for links */
-    text-decoration: none;
-    transition: color 0.3s ease;
+.hero p {
+    font-size: 1.2em;
+    color: #ccc;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
-a:hover {
-    color: #FF69B4; /* Pink on hover */
+/* Services Preview Section */
+.services-preview {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 20px;
+    background-color: #1a1a1a;
+}
+
+.services-preview .service, 
+.services-preview .community, 
+.services-preview .updates {
+    width: 30%;
+    text-align: center;
+}
+
+.services-preview h2 {
+    color: #00FF00;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.services-preview p {
+    color: #ccc;
+    font-size: 1em;
+    line-height: 1.5;
 }
 
 /* Footer */
 footer {
-    background-color: #111;
-    padding: 20px 0;
+    background-color: #222;
     color: #aaa;
-    border-top: 2px solid #00FF00;
-    font-size: 0.9em;
     text-align: center;
-}
-
-footer a {
-    color: #00FF00;
-}
-
-footer a:hover {
-    color: #FF69B4;
-}
-
-/* Responsive styling */
-@media (max-width: 768px) {
-    .explore-more {
-        flex-direction: column;
-        align-items: center;
-    }
+    padding: 15px 0;
+    margin-top: auto;
 }
