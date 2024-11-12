@@ -1,58 +1,152 @@
-/* styles.css */
+/* Base styling */
 body {
     font-family: Arial, sans-serif;
     background-color: #000;
-    color: #fff; /* White text for regular content */
+    color: #fff;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
+/* Heading styles */
 h1 {
     color: #00FF00; /* Green for headers */
-    margin-top: 50px;
+    margin: 40px 0 20px;
+    text-align: center;
 }
 
-nav {
+h2 {
+    color: #00FF00;
+    margin-bottom: 20px;
     text-align: center;
+}
+
+/* Navigation bar */
+nav {
+    display: flex;
+    justify-content: center;
     background-color: #111;
-    padding: 10px 0;
+    padding: 15px 0;
+    border-bottom: 2px solid #00FF00;
 }
 
 nav a {
-    color: #00FF00; /* Green for navigation links */
+    color: #00FF00;
     text-decoration: none;
-    margin: 0 15px;
+    margin: 0 20px;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
     color: #FF69B4; /* Pink on hover */
 }
 
-.container {
+/* Container for main content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
     text-align: center;
-    margin-top: 50px;
 }
 
-/* Links for Discord and other external links */
-a {
-    color: #9B59B6; /* Purple for Discord and other important links */
+/* Hero section */
+.hero {
+    background-color: #222;
+    padding: 40px 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: #ddd;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: #ffffff;
+    padding: 10px 20px;
+    margin-top: 20px;
     text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #FF69B4; /* Pink on hover */
+}
+
+/* Services overview and additional sections */
+.services-overview {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 8px;
+}
+
+.explore-more {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.explore-box {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 250px;
+    text-align: center;
+    color: #ddd;
+}
+
+.explore-box h3 {
+    color: #00FF00;
+    margin-bottom: 10px;
+}
+
+/* Link styling */
+a {
+    color: #9B59B6; /* Purple for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:hover {
     color: #FF69B4; /* Pink on hover */
 }
 
-/* Ensure the iframe fits well and is centered */
-iframe {
-    margin-top: 20px;
-    border: none;
-    max-width: 100%;
-    height: 500px;
+/* Footer */
+footer {
+    background-color: #111;
+    padding: 20px 0;
+    color: #aaa;
+    border-top: 2px solid #00FF00;
+    font-size: 0.9em;
+    text-align: center;
 }
 
-footer {
-    text-align: center;
-    margin-top: 50px;
-    color: #aaa;
+footer a {
+    color: #00FF00;
+}
+
+footer a:hover {
+    color: #FF69B4;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .explore-more {
+        flex-direction: column;
+        align-items: center;
+    }
 }
