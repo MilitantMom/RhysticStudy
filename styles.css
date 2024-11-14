@@ -54,8 +54,8 @@ body {
 
 /* Logo Styling */
 .logo {
-    width: 30px; /* Adjust size to be smaller */
-    height: auto;
+    width: 40px; /* Adjust the width to a smaller size */
+    height: auto; /* Maintain aspect ratio */
     margin-right: 10px; /* Space between the logo and the first navigation link */
     vertical-align: middle; /* Align with the middle of the text */
 }
