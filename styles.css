@@ -23,6 +23,7 @@ body {
 
 .left-nav {
     display: flex;
+    align-items: center; /* Align the logo with the navigation items */
     gap: 15px;
 }
 
@@ -49,6 +50,14 @@ body {
 
 .right-nav a:hover {
     color: #FF69B4;
+}
+
+/* Logo Styling */
+.logo {
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 10px; /* Space between the logo and the first navigation link */
+    vertical-align: middle; /* Align with the middle of the text */
 }
 
 /* Centered Tagline */
