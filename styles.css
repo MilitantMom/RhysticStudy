@@ -103,3 +103,40 @@ footer a {
 footer a:hover {
     color: #FF69B4; /* Pink hover for Discord link */
 }
+
+/* Button Styles */
+.button {
+    display: inline-block;
+    background-color: #007bff; /* Default button background */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Darker blue hover effect */
+}
+
+/* Specific Section Styling for Apps */
+.our-apps {
+    margin-top: 50px;
+    text-align: center;
+    background-color: #111; /* Slightly lighter background */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.our-apps h2 {
+    font-size: 2rem;
+    color: #00FF00; /* Green heading */
+    margin-bottom: 10px;
+}
+
+.our-apps p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
