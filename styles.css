@@ -21,6 +21,7 @@ body {
     align-items: center;
     background-color: #1f1f1f;
     padding: 15px 20px;
+    border-bottom: 2px solid #00FFAA;
 }
 
 .left-nav a, .right-nav a {
@@ -100,6 +101,42 @@ body {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
 }
 
+/* About Cards Section */
+.about-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 20px;
+    background-color: #121212;
+}
+
+.about-card {
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #00FFAA;
+}
+
+.about-card p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+}
+
 /* Our Apps Section */
 .our-apps {
     padding: 50px 20px;
@@ -149,4 +186,27 @@ footer a {
 
 footer a:hover {
     color: #fff;
+}
+
+/* Discord Widget */
+.discord-widget iframe {
+    border-radius: 10px;
+    border: 1px solid #00FFAA;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .services, .about-details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card, .about-card {
+        width: 90%;
+    }
 }
