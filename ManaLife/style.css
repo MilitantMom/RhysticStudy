@@ -1,0 +1,159 @@
+/* General Page Styles */
+body {
+    font-family: 'Arial', sans-serif; /* Standard sans-serif font for readability */
+    background-color: #2f3136; /* Dark gray background (Discord-like) */
+    color: white; /* White text for visibility against the dark background */
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Center-align text across the page */
+}
+
+/* Header Styling */
+header {
+    background-color: #222; /* Dark header background */
+    color: white; /* White text in header for contrast */
+    padding: 20px; /* Padding to create space around header content */
+}
+
+h1 {
+    font-size: 2.5em; /* Larger font size for main title */
+}
+
+p {
+    font-size: 1.2em; /* Slightly larger text for paragraph readability */
+}
+
+/* Styling for Players Section */
+#players {
+    display: flex; /* Flexbox for flexible player layout */
+    flex-wrap: wrap; /* Allow players to wrap to new lines if necessary */
+    justify-content: center; /* Center players within the container */
+    gap: 30px; /* Spacing between each player */
+    margin-top: 50px; /* Add space above the players section */
+}
+
+/* Player Box Styling */
+.player {
+    background-color: #fff; /* White background for player box */
+    border: 2px solid #ddd; /* Light border to separate player boxes */
+    border-radius: 8px; /* Rounded corners for a softer look */
+    padding: 30px; /* Extra padding for spacious player boxes */
+    width: 250px; /* Set a fixed width for player boxes */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow effect for depth */
+    text-align: center; /* Center text inside the player box */
+    position: relative; /* Positioning context for the remove button */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Distribute content inside the player box */
+    color: black; /* Ensure the text color is black inside the player box */
+}
+
+/* Flex container for Life Total and Buttons */
+.life-buttons {
+    display: flex; /* Flexbox to arrange life total and buttons horizontally */
+    justify-content: center; /* Center the buttons horizontally */
+    align-items: center; /* Vertically align the buttons */
+    gap: 20px; /* Space between buttons and life total */
+    margin-top: 10px; /* Add margin above the life total buttons */
+    width: 100%; /* Ensure the container spans the full width */
+}
+
+/* Life Total Styling */
+.life-total {
+    font-size: 3em; /* Larger font size for life total */
+    font-weight: bold; /* Bold font for emphasis */
+}
+
+/* Default Button Styling */
+button {
+    font-size: 1.5em; /* Standard font size for buttons */
+    padding: 15px; /* Ample padding for clickable area */
+    width: 50px; /* Fixed width for buttons */
+    border: none; /* Remove default border */
+    background-color: #007bff; /* Blue background for buttons */
+    color: white; /* White text for contrast */
+    border-radius: 4px; /* Rounded corners for the buttons */
+    cursor: pointer; /* Pointer cursor to indicate clickable action */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Specific Adjustment for +/- Buttons */
+button.decrement, button.increment {
+    font-size: 0.9em; /* Smaller font size for the +/- buttons */
+    width: 30px; /* Smaller width for the +/- buttons */
+    padding: 8px; /* Adjust padding to fit smaller buttons */
+}
+
+/* Hover Effect for All Buttons */
+button:hover {
+    background-color: #0056b3; /* Darker blue when hovering over any button */
+}
+
+/* Red "X" Button for Removing a Player */
+.remove-player {
+    position: absolute; /* Absolute positioning for the remove button */
+    top: 10px; /* Position at the top of the player box */
+    right: 10px; /* Position at the right of the player box */
+    background-color: transparent; /* No background color */
+    color: red; /* Red color for the "X" */
+    font-size: 2em; /* Larger font size for visibility */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Pointer cursor to indicate clickable action */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+/* Hover Effect for the "X" Remove Button */
+.remove-player:hover {
+    color: darkred; /* Darker red color when hovering */
+}
+
+/* Container for Add, Reset, and Remove Player Buttons */
+#button-container {
+    margin-top: 30px; /* Margin above the buttons container */
+    display: flex; /* Flexbox layout for buttons */
+    justify-content: center; /* Center buttons horizontally */
+    gap: 30px; /* Space between the buttons */
+}
+
+/* Add and Reset Button Styles */
+#add-player-btn, #reset-btn {
+    font-size: 1.5em; /* Large font size for primary buttons */
+    padding: 15px 25px; /* Larger padding for buttons */
+    width: 200px; /* Fixed width for the buttons */
+    border-radius: 5px; /* Rounded corners for the buttons */
+    cursor: pointer; /* Pointer cursor for clickable buttons */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Specific Button Background Colors */
+#add-player-btn {
+    background-color: #28a745; /* Green background for Add Player button */
+}
+
+#reset-btn {
+    background-color: #ffc107; /* Yellow background for Reset Life button */
+}
+
+/* Hover Effects for Add and Reset Buttons */
+#add-player-btn:hover {
+    background-color: #218838; /* Darker green when hovering over Add Player */
+}
+
+#reset-btn:hover {
+    background-color: #e0a800; /* Darker yellow when hovering over Reset Life */
+}
+
+/* Layout Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+    #players {
+        flex-direction: column; /* Stack players vertically on small screens */
+    }
+}
+
+/* Ensure Life Buttons Stay Horizontal on Smaller Screens */
+@media (max-width: 768px) {
+    .life-buttons {
+        flex-direction: row; /* Keep life total buttons horizontally aligned */
+    }
+}

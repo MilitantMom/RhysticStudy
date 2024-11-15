@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> <!-- Character encoding set to UTF-8 for wider compatibility -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design for mobile devices -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!-- Ensures compatibility with older versions of Internet Explorer -->
+  <title>ManaLife: MTG Life Tracker</title> <!-- Title of the webpage for the browser tab -->
+  <link rel="stylesheet" href="style.css"> <!-- Link to external CSS for styling -->
+</head>
+<body>
+  <!-- Header Section: Displays the title and description of the app -->
+  <header>
+    <h1>ManaLife: MTG Life Tracker</h1> <!-- Main title of the app -->
+    <p>Keep track of your life totals in the heat of battle!</p> <!-- Short description for users -->
+  </header>
+
+  <!-- Main Life Tracker Section: Where players and their life totals are displayed -->
+  <section id="players">
+    <!-- Player 1 -->
+    <div class="player" id="player1">
+      <button class="remove-player">&times;</button> <!-- Red X button to remove the player -->
+      <h2>Player 1</h2> <!-- Player's name -->
+      <div class="life-buttons">
+        <button class="decrement">-</button> <!-- Button to decrement life -->
+        <span class="life-total">20</span> <!-- Display the player's current life total -->
+        <button class="increment">+</button> <!-- Button to increment life -->
+      </div>
+    </div>
+
+    <!-- Player 2 -->
+    <div class="player" id="player2">
+      <button class="remove-player">&times;</button> <!-- Red X button to remove the player -->
+      <h2>Player 2</h2> <!-- Player's name -->
+      <div class="life-buttons">
+        <button class="decrement">-</button> <!-- Button to decrement life -->
+        <span class="life-total">20</span> <!-- Display the player's current life total -->
+        <button class="increment">+</button> <!-- Button to increment life -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Player Management Buttons: Section with buttons to add players and reset life totals -->
+  <div id="button-container">
+    <button id="add-player-btn">Add Player</button> <!-- Button to add a new player -->
+    <button id="reset-btn">Reset Life Totals</button> <!-- Button to reset life totals for all players -->
+  </div>
+
+  <!-- Footer Section: Contains additional information or credits -->
+  <footer>
+    <p>ManaLife by Luna - Magic: The Gathering Life Tracker ©2024 The Rhystic Study All Rights Reserved</p> <!-- Footer text with credits -->
+  </footer>
+
+  <script src="script.js"></script> <!-- Link to external JavaScript file for functionality -->
+</body>
+</html>
