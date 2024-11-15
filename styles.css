@@ -1,15 +1,17 @@
-/* General reset */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body */
+/* Body Styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #000;
-    color: #fff;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #f4f4f4;
+    line-height: 1.6;
+    margin: 0;
 }
 
 /* Navigation Bar */
@@ -17,126 +19,134 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    padding: 10px 20px;
+    background-color: #1f1f1f;
+    padding: 15px 20px;
 }
 
-.left-nav {
-    display: flex;
-    align-items: center; /* Align the logo with the navigation items */
-    gap: 15px;
-}
-
-.left-nav a {
+.left-nav a, .right-nav a {
     color: #fff;
     text-decoration: none;
+    margin: 0 10px;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+.left-nav a:hover, .right-nav a:hover {
+    color: #00FFAA;
 }
 
 .left-nav a.active {
-    color: #00FF00; /* Highlight active link */
-    pointer-events: none; /* Disable clicking on the active page */
+    color: #00FFAA;
+    pointer-events: none;
 }
 
-.left-nav a:hover {
-    color: #FF69B4; /* Hover effect */
-}
-
-.right-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.right-nav a:hover {
-    color: #FF69B4;
-}
-
-/* Logo Styling */
 .logo {
-    width: 40px; /* Adjust the width to a smaller size */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 10px; /* Space between the logo and the first navigation link */
-    vertical-align: middle; /* Align with the middle of the text */
+    width: 50px;
+    margin-right: 15px;
 }
 
-/* Centered Tagline */
-h1 {
+/* Header Section */
+.header-section {
     text-align: center;
-    margin: 50px 0;
-    color: #00FF00;
-    font-size: 2.5rem;
+    padding: 50px 20px;
+    background-color: #1f1f1f;
+    color: #fff;
 }
 
-/* Description Section */
-.description {
-    text-align: center;
+.header-section h1 {
+    font-size: 3rem;
+    color: #00FFAA;
+}
+
+.header-section p {
     font-size: 1.2rem;
-    margin-bottom: 50px;
+    margin-top: 15px;
+    color: #ccc;
 }
 
-.projects {
-    list-style: none;
-    padding: 0;
+/* Services Section */
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 20px;
+    background-color: #121212;
 }
 
-.projects li {
-    margin: 15px 0;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: #aaa;
-    text-align: center;
-    padding: 15px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-footer a {
-    color: #9B59B6; /* Purple for links */
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: #FF69B4; /* Pink hover for Discord link */
-}
-
-/* Button Styles */
-.button {
-    display: inline-block;
-    background-color: #007bff; /* Default button background */
-    color: white;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    text-align: center;
-}
-
-.button:hover {
-    background-color: #0056b3; /* Darker blue hover effect */
-}
-
-/* Specific Section Styling for Apps */
-.our-apps {
-    margin-top: 50px;
-    text-align: center;
-    background-color: #111; /* Slightly lighter background */
+.service-card {
+    background-color: #1f1f1f;
+    border-radius: 10px;
     padding: 20px;
-    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #00FFAA;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Our Apps Section */
+.our-apps {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #1f1f1f;
+    color: #fff;
 }
 
 .our-apps h2 {
     font-size: 2rem;
-    color: #00FF00; /* Green heading */
-    margin-bottom: 10px;
+    color: #00FFAA;
+    margin-bottom: 15px;
 }
 
 .our-apps p {
-    font-size: 1.2rem;
     margin-bottom: 20px;
+    color: #ccc;
+}
+
+.our-apps .button {
+    display: inline-block;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.our-apps .button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    background-color: #1f1f1f;
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: #00FFAA;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #fff;
 }
