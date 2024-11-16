@@ -171,6 +171,45 @@ body {
     background-color: #0056b3;
 }
 
+/* Project Box Styling (New) */
+.project-box {
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: #ccc;
+    margin: 10px;
+}
+
+.project-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #00FFAA;
+}
+
+.project-box p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.project-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Adjusting the layout for better visual appeal */
+.description {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 20px;
+    background-color: #121212;
+}
+
 /* Footer */
 footer {
     background-color: #1f1f1f;
@@ -207,6 +246,11 @@ footer a:hover {
     }
 
     .service-card, .about-card {
+        width: 90%;
+    }
+
+    /* Project Box Adjustments for smaller screens */
+    .project-box {
         width: 90%;
     }
 }
