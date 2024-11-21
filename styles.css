@@ -210,6 +210,26 @@ body {
     background-color: #121212;
 }
 
+/* Coming Soon Section */
+.coming-soon {
+    text-align: center;
+    padding: 40px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px;
+}
+
+.coming-soon h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.coming-soon p {
+    font-size: 1.25rem;
+    color: #555;
+}
+
 /* Footer */
 footer {
     background-color: #1f1f1f;
