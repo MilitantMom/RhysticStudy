@@ -54,11 +54,24 @@ body {
     font-weight: bold;
     font-size: 1.1rem;
     letter-spacing: 0.5px;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
-.nav-container a:hover {
-    color: var(--hover-color);
+/* Make sure icons inside the links are also white by default */
+.nav-container a i {
+    color: var(--text-color);  /* Icons should be white */
+    transition: color 0.3s ease;  /* Smooth transition for icon hover effect */
+}
+
+/* Hover effect for navigation links and icons */
+.nav-container a:hover,
+.nav-container a:focus {
+    color: var(--hover-color);  /* On hover, links change to hover color */
+}
+
+/* Ensure icons change color on hover as well */
+.nav-container a:hover i {
+    color: var(--hover-color);  /* Icons turn to the same hover color */
 }
 
 .logo {
