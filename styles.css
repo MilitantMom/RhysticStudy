@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+.header-section {
+    background: linear-gradient(to right, #1f1f1f, #007bff);
+}
+
 /* Root Variables */
 :root {
     --primary-color: #00FFAA;
@@ -20,7 +24,7 @@
 
 /* Body Styling */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #121212;
     color: #f4f4f4;
     line-height: 1.6;
@@ -125,9 +129,9 @@ body {
     color: #ccc;
 }
 
-.service-card:hover {
+.service-card:hover, .project-box:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7), 0 0 15px #00FFAA; /* Neon glow */
 }
 
 /* About Cards Section */
@@ -186,18 +190,16 @@ body {
 }
 
 .our-apps .button {
-    display: inline-block;
     background-color: #007BFF;
     color: #fff;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s;
+    border-radius: 12px;  /* Rounded edges */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .our-apps .button:hover {
     background-color: #0056b3;
+    box-shadow: 0 0 15px 5px rgba(0, 123, 255, 0.5);  /* Glowing effect */
 }
 
 /* Project Box Styling (New) */
@@ -354,10 +356,12 @@ footer {
 footer a {
     color: #00FFAA;
     text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
 }
 
 footer a:hover {
     color: #fff;
+    text-shadow: 0 0 10px #00FFAA; /* Glowing text effect */
 }
 
 /* Discord Widget */
