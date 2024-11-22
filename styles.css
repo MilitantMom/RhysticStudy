@@ -446,6 +446,31 @@ footer a:hover {
     animation: typing 3s steps(40) 1s forwards, fadeIn 2s forwards, blink 0.75s step-end infinite;
 }
 
+/* Bubble Animation */
+@keyframes bubble {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+/* Target the animated-text class */
+.animated-text {
+    animation: bubble 3s ease-out infinite;  /* Apply the bubble animation */
+    display: inline-block;  /* Make it an inline-block so the animation works */
+    font-size: 1.5em;
+    color: #3498db;  /* You can adjust this color */
+    font-family: 'Arial', sans-serif;
+}
+
 /* Fade in effect after typing */
 @keyframes fadeIn {
     0% {
