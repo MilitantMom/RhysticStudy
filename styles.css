@@ -722,13 +722,13 @@ body {
 }
 
 @keyframes rainbow {
-    0% { background-color: #f0f0f0; } /* Light grey */
-    25% { background-color: #d0d0d0; } /* Mid-light grey */
-    50% { background-color: #a0a0a0; } /* Mid-grey */
-    75% { background-color: #707070; } /* Dark-grey */
-    100% { background-color: #f0f0f0; } /* Return to light grey */
+    0% { background-color: #333333; }  /* Very dark grey */
+    25% { background-color: #4d4d4d; }  /* Dark grey */
+    50% { background-color: #666666; }  /* Medium-dark grey */
+    75% { background-color: #808080; }  /* Slightly lighter grey */
+    100% { background-color: #4d4d4d; }  /* Return to dark grey */
 }
 
 .nav-container, footer {
-    animation: rainbow 60s infinite linear;
+    animation: rainbow 30s infinite linear;
 }
