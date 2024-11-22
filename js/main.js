@@ -1,35 +1,42 @@
 // Smooth Scroll for Navigation Links
+// Enables smooth scrolling behavior for anchor links on the page.
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
+
+        // Find the target element using the href attribute of the clicked link.
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
             target.scrollIntoView({
-                behavior: 'smooth'
+                behavior: 'smooth' // Smooth scrolling behavior.
             });
         }
     });
 });
 
 // Fade-In Animation on Scroll
+// Applies a 'visible' class to elements with the 'fade-in' class when they enter the viewport.
 const fadeElements = document.querySelectorAll('.fade-in');
 
 const fadeInOnScroll = () => {
     fadeElements.forEach(element => {
         const rect = element.getBoundingClientRect();
+
+        // Check if the element is within the viewport.
         if (rect.top < window.innerHeight - 100 && !element.classList.contains('visible')) {
             element.classList.add('visible');
         }
     });
 };
 
-// Trigger on scroll
+// Attach the fade-in logic to the scroll event.
 window.addEventListener('scroll', fadeInOnScroll);
 
-// Initial check on page load in case elements are already in view
+// Run the check immediately on page load to handle elements already in view.
 fadeInOnScroll();
 
 // Sticky Navbar on Scroll
+// Toggles a 'sticky' class on the navigation bar when the user scrolls down.
 const navbar = document.querySelector('.nav-container');
 if (navbar) {
     window.addEventListener('scroll', () => {
@@ -42,6 +49,7 @@ if (navbar) {
 }
 
 // Coming Soon Section Button Interaction
+// Displays an alert message when the "Coming Soon" button is clicked.
 const comingSoonButton = document.querySelector('.coming-soon .button');
 if (comingSoonButton) {
     comingSoonButton.addEventListener('click', () => {
@@ -50,6 +58,7 @@ if (comingSoonButton) {
 }
 
 // Expandable Service Cards
+// Toggles an 'expanded' class on service cards when they are clicked.
 document.querySelectorAll('.service-card').forEach(card => {
     card.addEventListener('click', () => {
         card.classList.toggle('expanded');
@@ -57,55 +66,63 @@ document.querySelectorAll('.service-card').forEach(card => {
 });
 
 // Header Section Animation on Scroll
-document.addEventListener("DOMContentLoaded", function() {
+// Animates the header section when it comes into view.
+document.addEventListener("DOMContentLoaded", function () {
     const headerSection = document.querySelector('.header-section');
 
-    // Check if header section is in the viewport
+    // Function to check if the header section is in the viewport.
     function checkIfInView() {
-        if (!headerSection) return; // Check if element exists
+        if (!headerSection) return; // Exit if the header section is not present.
+
         const rect = headerSection.getBoundingClientRect();
         if (rect.top <= window.innerHeight && rect.bottom >= 0) {
             headerSection.classList.add('animate');
-            // Once the animation is added, remove the scroll event listener
+
+            // Remove the scroll listener after the animation is triggered.
             window.removeEventListener('scroll', checkIfInView);
         }
     }
 
-    // Only run when the page is scrolled
+    // Attach the scroll event and run the check on page load.
     window.addEventListener('scroll', checkIfInView);
-    checkIfInView(); // Run on page load if it's already in view
+    checkIfInView();
 });
 
-// Ensure text animation starts after page load
+// Text Animation After Page Load
+// Triggers fade-in and typing animations for text elements with the 'animated-text' class.
 window.addEventListener('load', () => {
     const animatedText = document.querySelectorAll('.animated-text');
 
     animatedText.forEach((text, index) => {
-        // Add a delay and trigger animation by adding 'visible' class
+        // Delay the animation for each text element.
         setTimeout(() => {
-            text.classList.add('visible'); // This triggers the fade-in
-            triggerTypingAnimation(text); // Trigger typing animation
-        }, 2000 + index * 1000); // Add incremental delay for each element
+            text.classList.add('visible'); // Triggers the fade-in effect.
+            triggerTypingAnimation(text); // Start the typing animation.
+        }, 2000 + index * 1000); // Adjust delay incrementally for each element.
     });
 
-    // Typing animation function
+    /**
+     * Triggers a typing animation for the given text element.
+     * @param {HTMLElement} element - The target element for the animation.
+     */
     function triggerTypingAnimation(element) {
-        const text = element.getAttribute('data-text'); // Store the full text in a data attribute
-        if (!text) return; // Ensure there's text to type
-        let index = 0;
-        element.innerHTML = ''; // Clear any existing content
+        const text = element.getAttribute('data-text'); // Retrieve the full text from the data-text attribute.
+        if (!text) return; // Exit if no text is found.
 
-        // Function to type next character
+        let index = 0;
+        element.innerHTML = ''; // Clear any existing content.
+
+        // Recursive function to type each character sequentially.
         function typeNextCharacter() {
             if (index < text.length) {
-                element.innerHTML += text.charAt(index); // Add next character to the element
+                element.innerHTML += text.charAt(index); // Append the next character.
                 index++;
-                setTimeout(typeNextCharacter, 100); // Adjust typing speed here
+                setTimeout(typeNextCharacter, 100); // Adjust typing speed as needed.
             } else {
-                element.classList.add('typing-complete'); // Add class when typing is complete
+                element.classList.add('typing-complete'); // Add class when typing completes.
             }
         }
 
-        typeNextCharacter(); // Start typing
+        typeNextCharacter(); // Start the typing process.
     }
 });
