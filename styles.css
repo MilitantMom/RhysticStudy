@@ -414,22 +414,34 @@ footer a:hover {
         width: 90%;
     }
 }
-/* Keyframe for typing effect */
-@keyframes typing {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 100%;
-    }
+
+/* Typing animation effect */
+.animated-text {
+  font-size: 1.5rem;  /* Adjust the size as per design */
+  white-space: nowrap;  /* Prevent the text from wrapping */
+  overflow: hidden;     /* Hide text that is not visible yet */
+  border-right: 0.15em solid #000; /* Cursor-like effect */
+  width: 0;             /* Initial width to be zero for animation */
+  animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
 }
 
-/* Keyframe for blinking cursor */
-@keyframes blink {
-    50% {
-        border-color: transparent;
-    }
+/* Typing animation keyframes */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
+
+/* Cursor blinking effect */
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
 
 /* Styling for animated text */
 .animated-text {
