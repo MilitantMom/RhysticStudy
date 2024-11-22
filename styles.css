@@ -7,16 +7,16 @@
 
 /* Root Variables */
 :root {
-    --primary-color: #FF0000; /* Red for header */
-    --secondary-color: #1f1f1f;
-    --accent-color: #007BFF;
-    --hover-color: #FF00FF;  /* Neon Pink */
-    --light-bg: #121212;
-    --text-color: #f4f4f4;
-    --highlight-color: #ffe4e1;
-    --highlight-text-color: #ff69b4;
-    --link-color: #00FFAA;
-    --footer-color: #800080;  /* Purple for footer */
+    --primary-color: #D32F2F; /* Dark Red for header */
+    --secondary-color: #1f1f1f; /* Dark background for the body */
+    --accent-color: #455A64; /* Muted teal for accents */
+    --hover-color: #9C27B0; /* Soft purple for hover effects */
+    --light-bg: #121212; /* Very dark background */
+    --text-color: #e0e0e0; /* Off-white for text */
+    --highlight-color: #616161; /* Subtle highlight color */
+    --highlight-text-color: #FF4081; /* Soft pink for highlighted text */
+    --link-color: #80CBC4; /* Muted teal for links */
+    --footer-color: #3E2723; /* Dark brown for footer */
 }
 
 /* Body Styling */
