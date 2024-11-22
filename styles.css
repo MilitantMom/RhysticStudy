@@ -48,6 +48,14 @@ body {
     border-bottom: 2px solid var(--highlight-border-color);
 }
 
+/* Centered Navigation Links */
+.center-nav {
+    display: flex;
+    justify-content: center; /* Center the links */
+    gap: 20px;  /* Space between the links */
+    flex-grow: 1;  /* Allow it to take available space */
+}
+
 .nav-container a {
     color: var(--text-color);
     text-decoration: none;
@@ -64,15 +72,37 @@ body {
     color: var(--hover-color);
 }
 
-/* Active link */
+/* Active link styling */
 .nav-container .active {
-    border-bottom: 2px solid var(--primary-color);
-    color: var(--primary-color);
+    border-bottom: 2px solid var(--highlight-color); /* Change to orange */
+    color: var(--highlight-color); /* Orange text */
+    font-size: 1.2rem; /* Slightly larger text */
+}
+
+/* Left Navigation (Logo) */
+.left-nav {
+    display: flex;
+    align-items: center;
 }
 
 .logo {
     width: auto;
     max-height: 50px;
+}
+
+/* Right Navigation (Shop, Cart, Profile) */
+.right-nav {
+    display: flex;
+    align-items: center;
+}
+
+.right-nav a {
+    font-size: 1.2rem;
+    margin-left: 20px;
+}
+
+.right-nav a i {
+    font-size: 1.5rem; /* Larger icons */
 }
 
 /* =============================
