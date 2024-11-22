@@ -25,4 +25,5 @@ The site is live at [Rhystic Studios](https://rhystic.studio) and is managed usi
 We welcome feedback and ideas! Reach out via our [Contact Page](https://rhystic.studio/contact.html) or open an issue in this repository.  
 
 ## 📜 **License**  
-This project is licensed under the [Rhystic Studios Terms of Use](https://rhystic.studio/terms).  
+This project is licensed under the terms in the [LICENSE.md](LICENSE.md) file.  
+Review our Terms of Use at [Rhystic Studios Terms of Use](https://rhystic.studio/terms).  
