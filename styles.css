@@ -1,104 +1,104 @@
-/* General Reset */
+/* =============================
+   General Reset
+   ============================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Root Variables */
+/* =============================
+   Root Variables
+   Define the primary colors, themes, and reusable values.
+   ============================= */
 :root {
-    --primary-color: #D32F2F; /* Dark Red for header */
-    --secondary-color: #1f1f1f; /* Dark background for the body */
-    --accent-color: #455A64; /* Muted teal for accents */
-    --hover-color: #9C27B0; /* Soft purple for hover effects */
-    --light-bg: #121212; /* Very dark background */
-    --text-color: #e0e0e0; /* Off-white for text */
-    --highlight-color: #616161; /* Subtle highlight color */
-    --highlight-text-color: #FF4081; /* Soft pink for highlighted text */
-    --link-color: #80CBC4; /* Muted teal for links */
-    --footer-color: #3E2723; /* Dark brown for footer */
+    --primary-color: #D32F2F; /* Main branding color */
+    --secondary-color: #1f1f1f; /* Background for dark elements */
+    --accent-color: #455A64; /* Accent highlights */
+    --hover-color: #9C27B0; /* Hover effect color */
+    --light-bg: #121212; /* Default background for the app */
+    --text-color: #e0e0e0; /* Default text color */
+    --highlight-color: #616161; /* Subtle highlight background */
+    --highlight-text-color: #FF4081; /* Special highlighted text */
+    --link-color: #80CBC4; /* Link text color */
+    --footer-color: #3E2723; /* Footer background color */
+    --highlight-border-color: #00FFAA; /* Bright border for highlights */
+    --hover-shadow-color: rgba(0, 255, 170, 0.7); /* Shadow for hover effects */
 }
 
-/* Body Styling */
+/* =============================
+   Body Styling
+   Define the base styles for the entire page.
+   ============================= */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #121212;
-    color: #f4f4f4;
+    background-color: var(--light-bg);
+    color: var(--text-color);
     line-height: 1.6;
     margin: 0;
 }
 
-/* Navigation Bar */
+/* =============================
+   Utility Classes
+   Reusable styles for common elements.
+   ============================= */
+.text-highlight {
+    color: var(--highlight-text-color);
+}
+
+.bg-dark {
+    background-color: var(--secondary-color);
+}
+
+.bg-accent {
+    background-color: var(--accent-color);
+}
+
+/* =============================
+   Navigation Bar
+   Styling for the navigation container and links.
+   ============================= */
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #333;
     padding: 15px 20px;
-    border-bottom: 2px solid #00FFAA;
+    border-bottom: 2px solid var(--highlight-border-color);
 }
 
-.left-nav a, .right-nav a {
+.nav-container a {
     color: #fff;
     text-decoration: none;
     margin: 0 10px;
     font-weight: bold;
-    opacity: 0;
+    opacity: 0; /* Initial state for animation */
     animation: fadeSlideIn 1s ease forwards;
-    animation-delay: var(--delay, 0s);
+    animation-delay: var(--delay, 0s); /* Staggered animation delay */
     transition: color 0.3s;
 }
 
-.left-nav a:hover, .right-nav a:hover {
-    color: #00FFAA; 
-    position: relative;
+.nav-container a:hover {
+    color: var(--highlight-border-color);
 }
 
-/* Add staggered delays for animation */
-.left-nav a:nth-child(1) { --delay: 0.2s; }
-.left-nav a:nth-child(2) { --delay: 0.4s; }
-.left-nav a:nth-child(3) { --delay: 0.6s; }
-.left-nav a:nth-child(4) { --delay: 0.8s; }
-.right-nav a:nth-child(1) { --delay: 1s; }
-.right-nav a:nth-child(2) { --delay: 1.2s; }
-.right-nav a:nth-child(3) { --delay: 1.4s; }
-
-.left-nav a:hover, .right-nav a:hover {
-    color: #00FFAA;
-    position: relative;
+.nav-container a:nth-child(n) {
+    animation-delay: calc(0.2s * var(--n));
 }
 
-/* Hover underline effect */
-.right-nav a:hover::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 100%;
-    height: 2px;
-    background-color: #00FFAA;
-    animation: hoverUnderline 0.3s ease forwards;
-}
-
-.logo {
-    width: 50px;
-    margin-right: 15px;
-    opacity: 0; /* Initial state for animation */
-    animation: fadeSlideIn 1s ease forwards;
-    animation-delay: 0.2s;
-}
-
-/* Services Section */
-.services {
+/* =============================
+   Services & About Cards
+   Cards for displaying content in a structured layout.
+   ============================= */
+.card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     padding: 50px 20px;
-    background-color: #121212;
 }
 
-.service-card {
+.card {
     background-color: #333;
     border-radius: 10px;
     padding: 20px;
@@ -108,202 +108,120 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.service-card h2 {
+.card h2 {
     font-size: 1.5rem;
     margin-bottom: 15px;
-    color: #00FFAA;
+    color: var(--highlight-border-color);
 }
 
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), 0 0 15px #00FFAA;
-}
-
-.service-card p {
+.card p {
     font-size: 1rem;
     color: #ccc;
 }
 
-/* About Cards Section */
-.about-details {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 50px 20px;
-    background-color: #121212;
-}
-
-.about-card {
-    background-color: #333;
-    border-radius: 10px;
-    padding: 20px;
-    width: 300px;
-    text-align: left;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.about-card h2 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #00FFAA; 
-}
-
-.about-card:hover {
+.card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 6px 20px var(--hover-shadow-color);
 }
 
-.about-card p {
-    font-size: 1rem;
-    color: #ccc;
-}
-
-/* Our Apps Section */
-.our-apps {
-    padding: 50px 20px;
-    text-align: center;
-    background-color: #1f1f1f;
+/* =============================
+   Buttons
+   Define button styles and hover effects.
+   ============================= */
+.button {
+    background-color: var(--highlight-border-color);
     color: #fff;
-}
-
-.our-apps h2 {
-    font-size: 2rem;
-    color: #00FFAA;
-    margin-bottom: 15px;
-}
-
-.our-apps p {
-    margin-bottom: 20px;
-    color: #ccc;
-}
-
-.our-apps .button {
-    background-color: #007BFF;
-    color: #fff;
-    border-radius: 12px;  /* Rounded edges */
+    border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-.our-apps .button:hover {
+.button:hover {
     background-color: #0056b3;
-    box-shadow: 0 0 15px 5px rgba(0, 123, 255, 0.5);  /* Glowing effect */
+    box-shadow: 0 0 15px 5px rgba(0, 123, 255, 0.5);
 }
 
-/* Project Box Styling (New) */
-.project-box {
-    background-color: #1f1f1f;
-    border-radius: 10px;
-    padding: 20px;
-    width: 300px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
-    color: #ccc;
-    margin: 10px;
-}
-
-.project-box h2 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #00FFAA;
-}
-
-.project-box p {
-    font-size: 1rem;
-    color: #ccc;
-}
-
-.project-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
-}
-
-/* Adjusting the layout for better visual appeal */
-.description {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 50px 20px;
-    background-color: #121212;
-}
-
-/* Cart Coming Soon Section */
-.coming-soon {
-    text-align: center;
-    padding: 50px;
-    background-color: #ffe4e1;
-    color: #333;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    margin: 50px auto;
-    width: 80%;
-    max-width: 600px;
-    font-family: 'Poppins', cursive, sans-serif;
-}
-
-.coming-soon h1 {
-    font-size: 3rem;
-    color: #ff69b4;  /* Hot pink */
-    margin-bottom: 20px;
-    animation: bounce 1.5s infinite;  /* Adding a little bounce animation */
-}
-
-.coming-soon p {
-    font-size: 1.25rem;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-/* Emoji style for cuteness */
-.coming-soon .emoji {
-    font-size: 3rem;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-10px);
-    }
-    60% {
-        transform: translateY(-5px);
-    }
-}
-
-/* Header Section */
+/* =============================
+   Header Section
+   Hero banner with animations for text elements.
+   ============================= */
 .header-section {
-    background: linear-gradient(to right, #FF0000, #FF7F00);
+    background: linear-gradient(to right, var(--primary-color), #FF7F00);
     text-align: center;
     padding: 100px 20px;
     color: #fff;
-    opacity: 0;
+    opacity: 0; /* Hidden initially for animation */
     transform: translateY(50px);
     animation: fadeInUp 1.5s ease-out forwards;
 }
 
 .header-section h1 {
     font-size: 3rem;
-    color: #00FFAA;
-    opacity: 0;
-    transform: translateX(-30px); /* Start from the left */
-    animation: slideInFromLeft 1s ease-out 0.5s forwards; /* Delayed slide-in */
+    color: var(--highlight-border-color);
+    opacity: 0; /* Hidden initially for animation */
+    transform: translateX(-30px);
+    animation: slideInFromLeft 1s ease-out 0.5s forwards;
 }
 
 .header-section p {
     font-size: 1.2rem;
     margin-top: 15px;
     color: #ccc;
-    opacity: 0;
-    transform: translateX(30px); /* Start from the right */
-    animation: slideInFromRight 1s ease-out 1s forwards; /* Delayed slide-in */
+    opacity: 0; /* Hidden initially for animation */
+    transform: translateX(30px);
+    animation: slideInFromRight 1s ease-out 1s forwards;
 }
 
-/* Keyframes for fading in and sliding up */
+/* =============================
+   Footer
+   Styling for the footer and its links.
+   ============================= */
+footer {
+    background-color: var(--footer-color);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+footer a {
+    color: var(--highlight-border-color);
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+footer a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px var(--highlight-border-color);
+}
+
+/* =============================
+   Media Queries
+   Responsive styles for smaller screens.
+   ============================= */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 10px;
+    }
+
+    .card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+/* =============================
+   Keyframes
+   Define animations for fade-in and sliding effects.
+   ============================= */
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -315,7 +233,17 @@ body {
     }
 }
 
-/* Slide-in animation for p */
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 @keyframes slideInFromRight {
     0% {
         opacity: 0;
@@ -327,44 +255,6 @@ body {
     }
 }
 
-/* Footer */
-footer {
-    background-color: #800080;  /* Purple background */
-    color: #fff;  /* White text */
-    text-align: center;
-    padding: 20px;
-    transition: background-color 0.3s ease;
-}
-
-footer a {
-    color: #00FFAA;
-    text-decoration: none;
-    transition: color 0.3s, text-shadow 0.3s;
-}
-
-footer a:hover {
-    color: #fff;
-    text-shadow: 0 0 10px #FF00FF; /* Glowing effect with neon pink */
-}
-
-footer a {
-    color: #00FFAA;
-    text-decoration: none;
-    transition: color 0.3s, text-shadow 0.3s;
-}
-
-footer a:hover {
-    color: #fff;
-    text-shadow: 0 0 10px #00FFAA; /* Glowing text effect */
-}
-
-/* Discord Widget */
-.discord-widget iframe {
-    border-radius: 10px;
-    border: 1px solid #00FFAA;
-}
-
-/* Add fade-in and slide-in animations */
 @keyframes fadeSlideIn {
     0% {
         opacity: 0;
@@ -374,362 +264,4 @@ footer a:hover {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-/* Hover underline effect animation */
-@keyframes hoverUnderline {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
-}
-
-/* For small screens (max-width: 768px) */
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        text-align: center;
-        padding: 10px 0; /* Reduced padding */
-    }
-
-    .services, .about-details {
-        flex-direction: column;
-        align-items: center;
-        padding: 30px 10px; /* Reduced padding */
-    }
-
-    .service-card, .about-card, .project-box {
-        width: 90%;
-        margin-bottom: 20px; /* Ensure some space between items */
-    }
-}
-
-/* Typing animation effect */
-.animated-text {
-    font-size: 3rem; /* Adjust the size as per design */
-    white-space: nowrap;  /* Prevent the text from wrapping */
-    overflow: hidden;     /* Hide text that is not visible yet */
-    border-right: 0.15em solid #fff; /* Cursor-like effect */
-    width: 0;             /* Initial width to be zero for animation */
-    opacity: 0;           /* Start with opacity 0 */
-    animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
-}
-
-/* Typing animation keyframes */
-@keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
-}
-
-/* Cursor blinking effect */
-@keyframes blink {
-    50% {
-        border-color: transparent;
-    }
-}
-
-/* Styling for animated text */
-.animated-text {
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 3px solid #fff;  /* Simulate a typing cursor */
-    width: 0;
-    font-size: 1.5rem;  /* Adjust this for your desired text size */
-    line-height: 1.5;
-    color: #f4f4f4;  /* Change text color as needed */
-    opacity: 0;  /* Start with opacity 0 for fade-in effect */
-    animation: typing 4s steps(40) 1s forwards, fadeIn 2s forwards, blink 0.75s step-end infinite;
-}
-
-/* Typing Animation */
-@keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
-}
-
-/* Fade-in Animation for opacity */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Blink cursor effect */
-@keyframes blink {
-    50% {
-        border-color: transparent;  /* Blink the cursor */
-    }
-}
-
-/* Bubble Animation (if you want it applied separately) */
-@keyframes bubble {
-    0% {
-        transform: scale(0);
-        opacity: 0;
-    }
-    50% {
-        transform: scale(1.2);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 0;
-    }
-}
-
-/* Optional: Apply bubble animation to specific elements */
-.animated-text.bubble {
-    animation: bubble 3s ease-out infinite;  /* Apply the bubble animation separately */
-}
-
-/* Fade in effect after typing */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-/* General Page Styles */
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #121212;
-    color: #f4f4f4;
-    line-height: 1.6;
-    margin: 0;
-}
-
-/* Hero Section */
-.header-section {
-    background: linear-gradient(135deg, #6a1b9a, #d81b60);
-    color: white;
-    padding: 100px 20px;
-    text-align: center;
-}
-
-.hero-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.hero-title {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-.hero-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 40px;
-}
-
-.scroll-indicator p {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
-.scroll-arrow {
-    font-size: 2rem;
-}
-
-.header-section .scroll-indicator {
-    display: inline-block;
-    margin-top: 20px;
-}
-
-/* Content Section */
-.content-section {
-    background-color: #2c2c2c;
-    color: #e0e0e0;
-    padding: 60px 20px;
-}
-
-.content-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    font-weight: bold;
-    color: #e0e0e0;
-}
-
-.mission-vision {
-    background-color: #1f1f1f;
-    color: #e0e0e0; 
-    padding: 50px 20px;
-}
-
-.mission, .vision {
-    width: 48%;
-    padding: 20px;
-    background-color: #3c3c3c;
-    border-radius: 8px;
-    color: #e0e0e0;
-}
-
-.mission h3, .vision h3 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #d81b60;
-}
-
-.mission p, .vision p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-/* Values Section */
-.values-title {
-    font-size: 2rem;
-    background-color: #333;
-    margin-top: 40px;
-    font-weight: bold;
-    color: #e0e0e0;
-}
-
-.values ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.values li {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    line-height: 1.6;
-    color: #e0e0e0;
-}
-
-.values li strong {
-    font-weight: bold;
-    color: #d81b60;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .mission-vision {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .mission, .vision {
-        width: 90%;
-        margin-bottom: 20px;
-    }
-
-    .values-title {
-        text-align: center;
-    }
-
-    .values li {
-        text-align: center;
-    }
-}
-
-/* Fade-in-up animation for text */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Bounce animation for the scroll arrow */
-@keyframes bounce {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-15px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-/* Content Section Styles */
-.content-section {
-    background-color: #f4f4f4;
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.content-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #333;
-    animation: fadeInUp 2s ease-out;
-}
-
-.content-text {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #555;
-}
-
-.content-text ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.content-text li {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-}
-
-/* Scroll effect for content section */
-.content-section {
-    opacity: 0;
-    animation: fadeInOnScroll 1.5s ease-out forwards;
-    animation-delay: 1s;
-}
-
-@keyframes fadeInOnScroll {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes rainbow {
-    0% { background-color: #333333; }  /* Very dark grey */
-    25% { background-color: #4d4d4d; }  /* Dark grey */
-    50% { background-color: #666666; }  /* Medium-dark grey */
-    75% { background-color: #808080; }  /* Slightly lighter grey */
-    100% { background-color: #4d4d4d; }  /* Return to dark grey */
-}
-
-.nav-container, footer {
-    animation: rainbow 30s infinite linear;
 }
