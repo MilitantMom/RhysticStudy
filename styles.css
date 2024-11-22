@@ -29,11 +29,11 @@
    Body Styling
    ============================= */
 body {
-    font-family: 'Roboto', sans-serif;  /* Modern sans-serif font for readability */
+    font-family: 'Roboto', sans-serif;
     background-color: var(--light-bg);
     color: var(--text-color);
     line-height: 1.8;
-    opacity: 1; /* Set opacity to 1 immediately, no need for transition */
+    opacity: 1;
 }
 
 /* =============================
@@ -78,7 +78,7 @@ body {
     font-weight: bold;
     font-size: 1.1rem;
     letter-spacing: 0.5px;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, font-size 0.3s ease;
 }
 
 /* Hover effect for navigation links */
@@ -89,8 +89,9 @@ body {
 
 /* Active link styling */
 .nav-container .active {
-    color: var(--highlight-color); /* Orange text */
-    font-size: 1.2rem; /* Slightly larger text */
+    color: var(--highlight-color);
+    font-size: 1.2rem;
+    text-decoration: none;
 }
 
 /* Right Navigation (Icons) */
@@ -105,7 +106,7 @@ body {
 }
 
 .right-nav a i {
-    font-size: 1.5rem; /* Larger icons */
+    font-size: 1.5rem;
 }
 
 /* =============================
@@ -152,8 +153,8 @@ body {
 .mission-vision-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;   /* Center the items */
-    gap: 40px;                 /* Space between the boxes */
+    justify-content: center;
+    gap: 40px;
     padding: 60px 20px;
 }
 
@@ -162,9 +163,9 @@ body {
     border-radius: 12px;
     padding: 30px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    flex: 1 1 300px;           /* Flex-grow and flex-basis */
-    max-width: 450px;          /* Prevent them from getting too wide */
-    margin: 0 10px;            /* Adds a bit of spacing on each side */
+    flex: 1 1 300px;
+    max-width: 450px;
+    margin: 0 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
@@ -204,12 +205,10 @@ body {
     transform: translateX(0);
 }
 
-/* Example: Animate from the left */
 .animate-left {
     animation: slideInFromLeft 1s ease-out forwards;
 }
 
-/* Example: Animate from the right */
 .animate-right {
     animation: slideInFromRight 1s ease-out forwards;
 }
@@ -247,13 +246,12 @@ footer a:hover {
     color: var(--hover-color);
 }
 
-/* Top Footer Section with Social Icons and Back to Top Button */
 .footer-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    flex-wrap: wrap; /* Ensure it wraps on smaller screens */
+    flex-wrap: wrap;
 }
 
 .social-icons {
@@ -287,7 +285,7 @@ footer a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Ensures items stack on mobile */
+    flex-wrap: wrap;
     margin-top: 20px;
 }
 
@@ -297,7 +295,7 @@ footer a:hover {
 }
 
 .footer-bottom .logo img {
-    max-width: 50px; /* Adjust logo size */
+    max-width: 50px;
     margin-top: 10px;
 }
 
@@ -305,7 +303,6 @@ footer a:hover {
    Media Queries for Footer Responsiveness
    ============================= */
 @media (max-width: 768px) {
-    /* Stack social icons and back-to-top button on mobile */
     .footer-top {
         flex-direction: column;
         align-items: center;
@@ -315,7 +312,6 @@ footer a:hover {
         margin-bottom: 20px;
     }
 
-    /* Stack policies and logo in the footer bottom section */
     .footer-bottom {
         flex-direction: column;
         align-items: center;
@@ -358,16 +354,16 @@ footer a:hover {
     }
    
        .embed-container {
-        flex-direction: column; /* Stacks the Google Form and Discord widget vertically */
+        flex-direction: column;
     }
 
     .embed-container > div {
-        flex: 1 1 100%; /* Makes each item take up full width on mobile screens */
-        margin-bottom: 20px; /* Adds some spacing between the stacked items */
+        flex: 1 1 100%;
+        margin-bottom: 20px;
     }
 
     .embed-container iframe {
-        height: 400px; /* Adjust height for mobile view */
+        height: 400px;
     }
 }
 
