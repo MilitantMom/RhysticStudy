@@ -24,7 +24,6 @@
             from {
                 opacity: 0;
             }
-
             to {
                 opacity: 1;
             }
@@ -146,42 +145,13 @@
             color: #777; /* Darker gray for the scroll indicator */
         }
 
-        footer {
-            background-color: #121212; /* Dark background for footer */
-            color: #888; /* Light gray text */
-            text-align: center;
-            padding: 20px;
-        }
-
-        footer a {
-            color: #f4f4f4; /* Light color for links */
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: #ff9900; /* Highlight color on hover */
-        }
     </style>
 </head>
 
 <body>
-    <!-- Header with Navigation Bar -->
-    <header>
-        <div class="nav-container">
-            <nav class="left-nav">
-                <img src="RhysticStudyLogo.png" alt="Rhystic Study Logo" class="logo">
-                <a href="index.html" class="active nav-link">Home</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="services.html" class="nav-link">Portfolio</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-            </nav>
-            <nav class="right-nav">
-                <a href="shop.html" class="nav-link">Shop</a>
-                <a href="cart.html" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
-                <a href="profile.html" class="nav-link"><i class="fas fa-user"></i></a>
-            </nav>
-        </div>
-    </header>
+
+    <!-- Dynamic Header -->
+    <div id="header-container"></div> <!-- This will load the header.html content -->
 
     <main>
         <section class="header-section">
@@ -232,35 +202,9 @@
         </section>
     </main>
 
-    <!-- Footer -->
-<footer>
-    <div class="footer-top">
-        <div class="social-icons">
-            <a href="https://facebook.com/RhysticStudios" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.youtube.com/@RhysticStudios" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://discord.gg/w2vTMUYvaH" target="_blank"><i class="fab fa-discord"></i></a>
-            <a href="https://github.com/MilitantMom/" target="_blank"><i class="fab fa-github"></i></a>
-        </div>
-            <a href="#top" class="back-to-top">&#8593;</a>
-    </div>
+    <!-- Dynamic Footer -->
+    <div id="footer-container"></div> <!-- This will load the footer.html content -->
 
-    <div class="footer-bottom">
-        <div class="policies">
-            <a href="terms.html" target="_blank">Terms of Service</a>
-            <a href="privacy.html" target="_blank">Privacy Policy</a>
-            <a href="refunds.html" target="_blank">Refund Policy</a>
-        </div>
-
-        <div class="logo">
-            <img src="RhysticStudyLogo.png" alt="Rhystic Study Logo">
-        </div>
-    </div>
-
-    <div class="footer-text">
-        <p>&copy; 2024 The Rhystic Study | All rights reserved.</p>
-    </div>
-</footer>
-    
     <script src="js/main.js"></script>
 </body>
 
