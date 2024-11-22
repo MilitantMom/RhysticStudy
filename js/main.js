@@ -79,11 +79,11 @@ document.addEventListener("DOMContentLoaded", function() {
 // Ensure text animation starts after page load
 window.addEventListener('load', () => {
     const animatedText = document.querySelectorAll('.animated-text');
-    
+
     animatedText.forEach((text, index) => {
-        // Delay fade-in and typing animation for each element
+        // Add a delay and trigger animation by adding 'visible' class
         setTimeout(() => {
-            text.style.opacity = '1'; // Make sure opacity is handled by CSS animation
+            text.classList.add('visible'); // This triggers the fade-in
             triggerTypingAnimation(text); // Trigger typing animation
         }, 2000 + index * 1000); // Add incremental delay for each element
     });
