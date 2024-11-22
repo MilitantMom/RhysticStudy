@@ -14,7 +14,7 @@
     --primary-color: #4CAF50;        /* Green */
     --secondary-color: #121212;      /* Dark background */
     --accent-color: #2C6B2F;         /* Muted green */
-    --hover-color: #FF7043;          /* Hover Color */
+    --hover-color: #ff9900;          /* Hover Color */
     --light-bg: #1E1E1E;             /* Dark gray background */
     --text-color: #E0E0E0;           /* Light gray text */
     --highlight-color: #333333;      /* Darker gray for contrast */
@@ -105,10 +105,6 @@ body {
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin-bottom: 20px;
-}
-
-.header-section h1:hover {
-    color: var(--hover-color);
 }
 
 .header-section p {
