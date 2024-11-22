@@ -2,9 +2,12 @@
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
@@ -28,18 +31,18 @@ fadeInOnScroll();
 
 // Sticky Navbar on Scroll
 const navbar = document.querySelector('.nav-container');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('sticky');
-    } else {
-        navbar.classList.remove('sticky');
-    }
-});
+if (navbar) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('sticky');
+        } else {
+            navbar.classList.remove('sticky');
+        }
+    });
+}
 
 // Coming Soon Section Button Interaction
 const comingSoonButton = document.querySelector('.coming-soon .button');
-
 if (comingSoonButton) {
     comingSoonButton.addEventListener('click', () => {
         alert('This feature is coming soon! Stay tuned 😊');
@@ -59,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Check if header section is in the viewport
     function checkIfInView() {
+        if (!headerSection) return; // Check if element exists
         const rect = headerSection.getBoundingClientRect();
         if (rect.top <= window.innerHeight && rect.bottom >= 0) {
             headerSection.classList.add('animate');
@@ -87,6 +91,7 @@ window.addEventListener('load', () => {
     // Typing animation function
     function triggerTypingAnimation(element) {
         const text = element.getAttribute('data-text'); // Store the full text in a data attribute
+        if (!text) return; // Ensure there's text to type
         let index = 0;
         element.innerHTML = ''; // Clear any existing content
 
