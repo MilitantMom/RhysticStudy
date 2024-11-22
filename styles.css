@@ -86,18 +86,6 @@ body {
     animation-delay: 0.2s;
 }
 
-/* Header Section */
-.header-section h1 {
-    font-size: 3rem;
-    color: #00FFAA;
-}
-
-.header-section p {
-    font-size: 1.2rem;
-    margin-top: 15px;
-    color: #ccc;
-}
-
 /* Services Section */
 .services {
     display: flex;
@@ -245,13 +233,13 @@ body {
 .coming-soon {
     text-align: center;
     padding: 50px;
-    background-color: #ffe4e1;  /* Light pink background */
+    background-color: #ffe4e1;
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     margin: 50px auto;
     width: 80%;
     max-width: 600px;
-    font-family: 'Comic Sans MS', cursive, sans-serif;  /* Cute font */
+    font-family: 'Poppins', cursive, sans-serif;
 }
 
 .coming-soon h1 {
@@ -284,15 +272,32 @@ body {
     }
 }
 
-/* Set up the initial state for the header section */
+/* Header Section */
 .header-section {
+    background: linear-gradient(to right, #1f1f1f, #007bff); /* Keep this */
     text-align: center;
     padding: 100px 20px;
-    background-color: #1f1f1f;
     color: #fff;
     opacity: 0;
     transform: translateY(50px);
     animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.header-section h1 {
+    font-size: 3rem;
+    color: #00FFAA;
+    opacity: 0;
+    transform: translateX(-30px); /* Start from the left */
+    animation: slideInFromLeft 1s ease-out 0.5s forwards; /* Delayed slide-in */
+}
+
+.header-section p {
+    font-size: 1.2rem;
+    margin-top: 15px;
+    color: #ccc;
+    opacity: 0;
+    transform: translateX(30px); /* Start from the right */
+    animation: slideInFromRight 1s ease-out 1s forwards; /* Delayed slide-in */
 }
 
 /* Keyframes for fading in and sliding up */
@@ -305,32 +310,6 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-/* Style the h1 for an additional animation */
-.header-section h1 {
-    opacity: 0;
-    transform: translateX(-30px); /* Start from the left */
-    animation: slideInFromLeft 1s ease-out 0.5s forwards; /* Delayed slide-in */
-}
-
-/* Slide-in animation for h1 */
-@keyframes slideInFromLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Style for the paragraph to animate after the header */
-.header-section p {
-    opacity: 0;
-    transform: translateX(30px); /* Start from the right */
-    animation: slideInFromRight 1s ease-out 1s forwards; /* Delayed slide-in */
 }
 
 /* Slide-in animation for p */
@@ -392,25 +371,23 @@ footer a:hover {
     }
 }
 
-/* Responsive Design */
+/* For small screens (max-width: 768px) */
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
         text-align: center;
+        padding: 10px 0; /* Reduced padding */
     }
 
     .services, .about-details {
         flex-direction: column;
         align-items: center;
+        padding: 30px 10px; /* Reduced padding */
     }
 
-    .service-card, .about-card {
+    .service-card, .about-card, .project-box {
         width: 90%;
-    }
-
-    /* Project Box Adjustments for smaller screens */
-    .project-box {
-        width: 90%;
+        margin-bottom: 20px; /* Ensure some space between items */
     }
 }
 
@@ -667,4 +644,3 @@ footer a:hover {
         opacity: 1;
     }
 }
-
