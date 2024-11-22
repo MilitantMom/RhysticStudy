@@ -1,7 +1,7 @@
 Custom License: Rhystic Open Source License (ROSL)
 
 Version 1.0
-Effective Date: [Insert Date]
+Effective Date: [11/22/2024]
 
 Permissions
 You are free to:
