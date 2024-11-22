@@ -11,25 +11,25 @@
    Root Variables
    ============================= */
 :root {
-    --primary-color: #4CAF50;
-    --secondary-color: #121212;
-    --accent-color: #2C6B2F;
-    --hover-color: #388E3C;
-    --light-bg: #1E1E1E;
-    --text-color: #E0E0E0;
-    --highlight-color: #333333;
-    --highlight-text-color: #81C784;
-    --link-color: #66BB6A;
-    --footer-color: #1D1D1D;
-    --highlight-border-color: #4CAF50;
-    --hover-shadow-color: rgba(56, 142, 60, 0.4);
+    --primary-color: #4CAF50;        /* Green */
+    --secondary-color: #121212;      /* Dark background */
+    --accent-color: #2C6B2F;         /* Muted green */
+    --hover-color: #388E3C;          /* Hover color */
+    --light-bg: #1E1E1E;             /* Dark gray background */
+    --text-color: #E0E0E0;           /* Light gray text */
+    --highlight-color: #333333;      /* Darker gray for contrast */
+    --highlight-text-color: #81C784; /* Soft green text highlight */
+    --link-color: #66BB6A;           /* Lighter green for links */
+    --footer-color: #1D1D1D;         /* Footer background */
+    --highlight-border-color: #4CAF50; /* Green border */
+    --hover-shadow-color: rgba(56, 142, 60, 0.4); /* Hover shadow */
 }
 
 /* =============================
    Body Styling
    ============================= */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;  /* Modern sans-serif font for readability */
     background-color: var(--light-bg);
     color: var(--text-color);
     line-height: 1.8;
@@ -52,6 +52,8 @@ body {
     text-decoration: none;
     margin: 0 10px;
     font-weight: bold;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
     transition: color 0.3s;
 }
 
@@ -76,8 +78,12 @@ body {
 }
 
 .header-section h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;  /* Larger heading for impactful title */
+    font-weight: 700;
     color: var(--highlight-border-color);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
 }
 
 .header-section p {
@@ -92,10 +98,10 @@ body {
 .mission-vision-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 40px;  /* Increased gap for better spacing */
     justify-content: center;
     text-align: center;
-    padding: 40px 20px;
+    padding: 60px 20px;
 }
 
 .mission-vision-box {
@@ -105,25 +111,28 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     flex: 1 1 300px;
     max-width: 450px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .mission-vision-box h3 {
-    font-size: 1.6rem;
+    font-size: 1.8rem; /* Slightly larger to make titles stand out */
     font-weight: 700;
     color: var(--highlight-border-color);
     text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
 }
 
 .mission-vision-box p {
     font-size: 1.1rem;
     line-height: 1.8;
     color: var(--text-color);
+    margin-bottom: 0;
 }
 
 .mission-vision-box:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 6px 25px var(--hover-shadow-color);
+    transform: translateY(-8px); /* Subtle translation for smooth hover effect */
+    box-shadow: 0 6px 25px var(--hover-shadow-color); /* Softer shadow for depth */
 }
 
 /* =============================
@@ -134,12 +143,14 @@ footer {
     color: var(--text-color);
     text-align: center;
     padding: 20px;
+    font-size: 1rem;
 }
 
 footer a {
     color: var(--highlight-border-color);
     text-decoration: none;
     transition: color 0.3s;
+    margin: 0 10px;
 }
 
 footer a:hover {
@@ -174,6 +185,9 @@ footer a:hover {
     }
 }
 
+/* =============================
+   Animations for Intro
+   ============================= */
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -185,31 +199,13 @@ footer a:hover {
     }
 }
 
-@keyframes slideInFromLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInFromRight {
-    0% {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
 @keyframes fadeSlideIn {
     0% {
         opacity: 0;
         transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
