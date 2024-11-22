@@ -12,7 +12,6 @@
         <div class="nav-container">
             <nav class="left-nav">
                 <img src="RhysticStudyLogo.png" alt="Rhystic Study Logo" class="logo">
-                <!-- Add animation classes to nav links -->
                 <a href="index.html" class="active nav-link">Home</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="services.html" class="nav-link">Portfolio</a>
@@ -27,15 +26,46 @@
     </header>
 
     <main>
+        <!-- Hero Section with Dynamic Effects -->
         <section class="header-section">
-            <h1>The Rhystic Study</h1>
-            <p class="animated-text">Innovative development studio dedicated to creating immersive and thought-provoking experiences.</p>
+            <div class="hero-container">
+                <h1 class="hero-title">Welcome to The Rhystic Study</h1>
+                <p class="hero-subtitle animated-text">Innovative development studio dedicated to creating immersive and thought-provoking experiences.</p>
+                <div class="cta-container">
+                    <button class="cta-button">Join Us</button>
+                    <button class="cta-button cta-secondary">Learn More</button>
+                </div>
+                <div class="scroll-indicator">
+                    <p>Scroll Down to Explore</p>
+                    <div class="scroll-arrow">
+                        &#8595;
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Section with Mission & Values -->
+        <section class="content-section">
+            <div class="content-container">
+                <h2 class="section-title">Our Mission & Values</h2>
+                <div class="content-text">
+                    <p>
+                        At Rhystic Studio, we believe that every project has the potential to change the way we view the world. Whether it's through innovative gameplay mechanics or breathtaking visuals, we ensure that every creation challenges conventions and excites the imagination.
+                    </p>
+                    <ul>
+                        <li><strong>Community:</strong> Building meaningful connections with players and creators alike.</li>
+                        <li><strong>Environment:</strong> Fostering sustainable, mindful development practices.</li>
+                        <li><strong>People:</strong> Empowering our team to think outside the box and innovate fearlessly.</li>
+                    </ul>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2024 The Rhystic Study | All rights reserved | <a href="https://discord.gg/w2vTMUYvaH" target="_blank">Join our Discord</a></p>
     </footer>
+
     <script src="js/main.js"></script>
 </body>
 </html>
