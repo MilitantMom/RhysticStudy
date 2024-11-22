@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Meta information for SEO and accessibility -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Rhystic Study is a game and app development studio focused on creating immersive and innovative experiences. Join us on a creative journey.">
     <meta name="keywords" content="Rhystic Study, game development, app development, creative studio, immersive experiences">
     <meta name="author" content="Rhystic Studio">
+
+    <!-- Title of the page that appears in the browser tab -->
     <title>The Rhystic Study | Welcome</title>
+
+    <!-- Link to external stylesheet for design -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Ads script (async loading for performance) -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3920209036805773" crossorigin="anonymous"></script>
-    <!-- Font Awesome for icons -->
+
+    <!-- Font Awesome for icons (for shopping cart, profile, etc.) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <!-- Inline styles for specific page animations -->
     <style>
-        /* Smooth scrolling */
+        /* Smooth scrolling for the entire page */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Hero Title Animation */
+        /* Hero section title fade-in animation */
         .hero-title {
             animation: fadeIn 1s ease-in-out;
         }
 
+        /* Keyframes for the fadeIn animation */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -32,16 +44,24 @@
         }
     </style>
 </head>
+
 <body>
+    <!-- Header Section: Navigation Bar -->
     <header>
         <div class="nav-container">
+            <!-- Left-aligned navigation links -->
             <nav class="left-nav">
+                <!-- Logo for Rhystic Study -->
                 <img src="RhysticStudyLogo.png" alt="Rhystic Study Logo" class="logo">
+
+                <!-- Navigation links (active link marked with 'active' class) -->
                 <a href="index.html" class="active nav-link" aria-label="Home">Home</a>
                 <a href="about.html" class="nav-link" aria-label="About">About</a>
                 <a href="services.html" class="nav-link" aria-label="Portfolio">Portfolio</a>
                 <a href="contact.html" class="nav-link" aria-label="Contact">Contact</a>
             </nav>
+
+            <!-- Right-aligned navigation links (Shop, Cart, Profile) -->
             <nav class="right-nav">
                 <a href="shop.html" class="nav-link" aria-label="Shop">Shop</a>
                 <a href="cart.html" class="nav-link" aria-label="Cart"><i class="fas fa-shopping-cart"></i></a>
@@ -50,38 +70,52 @@
         </div>
     </header>
 
+    <!-- Main Content Section -->
     <main>
-        <!-- Hero Section with Dynamic Effects -->
+        <!-- Hero Section with Welcome Message -->
         <section class="header-section">
             <div class="hero-container">
+                <!-- Main heading of the page with animation -->
                 <h1 class="hero-title">Welcome to The Rhystic Study</h1>
+
+                <!-- Subtitle with animation (may be highlighted later) -->
                 <p class="hero-subtitle animated-text">Innovative development studio dedicated to creating immersive and thought-provoking experiences.</p>
+
+                <!-- Scroll-down indicator -->
                 <div class="scroll-indicator">
                     <p>Scroll Down to Explore</p>
                     <div class="scroll-arrow">
-                        &#8595;
+                        &#8595; <!-- Downward arrow symbol -->
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Content Section with Mission & Values -->
+        <!-- Content Section for Mission & Vision Statements -->
         <section class="content-section">
             <div class="content-container">
+                <!-- Section Title -->
                 <h2 class="section-title">Our Mission & Vision</h2>
+
+                <!-- Mission and Vision blocks -->
                 <div class="mission-vision">
                     <div class="mission">
+                        <!-- Mission Heading and Description -->
                         <h3>Mission</h3>
                         <p>At Rhystic Studio, our mission is to develop games and apps that are accessible, engaging, and provoking 🎮✨. We believe in creating experiences that challenge conventions, spark curiosity, and invite players to explore new worlds 🌍. Through innovation and thoughtful design, we aim to provide meaningful experiences that leave a lasting impact on players of all backgrounds 👾.</p>
                     </div>
+
                     <div class="vision">
+                        <!-- Vision Heading and Description -->
                         <h3>Vision</h3>
                         <p>Our vision is to redefine interactive entertainment by blending cutting-edge technology with creativity 🎨💡. We strive to craft immersive worlds that spark new ways of thinking, feeling, and connecting 💭🤝. Through our work, we want to inspire a global community to engage with storytelling, challenge their perceptions, and embark on unforgettable journeys 🌟.</p>
                     </div>
                 </div>
 
+                <!-- Values Title and List of Core Values -->
                 <h3 class="values-title">Our Values: We Care</h3>
                 <div class="values">
+                    <!-- List of Values with Emojis -->
                     <ul>
                         <li><strong>C</strong>ommunity: We foster inclusive, supportive, and collaborative spaces where players and creators come together to share, learn, and grow. 🌱</li>
                         <li><strong>A</strong>ccessibility: We strive to make our games and apps accessible to all, ensuring that everyone, regardless of ability, can engage with and enjoy our experiences. ♿</li>
@@ -93,6 +127,7 @@
         </section>
     </main>
 
+    <!-- Footer Section with Links -->
     <footer>
         <p>&copy; 2024 The Rhystic Study | All rights reserved | 
             <a href="https://discord.gg/w2vTMUYvaH" target="_blank" aria-label="Join our Discord">Join our Discord</a> | 
@@ -101,6 +136,8 @@
         </p>
     </footer>
 
+    <!-- External JavaScript file for site functionality -->
     <script src="js/main.js"></script>
 </body>
+
 </html>
