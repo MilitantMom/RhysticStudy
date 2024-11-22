@@ -736,5 +736,5 @@ body {
 }
 
 .nav-container, footer {
-    animation: rainbow 10s infinite linear;
+    animation: rainbow 60s infinite linear;
 }
