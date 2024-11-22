@@ -1,26 +1,28 @@
-# Rhystic Study Website
+# Rhystic Studios Website 🌌  
 
-Welcome to the Rhystic Study Website repository! This is the official website for the Rhystic Study community, where we provide gaming and tech-related content, services, and more.
+Welcome to the official Rhystic Studios website! This site serves as the central hub for our indie game and app development studio.  
 
-## Project Description
+## 🌟 **About Rhystic Studios**  
+We’re an indie startup dedicated to crafting games and apps that are accessible, engaging, and thought-provoking. Our mission is to create unique experiences while fostering community, supporting the environment, and valuing people.  
 
-Rhystic Study is a hub for gamers and tech enthusiasts, where we offer a variety of services, including:
-- Gaming community access via our Discord server
-- Custom development services for Minecraft servers and other tech solutions
-- Exclusive content and tools for our community members
+## 🔗 **Current Pages**  
+- **Home**: Overview of Rhystic Studios and our mission.  
+- **About**: Learn more about who we are and what we do.  
+- **Contact**: Get in touch with us for inquiries or collaborations.  
 
-## Features
+## 🚀 **Features in Progress**  
+- **Professional Styling Updates**: Modern, sleek designs to elevate the user experience.  
+- **Wiki Integration**: A dedicated section to explore our games, lore, and development processes.  
+- **Game Showcases**: Highlighting our current projects like *POST* *SMOKEHOUES* and *ManaLife.*  
 
-- **Responsive design** for all devices
-- **About**, **Services**, and **Contact Us** pages
-- **Custom branding** with modern, sleek design elements
-- **Google Ads integration** for monetization
-- **Discord integration** for easy communication
+## 💻 **Development**  
+This website is built with HTML and styled with CSS. Future updates will include interactivity using JavaScript and hosting for our apps and games.  
 
-## Setup
+## 🌐 **Deployment**  
+The site is live at [Rhystic Studios](https://rhystic.studio) and is managed using GitHub Pages with Cloudflare for DNS.  
 
-1. **Purchase a License**: Before using, modifying, or redistributing this project, you must first purchase a license from our Discord server shop. Please visit our [Discord Server](https://discord.gg/w2vTMUYvaH) for details on how to complete your purchase.
-   
-2. Clone this repository:
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/rhystic-study.git
+## 🤝 **Contribute**  
+We welcome feedback and ideas! Reach out via our [Contact Page](https://rhystic.studio/contact.html) or open an issue in this repository.  
+
+## 📜 **License**  
+This project is licensed under the [Rhystic Studios Terms of Use](https://rhystic.studio/terms).  
