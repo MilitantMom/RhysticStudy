@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Rhystic Study | Cart</title>
     <link rel="stylesheet" href="styles.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3920209036805773" crossorigin="anonymous"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .hero-title {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <!-- Header with Navigation Bar -->
     <header>
         <div class="nav-container">
             <nav class="left-nav">
                 <img src="RhysticStudyLogo.png" alt="Rhystic Study Logo" class="logo">
-                <!-- Add animation classes to nav links -->
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="services.html" class="nav-link">Portfolio</a>
@@ -29,20 +48,50 @@
 
     <!-- Main Content -->
     <main>
+        <!-- Header Section with Hero Banner -->
+        <section class="header-section">
+            <div class="hero-container">
+                <h1 class="hero-title">Our Cart is Coming Soon! 🛍️✨</h1>
+                <p class="hero-subtitle">We’re working hard to make shopping with us easier and more fun! Stay tuned for updates.</p>
+                <div class="scroll-indicator">
+                    <p>In the meantime, feel free to browse our shop and check out all the exciting products we have in store!</p>
+                    <div class="scroll-arrow">&#8595;</div>
+                </div>
+            </div>
+        </section>
+
         <!-- Cart Coming Soon Section -->
-        <section class="coming-soon">
-            <h1>Our Cart is Coming Soon! 🛍️✨</h1>
-            <p>We’re working hard to make shopping with us easier and more fun! Stay tuned for updates.</p>
-            <p>In the meantime, feel free to browse our shop and check out all the exciting products we have in store!</p>
+        <section class="content-section">
+            <div class="content-container">
+                <div class="mission-vision-container">
+                    <!-- Coming Soon Box -->
+                    <div class="mission-vision-box">
+                        <h3 class="mission-title">Stay Tuned!</h3>
+                        <p>Our cart is currently under development, but we're working hard to bring you a seamless shopping experience!</p>
+                        <p>We appreciate your patience and encourage you to check out our other pages and join our Discord to stay updated on the launch.</p>
+                    </div>
+
+                    <!-- Join Discord Box -->
+                    <div class="mission-vision-box">
+                        <h3 class="mission-title">Join the Conversation</h3>
+                        <p>For real-time updates and support, join our community on Discord. Stay connected, and be the first to know when we launch our shop!</p>
+                        <a href="https://discord.gg/w2vTMUYvaH" target="_blank" class="button">Join the Discord</a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Rhystic Study | <a href="https://discord.gg/w2vTMUYvaH" target="_blank">Join our Discord</a></p>
+        <p>&copy; 2024 Rhystic Study | All rights reserved |
+            <a href="https://discord.gg/w2vTMUYvaH" target="_blank">Join our Discord</a> |
+            <a href="privacy.html" target="_blank">Privacy Policy</a> |
+            <a href="terms.html" target="_blank">Terms of Service</a>
+        </p>
     </footer>
 
-    <!-- Link to main.js script for additional functionality -->
     <script src="js/main.js"></script>
 </body>
+
 </html>
