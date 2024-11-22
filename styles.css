@@ -11,15 +11,16 @@
 
 /* Root Variables */
 :root {
-    --primary-color: #00FFAA;
+    --primary-color: #FF0000; /* Red for header */
     --secondary-color: #1f1f1f;
     --accent-color: #007BFF;
-    --hover-color: #0056b3;
+    --hover-color: #FF00FF;  /* Neon Pink */
     --light-bg: #121212;
     --text-color: #f4f4f4;
     --highlight-color: #ffe4e1;
     --highlight-text-color: #ff69b4;
     --link-color: #00FFAA;
+    --footer-color: #800080;  /* Purple for footer */
 }
 
 /* Body Styling */
@@ -36,7 +37,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1f1f1f;
+    background-color: #333;
     padding: 15px 20px;
     border-bottom: 2px solid #00FFAA;
 }
@@ -46,10 +47,15 @@ body {
     text-decoration: none;
     margin: 0 10px;
     font-weight: bold;
-    opacity: 0; /* Initial state for animation */
+    opacity: 0;
     animation: fadeSlideIn 1s ease forwards;
-    animation-delay: var(--delay, 0s); /* Delay for staggered effect */
+    animation-delay: var(--delay, 0s);
     transition: color 0.3s;
+}
+
+.left-nav a:hover, .right-nav a:hover {
+    color: #00FFAA; 
+    position: relative;
 }
 
 /* Add staggered delays for animation */
@@ -97,7 +103,7 @@ body {
 }
 
 .service-card {
-    background-color: #1f1f1f;
+    background-color: #333;
     border-radius: 10px;
     padding: 20px;
     width: 300px;
@@ -112,14 +118,14 @@ body {
     color: #00FFAA;
 }
 
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7), 0 0 15px #00FFAA;
+}
+
 .service-card p {
     font-size: 1rem;
     color: #ccc;
-}
-
-.service-card:hover, .project-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7), 0 0 15px #00FFAA; /* Neon glow */
 }
 
 /* About Cards Section */
@@ -133,7 +139,7 @@ body {
 }
 
 .about-card {
-    background-color: #1f1f1f;
+    background-color: #333;
     border-radius: 10px;
     padding: 20px;
     width: 300px;
@@ -145,17 +151,17 @@ body {
 .about-card h2 {
     font-size: 1.5rem;
     margin-bottom: 15px;
-    color: #00FFAA;
-}
-
-.about-card p {
-    font-size: 1rem;
-    color: #ccc;
+    color: #00FFAA; 
 }
 
 .about-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+}
+
+.about-card p {
+    font-size: 1rem;
+    color: #ccc;
 }
 
 /* Our Apps Section */
@@ -274,7 +280,7 @@ body {
 
 /* Header Section */
 .header-section {
-    background: linear-gradient(to right, #1f1f1f, #007bff); /* Keep this */
+    background: linear-gradient(to right, #FF0000, #FF7F00);
     text-align: center;
     padding: 100px 20px;
     color: #fff;
@@ -326,10 +332,22 @@ body {
 
 /* Footer */
 footer {
-    background-color: #1f1f1f;
-    color: #ccc;
+    background-color: #800080;  /* Purple background */
+    color: #fff;  /* White text */
     text-align: center;
     padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+footer a {
+    color: #00FFAA;
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+footer a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #FF00FF; /* Glowing effect with neon pink */
 }
 
 footer a {
@@ -492,11 +510,11 @@ footer a:hover {
 }
 /* General Page Styles */
 body {
-    font-family: 'Helvetica Neue', sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #f4f4f4;
+    line-height: 1.6;
     margin: 0;
-    padding: 0;
 }
 
 /* Hero Section */
@@ -704,4 +722,19 @@ body {
     to {
         opacity: 1;
     }
+}
+
+@keyframes rainbow {
+    0% { background-color: red; }
+    14% { background-color: orange; }
+    28% { background-color: yellow; }
+    42% { background-color: green; }
+    57% { background-color: blue; }
+    71% { background-color: indigo; }
+    85% { background-color: violet; }
+    100% { background-color: red; }
+}
+
+.nav-container, footer {
+    animation: rainbow 6s infinite linear; /* Apply to navbar and footer */
 }
