@@ -239,7 +239,7 @@ footer a:hover {
 }
 
 .back-to-top {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: var(--text-color);
     text-decoration: none;
     transition: color 0.3s ease;
@@ -264,7 +264,7 @@ footer a:hover {
 }
 
 .footer-bottom .logo img {
-    max-width: 120px; /* Adjust logo size */
+    max-width: 50px; /* Adjust logo size */
     margin-top: 10px;
 }
 
