@@ -21,7 +21,7 @@
     --highlight-text-color: #5C9B5A; /* Darkened green text highlight for better contrast */
     --link-color: #66BB6A;           /* Lighter green for links */
     --footer-color: #1D1D1D;         /* Footer background */
-    --highlight-border-color: #4CAF50; /* Green border */
+    --highlight-border-color: #4CAF50; /* highlight color */
     --hover-shadow-color: rgba(56, 142, 60, 0.4); /* Hover shadow */
 }
 
