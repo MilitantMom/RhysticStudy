@@ -33,7 +33,7 @@ body {
     background-color: var(--light-bg);
     color: var(--text-color);
     line-height: 1.8;
-    opacity: 1; /* Remove the opacity transition, body should be visible immediately */
+    opacity: 1; /* Set opacity to 1 immediately, no need for transition */
 }
 
 /* =============================
