@@ -14,7 +14,7 @@
     --primary-color: #4CAF50;        /* Green */
     --secondary-color: #121212;      /* Dark background */
     --accent-color: #2C6B2F;         /* Muted green */
-    --hover-color: #388E3C;          /* Hover color */
+    --hover-color: #FF7043;          /* Contrasting Hover Color (reddish-orange) */
     --light-bg: #1E1E1E;             /* Dark gray background */
     --text-color: #E0E0E0;           /* Light gray text */
     --highlight-color: #333333;      /* Darker gray for contrast */
@@ -66,7 +66,7 @@ body {
 /* Hover effect for navigation links and icons */
 .nav-container a:hover,
 .nav-container a:focus {
-    color: var(--hover-color);  /* On hover, links change to hover color */
+    color: var(--hover-color);  /* On hover, links change to the contrasting hover color */
 }
 
 /* Ensure icons change color on hover as well */
@@ -102,6 +102,10 @@ body {
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin-bottom: 20px;
+}
+
+.header-section h1:hover {
+    color: var(--hover-color);  /* Make the header title change on hover */
 }
 
 .header-section p {
@@ -149,9 +153,9 @@ body {
 }
 
 .mission-vision-box:hover {
-    background-color: var(--accent-color);  /* Change background color on hover */
+    background-color: var(--hover-color);  /* Change background to contrasting hover color */
     transform: translateY(-8px); /* Subtle translation for smooth hover effect */
-    box-shadow: 0 6px 25px var(--hover-shadow-color); /* Softer shadow for depth */
+    box-shadow: 0 6px 25px rgba(255, 112, 67, 0.4); /* Softer shadow for depth, matching hover color */
 }
 
 /* =============================
@@ -174,7 +178,7 @@ footer a {
 }
 
 footer a:hover {
-    color: var(--text-color); /* On hover, links turn to the text color */
+    color: var(--hover-color);  /* On hover, footer links change to the contrasting hover color */
 }
 
 /* =============================
