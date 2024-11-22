@@ -417,31 +417,30 @@ footer a:hover {
 
 /* Typing animation effect */
 .animated-text {
-  font-size: 1.5rem;  /* Adjust the size as per design */
-  white-space: nowrap;  /* Prevent the text from wrapping */
-  overflow: hidden;     /* Hide text that is not visible yet */
-  border-right: 0.15em solid #000; /* Cursor-like effect */
-  width: 0;             /* Initial width to be zero for animation */
-  animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
+    font-size: 3rem; /* Adjust the size as per design */
+    white-space: nowrap;  /* Prevent the text from wrapping */
+    overflow: hidden;     /* Hide text that is not visible yet */
+    border-right: 0.15em solid #fff; /* Cursor-like effect */
+    width: 0;             /* Initial width to be zero for animation */
+    animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
 }
 
 /* Typing animation keyframes */
 @keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }
 
 /* Cursor blinking effect */
 @keyframes blink {
-  50% {
-    border-color: transparent;
-  }
+    50% {
+        border-color: transparent;
+    }
 }
-
 
 /* Styling for animated text */
 .animated-text {
