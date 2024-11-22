@@ -8,23 +8,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Fade In Animation on Scroll
+// Fade-In Animation on Scroll
 const fadeElements = document.querySelectorAll('.fade-in');
 
 const fadeInOnScroll = () => {
     fadeElements.forEach(element => {
         const rect = element.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
+        if (rect.top < window.innerHeight - 100 && !element.classList.contains('visible')) {
             element.classList.add('visible');
         }
     });
 };
 
+// Trigger on scroll
 window.addEventListener('scroll', fadeInOnScroll);
 
-// Add 'fade-in' class to elements in HTML you want to animate
-// Example:
-// <div class="fade-in">Content here</div>
+// Initial check on page load in case elements are already in view
+fadeInOnScroll();
 
 // Sticky Navbar on Scroll
 const navbar = document.querySelector('.nav-container');
@@ -36,17 +36,6 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('sticky');
     }
 });
-
-// Example: Sticky effect needs the following CSS
-/*
-.nav-container.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-*/
 
 // Coming Soon Section Button Interaction
 const comingSoonButton = document.querySelector('.coming-soon .button');
@@ -64,10 +53,21 @@ document.querySelectorAll('.service-card').forEach(card => {
     });
 });
 
-// Example CSS for expanded card:
-/*
-.service-card.expanded {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-}
-*/
+// Header Section Animation on Scroll
+document.addEventListener("DOMContentLoaded", function() {
+    const headerSection = document.querySelector('.header-section');
+
+    // Check if header section is in the viewport
+    function checkIfInView() {
+        const rect = headerSection.getBoundingClientRect();
+        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+            headerSection.classList.add('animate');
+            // Once the animation is added, remove the scroll event listener
+            window.removeEventListener('scroll', checkIfInView);
+        }
+    }
+
+    // Only run when the page is scrolled
+    window.addEventListener('scroll', checkIfInView);
+    checkIfInView(); // Run on page load if it's already in view
+});
