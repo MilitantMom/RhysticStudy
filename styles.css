@@ -422,6 +422,7 @@ footer a:hover {
     overflow: hidden;     /* Hide text that is not visible yet */
     border-right: 0.15em solid #fff; /* Cursor-like effect */
     width: 0;             /* Initial width to be zero for animation */
+    opacity: 0;           /* Start with opacity 0 */
     animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
 }
 
@@ -440,6 +441,12 @@ footer a:hover {
     50% {
         border-color: transparent;
     }
+}
+
+/* Fade-in effect for opacity */
+.animated-text.typing {
+    opacity: 1;  /* Gradually reveal the text */
+    animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
 }
 
 /* Styling for animated text */
