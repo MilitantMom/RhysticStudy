@@ -1,59 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Rhystic Study | Contact</title>
     <link rel="stylesheet" href="styles.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3920209036805773" crossorigin="anonymous"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .hero-title {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <!-- Header with Navigation Bar -->
     <header>
         <div class="nav-container">
             <nav class="left-nav">
                 <img src="RhysticStudyLogo.png" alt="Rhystic Study Logo" class="logo">
-                <!-- Add animation classes to nav links -->
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="services.html" class="nav-link">Portfolio</a>
-                <a href="contact.html" class="nav-link active">Contact</a> <!-- Mark this page as active -->
+                <a href="contact.html" class="nav-link active">Contact</a>
             </nav>
             <nav class="right-nav">
                 <a href="shop.html" class="nav-link">Shop</a>
-                <a href="cart.html" class="nav-link">🛒</a>
-                <a href="profile.html" class="nav-link">👤</a>
+                <a href="cart.html" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                <a href="profile.html" class="nav-link"><i class="fas fa-user"></i></a>
             </nav>
         </div>
     </header>
 
     <!-- Main Content -->
     <main>
+        <!-- Header Section with Hero Banner -->
         <section class="header-section">
-            <h1>Contact Us</h1>
-            <p>We'd love to hear from you! Whether you have questions, need support, or just want to connect, feel free to reach out.</p>
+            <div class="hero-container">
+                <h1 class="hero-title">Contact Us</h1>
+                <p class="hero-subtitle">We'd love to hear from you! Whether you have questions, need support, or just want to connect, feel free to reach out.</p>
+                <div class="scroll-indicator">
+                    <p>Scroll Down for Contact Information</p>
+                    <div class="scroll-arrow">&#8595;</div>
+                </div>
+            </div>
         </section>
 
-        <section class="contact-info">
-            <div class="contact-details">
-                <h2>Get in Touch</h2>
-                <p><strong>Email:</strong> <a href="mailto:therhysticstudypdx@gmail.com">therhysticstudypdx@gmail.com</a></p>
-                <p>For real-time support, join our community on Discord:</p>
-                <a href="https://discord.gg/w2vTMUYvaH" target="_blank" class="button">Join the Conversation</a>
-            </div>
+        <!-- Contact Info Section -->
+        <section class="content-section">
+            <div class="content-container">
+                <div class="mission-vision-container">
+                    <!-- Get in Touch Box -->
+                    <div class="mission-vision-box">
+                        <h3 class="mission-title">Get in Touch</h3>
+                        <p><strong>Email:</strong> <a href="mailto:therhysticstudypdx@gmail.com">therhysticstudypdx@gmail.com</a></p>
+                    </div>
 
-            <div class="discord-widget">
-                <iframe src="https://discord.com/widget?id=282359486461509632&theme=dark" width="100%" height="400" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                    <!-- Real-Time Support Box -->
+                    <div class="mission-vision-box">
+                        <h3 class="mission-title">For Real-Time Support</h3>
+                        <p>Join our community on Discord to get quick help, interact with fellow enthusiasts, or just chat!</p>
+                        <a href="https://discord.gg/w2vTMUYvaH" target="_blank" class="button">Join the Conversation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Discord Widget Section -->
+        <section class="discord-widget-section">
+            <div class="content-container">
+                <h2>Connect with Us on Discord</h2>
+                <p>Our community is always active. Join us to ask questions, get updates, and chat with like-minded people!</p>
+                <div class="discord-widget">
+                    <iframe src="https://discord.com/widget?id=282359486461509632&theme=dark" width="100%" height="400" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Rhystic Study | <a href="https://discord.gg/w2vTMUYvaH" target="_blank">Join our Discord</a></p>
+        <p>&copy; 2024 Rhystic Study | All rights reserved |
+            <a href="https://discord.gg/w2vTMUYvaH" target="_blank">Join our Discord</a> |
+            <a href="privacy.html" target="_blank">Privacy Policy</a> |
+            <a href="terms.html" target="_blank">Terms of Service</a>
+        </p>
     </footer>
 
-    <!-- Link to main.js script for additional functionality -->
     <script src="js/main.js"></script>
 </body>
+
 </html>
