@@ -443,12 +443,6 @@ footer a:hover {
     }
 }
 
-/* Fade-in effect for opacity */
-.animated-text.typing {
-    opacity: 1;  /* Gradually reveal the text */
-    animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
-}
-
 /* Styling for animated text */
 .animated-text {
     display: inline-block;
@@ -456,15 +450,41 @@ footer a:hover {
     white-space: nowrap;
     border-right: 3px solid #fff;  /* Simulate a typing cursor */
     width: 0;
-    animation: typing 3s steps(40) 1s forwards, blink 0.75s step-end infinite;
     font-size: 1.5rem;  /* Adjust this for your desired text size */
     line-height: 1.5;
-    color: #fff;  /* You can change the text color to fit your design */
-    opacity: 0;
-    animation: typing 3s steps(40) 1s forwards, fadeIn 2s forwards, blink 0.75s step-end infinite;
+    color: #fff;  /* Change text color as needed */
+    opacity: 0;  /* Start with opacity 0 for fade-in effect */
+    animation: typing 4s steps(40) 1s forwards, fadeIn 2s forwards, blink 0.75s step-end infinite;
 }
 
-/* Bubble Animation */
+/* Typing Animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Fade-in Animation for opacity */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Blink cursor effect */
+@keyframes blink {
+    50% {
+        border-color: transparent;  /* Blink the cursor */
+    }
+}
+
+/* Bubble Animation (if you want it applied separately) */
 @keyframes bubble {
     0% {
         transform: scale(0);
@@ -480,13 +500,9 @@ footer a:hover {
     }
 }
 
-/* Target the animated-text class */
-.animated-text {
-    animation: bubble 3s ease-out infinite;  /* Apply the bubble animation */
-    display: inline-block;  /* Make it an inline-block so the animation works */
-    font-size: 1.5em;
-    color: #3498db;  /* You can adjust this color */
-    font-family: 'Arial', sans-serif;
+/* Optional: Apply bubble animation to specific elements */
+.animated-text.bubble {
+    animation: bubble 3s ease-out infinite;  /* Apply the bubble animation separately */
 }
 
 /* Fade in effect after typing */
