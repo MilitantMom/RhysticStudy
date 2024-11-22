@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch(url)
             .then(response => response.text())
             .then(data => {
-                document.getElementById(containerId).innerHTML = data;
+                const container = document.getElementById(containerId);
+                container.innerHTML = data;
+                container.classList.add('loaded');  // Add 'loaded' class to trigger visibility
             })
             .catch(error => console.error('Error loading HTML:', error));
     }
