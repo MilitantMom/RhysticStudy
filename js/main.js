@@ -74,10 +74,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Ensure text animation starts after page load
 window.addEventListener('load', () => {
-    const animatedText = document.querySelector('.animated-text');
+    const animatedText = document.querySelectorAll('.animated-text');
     
-    // Delay fade-in until after typing animation ends
-    setTimeout(() => {
-        animatedText.style.opacity = '1';
-    }, 3000); // 3 seconds delay after typing animation starts
+    animatedText.forEach((text, index) => {
+        // Delay fade-in and typing animation for each element
+        setTimeout(() => {
+            text.style.opacity = '1';
+            // Trigger typing animation
+            text.classList.add('typing');
+        }, 2000 + index * 1000); // Add incremental delay for each element
+    });
 });
