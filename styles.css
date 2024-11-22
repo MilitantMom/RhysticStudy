@@ -11,18 +11,18 @@
    Root Variables
    ============================= */
 :root {
-    --primary-color: #BB86FC; /* Muted purple for branding */
+    --primary-color: #4CAF50; /* Green for branding */
     --secondary-color: #121212; /* Dark background for the app */
-    --accent-color: #3700B3; /* Darker accent color */
-    --hover-color: #03DAC5; /* Soft teal for hover effects */
-    --light-bg: #121212; /* Default background for the app */
+    --accent-color: #2C6B2F; /* Muted green for accents */
+    --hover-color: #388E3C; /* Lighter green for hover effects */
+    --light-bg: #1E1E1E; /* Darker gray for background */
     --text-color: #E0E0E0; /* Light gray text color */
     --highlight-color: #333333; /* Subtle highlight background */
-    --highlight-text-color: #BB86FC; /* Light purple for highlighted text */
-    --link-color: #03DAC5; /* Teal link color */
+    --highlight-text-color: #81C784; /* Soft green for highlighted text */
+    --link-color: #66BB6A; /* Lighter green for links */
     --footer-color: #1D1D1D; /* Dark footer background */
-    --highlight-border-color: #6200EE; /* Purple border for highlights */
-    --hover-shadow-color: rgba(38, 198, 218, 0.4); /* Soft teal shadow for hover effects */
+    --highlight-border-color: #4CAF50; /* Green border for highlights */
+    --hover-shadow-color: rgba(56, 142, 60, 0.4); /* Green shadow for hover effects */
 }
 
 /* =============================
@@ -58,7 +58,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1A1A1A; /* Dark background for navigation */
+    background-color: #212121; /* Dark background for navigation */
     padding: 15px 20px;
     border-bottom: 2px solid var(--highlight-border-color);
 }
@@ -216,7 +216,7 @@ footer a:hover {
 
 .button:hover {
     background-color: var(--hover-color);
-    box-shadow: 0 0 15px 5px rgba(0, 123, 255, 0.5);
+    box-shadow: 0 0 15px 5px rgba(56, 142, 60, 0.5);
 }
 
 /* =============================
@@ -289,5 +289,4 @@ footer a:hover {
         opacity: 0;
         transform: translateY(-10px);
     }
-    100% {
-       
+}
