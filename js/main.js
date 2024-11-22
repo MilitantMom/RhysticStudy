@@ -84,4 +84,13 @@ window.addEventListener('load', () => {
             text.classList.add('typing');
         }, 2000 + index * 1000); // Add incremental delay for each element
     });
+
+    // Optional: Reset the typing animation after it finishes
+    animatedText.forEach(text => {
+        text.addEventListener('animationiteration', () => {
+            text.style.animation = 'none'; // Stop the current animation
+            text.offsetHeight; // Trigger reflow to reset the element
+            text.style.animation = ''; // Restart the animation
+        });
+    });
 });
