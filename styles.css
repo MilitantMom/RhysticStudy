@@ -11,18 +11,18 @@
    Root Variables
    ============================= */
 :root {
-    --primary-color: #4CAF50; /* Green for branding */
-    --secondary-color: #121212; /* Dark background for the app */
-    --accent-color: #2C6B2F; /* Muted green for accents */
-    --hover-color: #388E3C; /* Lighter green for hover effects */
-    --light-bg: #1E1E1E; /* Darker gray for background */
-    --text-color: #E0E0E0; /* Light gray text color */
-    --highlight-color: #333333; /* Subtle highlight background */
-    --highlight-text-color: #81C784; /* Soft green for highlighted text */
-    --link-color: #66BB6A; /* Lighter green for links */
-    --footer-color: #1D1D1D; /* Dark footer background */
-    --highlight-border-color: #4CAF50; /* Green border for highlights */
-    --hover-shadow-color: rgba(56, 142, 60, 0.4); /* Green shadow for hover effects */
+    --primary-color: #4CAF50;
+    --secondary-color: #121212;
+    --accent-color: #2C6B2F;
+    --hover-color: #388E3C;
+    --light-bg: #1E1E1E;
+    --text-color: #E0E0E0;
+    --highlight-color: #333333;
+    --highlight-text-color: #81C784;
+    --link-color: #66BB6A;
+    --footer-color: #1D1D1D;
+    --highlight-border-color: #4CAF50;
+    --hover-shadow-color: rgba(56, 142, 60, 0.4);
 }
 
 /* =============================
@@ -33,22 +33,6 @@ body {
     background-color: var(--light-bg);
     color: var(--text-color);
     line-height: 1.8;
-    margin: 0;
-}
-
-/* =============================
-   Utility Classes
-   ============================= */
-.text-highlight {
-    color: var(--highlight-text-color);
-}
-
-.bg-dark {
-    background-color: var(--secondary-color);
-}
-
-.bg-accent {
-    background-color: var(--accent-color);
 }
 
 /* =============================
@@ -58,7 +42,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #212121; /* Dark background for navigation */
+    background-color: #212121;
     padding: 15px 20px;
     border-bottom: 2px solid var(--highlight-border-color);
 }
@@ -68,9 +52,6 @@ body {
     text-decoration: none;
     margin: 0 10px;
     font-weight: bold;
-    opacity: 0; /* Initial state for animation */
-    animation: fadeSlideIn 1s ease forwards;
-    animation-delay: var(--delay, 0s); /* Staggered animation delay */
     transition: color 0.3s;
 }
 
@@ -78,48 +59,31 @@ body {
     color: var(--hover-color);
 }
 
-.nav-container a:nth-child(n) {
-    animation-delay: calc(0.2s * var(--n));
-}
-
-/* =============================
-   Logo Styling
-   ============================= */
 .logo {
-    width: auto; /* Maintain aspect ratio */
-    max-height: 50px; /* Resize logo to fit in navigation bar */
-    vertical-align: middle; /* Align with text */
-    margin-right: 10px; /* Space between logo and text */
+    width: auto;
+    max-height: 50px;
 }
 
 /* =============================
    Header Section
    ============================= */
 .header-section {
-    background-color: var(--secondary-color); /* Dark background */
+    background-color: var(--secondary-color);
     text-align: center;
     padding: 80px 20px;
     color: var(--text-color);
-    opacity: 0; /* Hidden initially for animation */
-    transform: translateY(50px);
     animation: fadeInUp 1.5s ease-out forwards;
 }
 
 .header-section h1 {
     font-size: 3rem;
     color: var(--highlight-border-color);
-    opacity: 0; /* Hidden initially for animation */
-    transform: translateX(-30px);
-    animation: slideInFromLeft 1s ease-out 0.5s forwards;
 }
 
 .header-section p {
     font-size: 1.2rem;
     margin-top: 15px;
-    color: #B0B0B0; /* Lighter gray text */
-    opacity: 0; /* Hidden initially for animation */
-    transform: translateX(30px);
-    animation: slideInFromRight 1s ease-out 1s forwards;
+    color: #B0B0B0;
 }
 
 /* =============================
@@ -129,26 +93,22 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-    padding: 40px 20px;
-    background-color: var(--secondary-color); /* Dark background */
-    color: var(--text-color); /* Ensure readability */
-    justify-content: center; /* Center content */
+    justify-content: center;
     text-align: center;
+    padding: 40px 20px;
 }
 
 .mission-vision-box {
-    flex: 1 1 300px; /* Flexible width with a minimum */
-    background-color: var(--highlight-color); /* Darker highlight */
-    border-radius: 12px; /* Rounded corners for a softer look */
+    background-color: var(--highlight-color);
+    border-radius: 12px;
     padding: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    flex: 1 1 300px;
+    max-width: 450px;
     transition: transform 0.3s, box-shadow 0.3s;
-    text-align: left; /* Left-align text inside boxes */
-    max-width: 450px; /* Max width for larger screens */
 }
 
 .mission-vision-box h3 {
-    margin-bottom: 15px;
     font-size: 1.6rem;
     font-weight: 700;
     color: var(--highlight-border-color);
@@ -159,28 +119,11 @@ body {
     font-size: 1.1rem;
     line-height: 1.8;
     color: var(--text-color);
-    margin-bottom: 20px;
-}
-
-.mission-vision-box ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.mission-vision-box li {
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--text-color);
 }
 
 .mission-vision-box:hover {
     transform: translateY(-8px);
     box-shadow: 0 6px 25px var(--hover-shadow-color);
-}
-
-.mission-vision-box p:hover {
-    color: var(--highlight-text-color);
 }
 
 /* =============================
@@ -204,22 +147,6 @@ footer a:hover {
 }
 
 /* =============================
-   Buttons Styling
-   ============================= */
-.button {
-    background-color: var(--highlight-border-color);
-    color: var(--text-color);
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-.button:hover {
-    background-color: var(--hover-color);
-    box-shadow: 0 0 15px 5px rgba(56, 142, 60, 0.5);
-}
-
-/* =============================
    Media Queries for Mobile Responsiveness
    ============================= */
 @media (max-width: 768px) {
@@ -230,7 +157,7 @@ footer a:hover {
     }
 
     .logo {
-        max-height: 40px; /* Adjust logo size for mobile */
+        max-height: 40px;
     }
 
     .header-section {
@@ -239,7 +166,6 @@ footer a:hover {
 
     .mission-vision-container {
         flex-direction: column;
-        align-items: center;
     }
 
     .mission-vision-box {
@@ -248,9 +174,6 @@ footer a:hover {
     }
 }
 
-/* =============================
-   Keyframe Animations
-   ============================= */
 @keyframes fadeInUp {
     0% {
         opacity: 0;
