@@ -428,3 +428,22 @@ footer a:hover {
     padding: 20px;
     border-radius: 8px;
 }
+
+/* =============================
+   Header and Footer Container Styling
+   ============================= */
+#header-container, #footer-container {
+    width: 100%;
+    display: block;
+}
+
+/* For initial visibility of injected content */
+#header-container, #footer-container {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#header-container.loaded, #footer-container.loaded {
+    opacity: 1;
+}
+
