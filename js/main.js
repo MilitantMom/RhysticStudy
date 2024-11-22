@@ -1,5 +1,4 @@
 // Smooth Scroll for Navigation Links
-// Enables smooth scrolling behavior for anchor links on the page.
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -15,7 +14,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Fade-In Animation on Scroll
-// Applies a 'visible' class to elements with the 'fade-in' class when they enter the viewport.
 const fadeElements = document.querySelectorAll('.fade-in');
 
 const fadeInOnScroll = () => {
@@ -36,7 +34,6 @@ window.addEventListener('scroll', fadeInOnScroll);
 fadeInOnScroll();
 
 // Sticky Navbar on Scroll
-// Toggles a 'sticky' class on the navigation bar when the user scrolls down.
 const navbar = document.querySelector('.nav-container');
 if (navbar) {
     window.addEventListener('scroll', () => {
@@ -49,7 +46,6 @@ if (navbar) {
 }
 
 // Coming Soon Section Button Interaction
-// Displays an alert message when the "Coming Soon" button is clicked.
 const comingSoonButton = document.querySelector('.coming-soon .button');
 if (comingSoonButton) {
     comingSoonButton.addEventListener('click', () => {
@@ -58,7 +54,6 @@ if (comingSoonButton) {
 }
 
 // Expandable Service Cards
-// Toggles an 'expanded' class on service cards when they are clicked.
 document.querySelectorAll('.service-card').forEach(card => {
     card.addEventListener('click', () => {
         card.classList.toggle('expanded');
@@ -66,7 +61,6 @@ document.querySelectorAll('.service-card').forEach(card => {
 });
 
 // Header Section Animation on Scroll
-// Animates the header section when it comes into view.
 document.addEventListener("DOMContentLoaded", function () {
     const headerSection = document.querySelector('.header-section');
 
@@ -89,7 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Text Animation After Page Load
-// Triggers fade-in and typing animations for text elements with the 'animated-text' class.
 window.addEventListener('load', () => {
     const animatedText = document.querySelectorAll('.animated-text');
 
@@ -126,3 +119,26 @@ window.addEventListener('load', () => {
         typeNextCharacter(); // Start the typing process.
     }
 });
+
+// Parallax Effect for Background Image
+// Applies parallax effect to elements with the 'parallax' class.
+const parallaxElements = document.querySelectorAll('.parallax');
+if (parallaxElements.length > 0) {
+    window.addEventListener('scroll', () => {
+        parallaxElements.forEach(parallaxElement => {
+            const speed = parallaxElement.dataset.speed || 0.5; // Customizable speed via data attribute.
+            const offset = window.scrollY * speed;
+            parallaxElement.style.transform = `translateY(${offset}px)`;
+        });
+    });
+}
+
+// Loading Spinner Logic
+// Shows the loading spinner until the page content is fully loaded.
+const loadingSpinner = document.getElementById('loading');
+if (loadingSpinner) {
+    window.addEventListener('load', () => {
+        loadingSpinner.style.display = 'none'; // Hide spinner after page load.
+        document.body.classList.add('loaded'); // Trigger fade-in for the body content.
+    });
+}
