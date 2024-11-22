@@ -11,18 +11,18 @@
    Root Variables
    ============================= */
 :root {
-    --primary-color: #D32F2F; /* Main branding color */
-    --secondary-color: #1f1f1f; /* Background for dark elements */
-    --accent-color: #455A64; /* Accent highlights */
-    --hover-color: #9C27B0; /* Hover effect color */
+    --primary-color: #BB86FC; /* Muted purple for branding */
+    --secondary-color: #121212; /* Dark background for the app */
+    --accent-color: #3700B3; /* Darker accent color */
+    --hover-color: #03DAC5; /* Soft teal for hover effects */
     --light-bg: #121212; /* Default background for the app */
-    --text-color: #e0e0e0; /* Default text color */
-    --highlight-color: #616161; /* Subtle highlight background */
-    --highlight-text-color: #FF4081; /* Special highlighted text */
-    --link-color: #80CBC4; /* Link text color */
-    --footer-color: #1f1f1f; /* Footer background matches header */
-    --highlight-border-color: #00FFAA; /* Bright border for highlights */
-    --hover-shadow-color: rgba(0, 255, 170, 0.7); /* Shadow for hover effects */
+    --text-color: #E0E0E0; /* Light gray text color */
+    --highlight-color: #333333; /* Subtle highlight background */
+    --highlight-text-color: #BB86FC; /* Light purple for highlighted text */
+    --link-color: #03DAC5; /* Teal link color */
+    --footer-color: #1D1D1D; /* Dark footer background */
+    --highlight-border-color: #6200EE; /* Purple border for highlights */
+    --hover-shadow-color: rgba(38, 198, 218, 0.4); /* Soft teal shadow for hover effects */
 }
 
 /* =============================
@@ -58,13 +58,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: #1A1A1A; /* Dark background for navigation */
     padding: 15px 20px;
     border-bottom: 2px solid var(--highlight-border-color);
 }
 
 .nav-container a {
-    color: #fff;
+    color: var(--text-color);
     text-decoration: none;
     margin: 0 10px;
     font-weight: bold;
@@ -75,7 +75,7 @@ body {
 }
 
 .nav-container a:hover {
-    color: var(--highlight-border-color);
+    color: var(--hover-color);
 }
 
 .nav-container a:nth-child(n) {
@@ -116,7 +116,7 @@ body {
 .header-section p {
     font-size: 1.2rem;
     margin-top: 15px;
-    color: #ccc;
+    color: #B0B0B0; /* Lighter gray text */
     opacity: 0; /* Hidden initially for animation */
     transform: translateX(30px);
     animation: slideInFromRight 1s ease-out 1s forwards;
@@ -138,7 +138,7 @@ body {
 
 .mission-vision-box {
     flex: 1 1 300px; /* Flexible width with a minimum */
-    background-color: var(--highlight-color); /* Subtle highlight */
+    background-color: var(--highlight-color); /* Darker highlight */
     border-radius: 12px; /* Rounded corners for a softer look */
     padding: 30px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
@@ -188,7 +188,7 @@ body {
    ============================= */
 footer {
     background-color: var(--footer-color);
-    color: #fff;
+    color: var(--text-color);
     text-align: center;
     padding: 20px;
 }
@@ -200,7 +200,7 @@ footer a {
 }
 
 footer a:hover {
-    color: #fff;
+    color: var(--text-color);
 }
 
 /* =============================
@@ -208,14 +208,14 @@ footer a:hover {
    ============================= */
 .button {
     background-color: var(--highlight-border-color);
-    color: #fff;
+    color: var(--text-color);
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .button:hover {
-    background-color: #0056b3;
+    background-color: var(--hover-color);
     box-shadow: 0 0 15px 5px rgba(0, 123, 255, 0.5);
 }
 
@@ -290,7 +290,4 @@ footer a:hover {
         transform: translateY(-10px);
     }
     100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+       
