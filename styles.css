@@ -48,6 +48,19 @@ body {
     border-bottom: 2px solid var(--highlight-border-color);
 }
 
+/* Sticky Navbar Styles */
+.nav-container.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    transition: top 0.3s ease-in-out;
+}
+
 /* Left Navigation (Logo + Links) */
 .left-nav {
     display: flex;
