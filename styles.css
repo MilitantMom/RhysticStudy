@@ -29,21 +29,44 @@ body {
     text-decoration: none;
     margin: 0 10px;
     font-weight: bold;
+    opacity: 0; /* Initial state for animation */
+    animation: fadeSlideIn 1s ease forwards;
+    animation-delay: var(--delay, 0s); /* Delay for staggered effect */
     transition: color 0.3s;
 }
 
+/* Add staggered delays for animation */
+.left-nav a:nth-child(1) { --delay: 0.2s; }
+.left-nav a:nth-child(2) { --delay: 0.4s; }
+.left-nav a:nth-child(3) { --delay: 0.6s; }
+.left-nav a:nth-child(4) { --delay: 0.8s; }
+.right-nav a:nth-child(1) { --delay: 1s; }
+.right-nav a:nth-child(2) { --delay: 1.2s; }
+.right-nav a:nth-child(3) { --delay: 1.4s; }
+
 .left-nav a:hover, .right-nav a:hover {
     color: #00FFAA;
+    position: relative;
 }
 
-.left-nav a.active {
-    color: #00FFAA;
-    pointer-events: none;
+/* Hover underline effect */
+.right-nav a:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #00FFAA;
+    animation: hoverUnderline 0.3s ease forwards;
 }
 
 .logo {
     width: 50px;
     margin-right: 15px;
+    opacity: 0; /* Initial state for animation */
+    animation: fadeSlideIn 1s ease forwards;
+    animation-delay: 0.2s;
 }
 
 /* Header Section */
@@ -274,6 +297,28 @@ footer a:hover {
 .discord-widget iframe {
     border-radius: 10px;
     border: 1px solid #00FFAA;
+}
+
+/* Add fade-in and slide-in animations */
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover underline effect animation */
+@keyframes hoverUnderline {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }
 
 /* Responsive Design */
