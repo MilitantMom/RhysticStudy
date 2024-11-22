@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,28 @@
     <title>Services | The Rhystic Study</title>
     <link rel="stylesheet" href="styles.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3920209036805773" crossorigin="anonymous"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .hero-title {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
+
 <body>
+    <!-- Header with Navigation Bar -->
     <header>
         <div class="nav-container">
             <nav class="left-nav">
@@ -20,80 +41,93 @@
             </nav>
             <nav class="right-nav">
                 <a href="shop.html" class="nav-link">Shop</a>
-                <a href="cart.html" class="nav-link">🛒</a>
-                <a href="profile.html" class="nav-link">👤</a>
+                <a href="cart.html" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                <a href="profile.html" class="nav-link"><i class="fas fa-user"></i></a>
             </nav>
         </div>
     </header>
 
+    <!-- Main Content -->
     <main>
-        <!-- Header Section -->
+        <!-- Header Section with Hero Banner -->
         <section class="header-section">
-            <h1>My Portfolio</h1>
-            <p>I've crafted some random stuff over the years, here's a few things.</p>
+            <div class="hero-container">
+                <h1 class="hero-title">My Portfolio</h1>
+                <p class="hero-subtitle">I've crafted some random stuff over the years, here's a few things.</p>
+                <div class="scroll-indicator">
+                    <p>Scroll Down to Explore</p>
+                    <div class="scroll-arrow">&#8595;</div>
+                </div>
+            </div>
         </section>
 
         <!-- Portfolio Section -->
-        <section class="mission-vision-container">
-            <!-- POST Project Card -->
-            <div class="mission-vision-box">
-                <h3>POST: A Gothic Mystery Game</h3>
-                <p>A mysterious, narrative-driven game set in a dark and surreal world. Players' choices shape the fate of a lost soul. (In Production)</p>
-            </div>
+        <section class="content-section">
+            <div class="content-container">
+                <div class="mission-vision-container">
+                    <!-- POST Project Card -->
+                    <div class="mission-vision-box">
+                        <h3 class="mission-title">POST: A Gothic Mystery Game</h3>
+                        <p>A mysterious, narrative-driven game set in a dark and surreal world. Players' choices shape the fate of a lost soul. (In Production)</p>
+                    </div>
 
-            <!-- ManaLife Project Card -->
-            <div class="mission-vision-box">
-                <h3>ManaLife: Life Tracking App for MTG</h3>
-                <p>An app designed for Magic: The Gathering players to track their life totals, deck stats, and game history. Built with a smooth, intuitive interface, focused on enhancing the gameplay experience.</p>
-            </div>
+                    <!-- ManaLife Project Card -->
+                    <div class="mission-vision-box">
+                        <h3 class="mission-title">ManaLife: Life Tracking App for MTG</h3>
+                        <p>An app designed for Magic: The Gathering players to track their life totals, deck stats, and game history. Built with a smooth, intuitive interface, focused on enhancing the gameplay experience.</p>
+                    </div>
 
-            <!-- RhysticCoin Project Card -->
-            <div class="mission-vision-box">
-                <h3>RhysticCoin: Cryptocurrency for Communities</h3>
-                <p>A cryptocurrency tailored for online communities, allowing users to earn RhysticCoin through engagement with Discord bots and interactions in-game, offering a unique rewards system.</p>
-            </div>
+                    <!-- RhysticCoin Project Card -->
+                    <div class="mission-vision-box">
+                        <h3 class="mission-title">RhysticCoin: Cryptocurrency for Communities</h3>
+                        <p>A cryptocurrency tailored for online communities, allowing users to earn RhysticCoin through engagement with Discord bots and interactions in-game, offering a unique rewards system.</p>
+                    </div>
 
-            <!-- Server Management Section -->
-            <div class="mission-vision-box">
-                <h3>Server Manager and Developer</h3>
-                <p>I have lots of experience developing and managing various gaming servers and communities including Ubuntu based Minecraft Servers and corresponding SQL databases.</p>
-            </div>
+                    <!-- Server Management Section -->
+                    <div class="mission-vision-box">
+                        <h3 class="mission-title">Server Manager and Developer</h3>
+                        <p>I have lots of experience developing and managing various gaming servers and communities including Ubuntu based Minecraft Servers and corresponding SQL databases.</p>
+                    </div>
 
-            <!-- Pixel Art Card -->
-            <div class="mission-vision-box">
-                <h3>Pixel Art</h3>
-                <p>I create pixel art assets for games, including characters, environments, and UI elements. (Link coming soon!)</p>
-            </div>
+                    <!-- Pixel Art Card -->
+                    <div class="mission-vision-box">
+                        <h3 class="mission-title">Pixel Art</h3>
+                        <p>I create pixel art assets for games, including characters, environments, and UI elements. (Link coming soon!)</p>
+                    </div>
 
-            <!-- SmokeShop Card -->
-            <div class="mission-vision-box">
-                <h3>SmokeShop: A Social Experience</h3>
-                <p>SmokeShop is an upcoming game that explores the connections between people in a unique setting. Learn about characters, uncover their stories, and navigate their interactions.</p>
-            </div>
+                    <!-- SmokeShop Card -->
+                    <div class="mission-vision-box">
+                        <h3 class="mission-title">SmokeShop: A Social Experience</h3>
+                        <p>SmokeShop is an upcoming game that explores the connections between people in a unique setting. Learn about characters, uncover their stories, and navigate their interactions.</p>
+                    </div>
 
-            <!-- My Music -->
-            <div class="mission-vision-box">
-                <h3>My Music</h3>
-                <p>I've produced a ton of music! 🎵 Stream for free or <a href="https://croat.bandcamp.com" target="_blank">buy at Bandcamp</a>.</p>
+                    <!-- My Music -->
+                    <div class="mission-vision-box">
+                        <h3 class="mission-title">My Music</h3>
+                        <p>I've produced a ton of music! 🎵 Stream for free or <a href="https://croat.bandcamp.com" target="_blank">buy at Bandcamp</a>.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Our Apps Section -->
+        <!-- My Apps Section -->
         <section class="our-apps">
-            <h2>Our Apps</h2>
-            <p>Explore our tools and apps designed for the gaming community:</p>
+            <h2>My Apps</h2>
+            <p>Explore my tools and apps designed for the gaming community:</p>
             <a href="https://rhystic.study/ManaLife" class="button">ManaLife</a>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Rhystic Study | 
-            <a href="https://discord.gg/w2vTMUYvaH" target="_blank">Join our Discord</a> | 
-            <a href="privacy.html" target="_blank">Privacy Policy</a> | 
+        <p>&copy; 2024 Rhystic Study | All rights reserved |
+            <a href="https://discord.gg/w2vTMUYvaH" target="_blank">Join our Discord</a> |
+            <a href="privacy.html" target="_blank">Privacy Policy</a> |
             <a href="terms.html" target="_blank">Terms of Service</a>
         </p>
     </footer>
 
     <script src="js/main.js"></script>
 </body>
+
 </html>
