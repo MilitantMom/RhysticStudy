@@ -118,9 +118,18 @@ body {
 }
 
 .rhystic-icon {
+    width: auto; /* Maintain aspect ratio */
     max-height: 1.5em; /* Adjust size relative to text */
+    max-width: 3em; /* Optional: limit maximum width */
     vertical-align: middle; /* Align with text baseline */
     margin-right: 8px; /* Add spacing between icon and text */
+    object-fit: contain; /* Ensure the image scales within the bounds */
+}
+
+@media (max-width: 768px) {
+    .rhystic-icon {
+        max-height: 1.2em; /* Slightly reduce size for smaller screens */
+    }
 }
 
 /* =============================
