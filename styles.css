@@ -276,6 +276,65 @@ body {
     }
 }
 
+/* Set up the initial state for the header section */
+.header-section {
+    opacity: 0;
+    transform: translateY(50px); /* Start with the header 50px lower */
+    animation: fadeInUp 1.5s ease-out forwards;
+    text-align: center;
+    padding: 100px 20px; /* Add padding to space things out */
+}
+
+/* Keyframes for fading in and sliding up */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Style the h1 for an additional animation */
+.header-section h1 {
+    opacity: 0;
+    transform: translateX(-30px); /* Start from the left */
+    animation: slideInFromLeft 1s ease-out 0.5s forwards; /* Delayed slide-in */
+}
+
+/* Slide-in animation for h1 */
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Style for the paragraph to animate after the header */
+.header-section p {
+    opacity: 0;
+    transform: translateX(30px); /* Start from the right */
+    animation: slideInFromRight 1s ease-out 1s forwards; /* Delayed slide-in */
+}
+
+/* Slide-in animation for p */
+@keyframes slideInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 /* Footer */
 footer {
     background-color: #1f1f1f;
