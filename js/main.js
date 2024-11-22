@@ -72,16 +72,16 @@ document.addEventListener("DOMContentLoaded", function() {
     checkIfInView(); // Run on page load if it's already in view
 });
 
-// Ensure text animation starts after page load
+// Ensure text animation starts after page loadff
 window.addEventListener('load', () => {
     const animatedText = document.querySelectorAll('.animated-text');
     
     animatedText.forEach((text, index) => {
         // Delay fade-in and typing animation for each element
         setTimeout(() => {
-            text.style.opacity = '1';
+            text.style.opacity = '1'; // Make sure opacity is handled by CSS animation
             // Trigger typing animation
-            text.classList.add('typing');
+            text.classList.add('typing'); // Add typing class to initiate the animation
         }, 2000 + index * 1000); // Add incremental delay for each element
     });
 
