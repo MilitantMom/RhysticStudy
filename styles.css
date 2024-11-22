@@ -722,14 +722,11 @@ body {
 }
 
 @keyframes rainbow {
-    0% { background-color: red; }
-    14% { background-color: orange; }
-    28% { background-color: yellow; }
-    42% { background-color: green; }
-    57% { background-color: blue; }
-    71% { background-color: indigo; }
-    85% { background-color: violet; }
-    100% { background-color: red; }
+    0% { background-color: #f0f0f0; } /* Light grey */
+    25% { background-color: #d0d0d0; } /* Mid-light grey */
+    50% { background-color: #a0a0a0; } /* Mid-grey */
+    75% { background-color: #707070; } /* Dark-grey */
+    100% { background-color: #f0f0f0; } /* Return to light grey */
 }
 
 .nav-container, footer {
