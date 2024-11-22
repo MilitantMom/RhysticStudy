@@ -119,9 +119,8 @@ body {
 .mission-vision-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
-    justify-content: center;
-    text-align: center;
+    justify-content: center;   /* Center the items */
+    gap: 40px;                 /* Space between the boxes */
     padding: 60px 20px;
 }
 
@@ -130,8 +129,9 @@ body {
     border-radius: 12px;
     padding: 30px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    flex: 1 1 300px;
-    max-width: 450px;
+    flex: 1 1 300px;           /* Flex-grow and flex-basis */
+    max-width: 450px;          /* Prevent them from getting too wide */
+    margin: 0 10px;            /* Adds a bit of spacing on each side */
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
