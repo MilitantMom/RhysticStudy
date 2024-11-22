@@ -2,38 +2,24 @@
 <html lang="en">
 
 <head>
-    <!-- Meta information for SEO and accessibility -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Rhystic Study is a game and app development studio focused on creating immersive and innovative experiences. Join us on a creative journey.">
     <meta name="keywords" content="Rhystic Study, game development, app development, creative studio, immersive experiences">
     <meta name="author" content="Rhystic Studio">
-
-    <!-- Title of the page that appears in the browser tab -->
     <title>The Rhystic Study | Welcome</title>
-
-    <!-- Link to external stylesheet for design -->
     <link rel="stylesheet" href="styles.css">
-
-    <!-- Google Ads script (async loading for performance) -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3920209036805773" crossorigin="anonymous"></script>
-
-    <!-- Font Awesome for icons (for shopping cart, profile, etc.) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
-    <!-- Inline styles for specific page animations -->
     <style>
-        /* Smooth scrolling for the entire page */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Hero section title fade-in animation */
         .hero-title {
             animation: fadeIn 1s ease-in-out;
         }
 
-        /* Keyframes for the fadeIn animation */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -46,94 +32,70 @@
 </head>
 
 <body>
-    <!-- Header Section: Navigation Bar -->
     <header>
         <div class="nav-container">
-            <!-- Left-aligned navigation links -->
             <nav class="left-nav">
-                <!-- Logo for Rhystic Study -->
                 <img src="RhysticStudyLogo.png" alt="Rhystic Study Logo" class="logo">
-
-                <!-- Navigation links (active link marked with 'active' class) -->
-                <a href="index.html" class="active nav-link" aria-label="Home">Home</a>
-                <a href="about.html" class="nav-link" aria-label="About">About</a>
-                <a href="services.html" class="nav-link" aria-label="Portfolio">Portfolio</a>
-                <a href="contact.html" class="nav-link" aria-label="Contact">Contact</a>
+                <a href="index.html" class="active nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Portfolio</a>
+                <a href="contact.html" class="nav-link">Contact</a>
             </nav>
-
-            <!-- Right-aligned navigation links (Shop, Cart, Profile) -->
             <nav class="right-nav">
-                <a href="shop.html" class="nav-link" aria-label="Shop">Shop</a>
-                <a href="cart.html" class="nav-link" aria-label="Cart"><i class="fas fa-shopping-cart"></i></a>
-                <a href="profile.html" class="nav-link" aria-label="Profile"><i class="fas fa-user"></i></a>
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="cart.html" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                <a href="profile.html" class="nav-link"><i class="fas fa-user"></i></a>
             </nav>
         </div>
     </header>
 
-    <!-- Main Content Section -->
     <main>
-        <!-- Hero Section with Welcome Message -->
         <section class="header-section">
             <div class="hero-container">
-                <!-- Main heading of the page with animation -->
                 <h1 class="hero-title">Welcome to The Rhystic Study</h1>
-
-                <!-- Subtitle with animation (may be highlighted later) -->
-                <p class="hero-subtitle animated-text">Innovative development studio dedicated to creating immersive and thought-provoking experiences.</p>
-
-                <!-- Scroll-down indicator -->
+                <p class="hero-subtitle">Innovative development studio dedicated to creating immersive and thought-provoking experiences.</p>
                 <div class="scroll-indicator">
                     <p>Scroll Down to Explore</p>
-                    <div class="scroll-arrow">
-                        &#8595; <!-- Downward arrow symbol -->
-                    </div>
+                    <div class="scroll-arrow">&#8595;</div>
                 </div>
             </div>
         </section>
 
-        <!-- Content Section for Mission & Vision Statements -->
         <section class="content-section">
             <div class="content-container">
-                <!-- Section Title -->
                 <h2 class="section-title">Our Mission & Vision</h2>
-
-                <!-- Mission and Vision blocks inside styled boxes -->
-                <div class="mission-vision">
+                <div class="mission-vision-container">
                     <div class="mission-vision-box">
                         <h3 class="mission-title">Mission</h3>
-                        <p>At Rhystic Studio, our mission is to develop games and apps that are accessible, engaging, and provoking 🎮✨. We believe in creating experiences that challenge conventions, spark curiosity, and invite players to explore new worlds 🌍. Through innovation and thoughtful design, we aim to provide meaningful experiences that leave a lasting impact on players of all backgrounds 👾.</p>
+                        <p>At Rhystic Studio, our mission is to develop games and apps that are accessible, engaging, and provoking. We believe in creating experiences that challenge conventions, spark curiosity, and invite players to explore new worlds.</p>
                     </div>
-
                     <div class="mission-vision-box">
                         <h3 class="mission-title">Vision</h3>
-                        <p>Our vision is to redefine interactive entertainment by blending cutting-edge technology with creativity 🎨💡. We strive to craft immersive worlds that spark new ways of thinking, feeling, and connecting 💭🤝. Through our work, we want to inspire a global community to engage with storytelling, challenge their perceptions, and embark on unforgettable journeys 🌟.</p>
+                        <p>Our vision is to redefine interactive entertainment by blending cutting-edge technology with creativity. We strive to craft immersive worlds that spark new ways of thinking, feeling, and connecting, inspiring a global community to engage with storytelling.</p>
                     </div>
                 </div>
 
-                <!-- Values Title and List of Core Values inside styled boxes -->
                 <h3 class="values-title">Our Values: We Care</h3>
                 <div class="values-container">
                     <ul>
-                        <li><strong>C</strong>ommunity: We foster inclusive, supportive, and collaborative spaces where players and creators come together to share, learn, and grow. 🌱</li>
-                        <li><strong>A</strong>ccessibility: We strive to make our games and apps accessible to all, ensuring that everyone, regardless of ability, can engage with and enjoy our experiences. ♿</li>
-                        <li><strong>R</strong>espect: We value the unique perspectives and voices of everyone, ensuring that our products reflect diversity and are created with empathy. 💖</li>
-                        <li><strong>E</strong>nvironment: We are committed to sustainable practices in both our development processes and the stories we tell, ensuring that our impact on the world is positive and lasting. 🌍</li>
+                        <li><strong>C</strong>ommunity: We foster inclusive, supportive, and collaborative spaces where players and creators come together to share, learn, and grow.</li>
+                        <li><strong>A</strong>ccessibility: We strive to make our games and apps accessible to all, ensuring that everyone, regardless of ability, can engage with and enjoy our experiences.</li>
+                        <li><strong>R</strong>espect: We value the unique perspectives and voices of everyone, ensuring that our products reflect diversity and are created with empathy.</li>
+                        <li><strong>E</strong>nvironment: We are committed to sustainable practices in both our development processes and the stories we tell, ensuring that our impact on the world is positive and lasting.</li>
                     </ul>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer Section with Links -->
     <footer>
-        <p>&copy; 2024 The Rhystic Study | All rights reserved | 
-            <a href="https://discord.gg/w2vTMUYvaH" target="_blank" aria-label="Join our Discord">Join our Discord</a> | 
-            <a href="privacy.html" target="_blank" aria-label="Privacy Policy">Privacy Policy</a> | 
-            <a href="terms.html" target="_blank" aria-label="Terms of Service">Terms of Service</a>
+        <p>&copy; 2024 The Rhystic Study | All rights reserved |
+            <a href="https://discord.gg/w2vTMUYvaH" target="_blank">Join our Discord</a> |
+            <a href="privacy.html" target="_blank">Privacy Policy</a> |
+            <a href="terms.html" target="_blank">Terms of Service</a>
         </p>
     </footer>
 
-    <!-- External JavaScript file for site functionality -->
     <script src="js/main.js"></script>
 </body>
 
