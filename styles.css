@@ -74,6 +74,11 @@ body {
     color: var(--hover-color);  /* Icons turn to the same hover color */
 }
 
+.nav-container .active {
+    border-bottom: 2px solid var(--primary-color); /* Active link underline */
+    color: var(--primary-color); /* Optional: Change text color for active state */
+}
+
 .logo {
     width: auto;
     max-height: 50px;
@@ -124,7 +129,7 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     flex: 1 1 300px;
     max-width: 450px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .mission-vision-box h3 {
@@ -144,6 +149,7 @@ body {
 }
 
 .mission-vision-box:hover {
+    background-color: var(--accent-color);  /* Change background color on hover */
     transform: translateY(-8px); /* Subtle translation for smooth hover effect */
     box-shadow: 0 6px 25px var(--hover-shadow-color); /* Softer shadow for depth */
 }
@@ -160,6 +166,7 @@ footer {
 }
 
 footer a {
+    font-size: 1.1rem; /* Slightly larger footer link text */
     color: var(--highlight-border-color);
     text-decoration: none;
     transition: color 0.3s;
@@ -167,7 +174,7 @@ footer a {
 }
 
 footer a:hover {
-    color: var(--text-color);
+    color: var(--text-color); /* On hover, links turn to the text color */
 }
 
 /* =============================
@@ -178,6 +185,10 @@ footer a:hover {
         flex-direction: column;
         align-items: center;
         padding: 10px 0;
+    }
+
+    .nav-container a {
+        margin: 10px 0; /* Adjust vertical margin for stacked items */
     }
 
     .logo {
@@ -221,4 +232,20 @@ footer a:hover {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* =============================
+   Scrollbar Styling (Optional)
+   ============================= */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--secondary-color);
 }
