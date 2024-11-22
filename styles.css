@@ -5,6 +5,19 @@
     box-sizing: border-box;
 }
 
+/* Root Variables */
+:root {
+    --primary-color: #00FFAA;
+    --secondary-color: #1f1f1f;
+    --accent-color: #007BFF;
+    --hover-color: #0056b3;
+    --light-bg: #121212;
+    --text-color: #f4f4f4;
+    --highlight-color: #ffe4e1;
+    --highlight-text-color: #ff69b4;
+    --link-color: #00FFAA;
+}
+
 /* Body Styling */
 body {
     font-family: 'Arial', sans-serif;
