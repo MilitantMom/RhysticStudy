@@ -1,15 +1,17 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function() {
+    const loadingSpinner = document.getElementById('loading');
+    if (loadingSpinner) {
+        // Hide the spinner once the content is ready to display
+        loadingSpinner.classList.add('hidden'); // Add 'hidden' class to hide spinner
+    }
+
     // Smooth Scroll for Navigation Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-
-            // Find the target element using the href attribute of the clicked link.
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth' // Smooth scrolling behavior.
-                });
+                target.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
@@ -47,13 +49,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Expandable Service Cards
-    document.querySelectorAll('.service-card').forEach(card => {
-        card.addEventListener('click', () => {
-            card.classList.toggle('expanded');
-        });
-    });
-
     // Header Section Animation on Scroll
     const headerSection = document.querySelector('.header-section');
     if (headerSection) {
@@ -61,18 +56,18 @@ document.addEventListener("DOMContentLoaded", function() {
             const rect = headerSection.getBoundingClientRect();
             if (rect.top <= window.innerHeight && rect.bottom >= 0) {
                 headerSection.classList.add('animate');
-                window.removeEventListener('scroll', checkIfInView); // Stop checking once the animation is triggered
+                window.removeEventListener('scroll', checkIfInView);
             }
         };
         window.addEventListener('scroll', checkIfInView);
-        checkIfInView(); // Check if it's in view immediately on page load.
+        checkIfInView();
     }
 
     // Text Animation After Page Load
     const animatedText = document.querySelectorAll('.animated-text');
     animatedText.forEach((text, index) => {
         setTimeout(() => {
-            text.classList.add('visible'); // Triggers fade-in effect.
+            text.classList.add('visible');
             triggerTypingAnimation(text);
         }, 2000 + index * 1000);
     });
@@ -82,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (!text) return;
 
         let index = 0;
-        element.innerHTML = ''; // Clear any existing content.
+        element.innerHTML = '';
         function typeNextCharacter() {
             if (index < text.length) {
                 element.innerHTML += text.charAt(index);
@@ -92,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 element.classList.add('typing-complete');
             }
         }
-        typeNextCharacter(); // Start typing animation.
+        typeNextCharacter();
     }
 
     // Parallax Effect for Background Image
@@ -100,19 +95,10 @@ document.addEventListener("DOMContentLoaded", function() {
     if (parallaxElements.length > 0) {
         window.addEventListener('scroll', () => {
             parallaxElements.forEach(parallaxElement => {
-                const speed = parallaxElement.dataset.speed || 0.5; // Customizable speed via data attribute.
+                const speed = parallaxElement.dataset.speed || 0.5;
                 const offset = window.scrollY * speed;
                 parallaxElement.style.transform = `translateY(${offset}px)`;
             });
         });
-    }
-});
-
-// Ensure the page is loaded and then hide loading spinner
-window.addEventListener('load', () => {
-    const loadingSpinner = document.getElementById('loading');
-    if (loadingSpinner) {
-        loadingSpinner.style.display = 'none'; // Hide the spinner after load.
-        document.body.classList.add('loaded'); // Optionally trigger any other animations you may want.
     }
 });
