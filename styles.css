@@ -48,14 +48,29 @@ body {
     border-bottom: 2px solid var(--highlight-border-color);
 }
 
-/* Centered Navigation Links */
-.center-nav {
+/* Left Navigation (Logo + Links) */
+.left-nav {
     display: flex;
-    justify-content: center; /* Center the links */
-    gap: 20px;  /* Space between the links */
-    flex-grow: 1;  /* Allow it to take available space */
+    align-items: center;
+    gap: 20px;
+    flex-grow: 1;
 }
 
+.left-nav .logo {
+    width: auto;
+    max-height: 50px;
+}
+
+/* Center Navigation Links (Home, About, etc.) */
+.center-nav {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    flex-grow: 1;
+    text-align: left;
+}
+
+/* Navigation Link Styling */
 .nav-container a {
     color: var(--text-color);
     text-decoration: none;
@@ -74,23 +89,11 @@ body {
 
 /* Active link styling */
 .nav-container .active {
-    border-bottom: 2px solid var(--highlight-color); /* Change to orange */
     color: var(--highlight-color); /* Orange text */
     font-size: 1.2rem; /* Slightly larger text */
 }
 
-/* Left Navigation (Logo) */
-.left-nav {
-    display: flex;
-    align-items: center;
-}
-
-.logo {
-    width: auto;
-    max-height: 50px;
-}
-
-/* Right Navigation (Shop, Cart, Profile) */
+/* Right Navigation (Icons) */
 .right-nav {
     display: flex;
     align-items: center;
