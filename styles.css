@@ -603,6 +603,7 @@ body {
 /* Values Section */
 .values-title {
     font-size: 2rem;
+    background-color: transparent;
     margin-top: 40px;
     font-weight: bold;
     color: #6a1b9a; /* Keep accent color */
