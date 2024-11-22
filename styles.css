@@ -414,3 +414,44 @@ footer a:hover {
         width: 90%;
     }
 }
+/* Keyframe for typing effect */
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* Keyframe for blinking cursor */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Styling for animated text */
+.animated-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #fff;  /* Simulate a typing cursor */
+    width: 0;
+    animation: typing 3s steps(40) 1s forwards, blink 0.75s step-end infinite;
+    font-size: 1.5rem;  /* Adjust this for your desired text size */
+    line-height: 1.5;
+    color: #fff;  /* You can change the text color to fit your design */
+    opacity: 0;
+    animation: typing 3s steps(40) 1s forwards, fadeIn 2s forwards, blink 0.75s step-end infinite;
+}
+
+/* Fade in effect after typing */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
