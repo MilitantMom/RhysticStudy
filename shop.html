@@ -1,43 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Rhystic Study | Welcome</title>
+    <title>The Rhystic Study | Shop</title>
     <link rel="stylesheet" href="styles.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3920209036805773" crossorigin="anonymous"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .hero-title {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
+
 <body>
+    <!-- Header with Navigation Bar -->
     <header>
         <div class="nav-container">
             <nav class="left-nav">
                 <img src="RhysticStudyLogo.png" alt="Rhystic Study Logo" class="logo">
-                <!-- Add animation classes to nav links -->
-                <a href="index.html" class="active nav-link">Home</a>
+                <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="services.html" class="nav-link">Portfolio</a>
                 <a href="contact.html" class="nav-link">Contact</a>
             </nav>
             <nav class="right-nav">
-                <a href="shop.html" class="nav-link">Shop</a>
-                <a href="cart.html" class="nav-link">🛒</a>
-                <a href="profile.html" class="nav-link">👤</a>
+                <a href="shop.html" class="nav-link active">Shop</a>
+                <a href="cart.html" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                <a href="profile.html" class="nav-link"><i class="fas fa-user"></i></a>
             </nav>
         </div>
     </header>
 
+    <!-- Main Content -->
     <main>
-        <!-- Shop Coming Soon Section -->
-        <section class="coming-soon">
-            <h1>Shop Coming Soon!</h1>
-            <p>We’re working hard on our shop. Stay tuned for exciting products and exclusive offers!</p>
-            <p>In the meantime, feel free to browse our other sections or join us on Discord to stay updated!</p>
+        <!-- Header Section with Hero Banner -->
+        <section class="header-section">
+            <div class="hero-container">
+                <h1 class="hero-title">Shop Coming Soon!</h1>
+                <p class="hero-subtitle">We’re working hard on our shop. Stay tuned for exciting products and exclusive offers!</p>
+                <div class="scroll-indicator">
+                    <p>In the meantime, feel free to browse our other sections or join us on Discord to stay updated!</p>
+                    <div class="scroll-arrow">&#8595;</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coming Soon Section with Boxes -->
+        <section class="content-section">
+            <div class="content-container">
+                <div class="mission-vision-container">
+                    <!-- Coming Soon Box -->
+                    <div class="mission-vision-box">
+                        <h3 class="mission-title">Stay Tuned!</h3>
+                        <p>Our shop is currently under construction. We're working hard to bring you some awesome products, so stay tuned for updates.</p>
+                        <p>In the meantime, check out our other sections or join our community on Discord to stay informed about what's coming next!</p>
+                    </div>
+
+                    <!-- Join Discord Box -->
+                    <div class="mission-vision-box">
+                        <h3 class="mission-title">Join the Conversation</h3>
+                        <p>For real-time updates, support, and a great community, join our Discord server.</p>
+                        <a href="https://discord.gg/w2vTMUYvaH" target="_blank" class="button">Join the Discord</a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Rhystic Study | <a href="https://discord.gg/w2vTMUYvaH" target="_blank">Join our Discord</a></p>
+        <p>&copy; 2024 Rhystic Study | All rights reserved |
+            <a href="https://discord.gg/w2vTMUYvaH" target="_blank">Join our Discord</a> |
+            <a href="privacy.html" target="_blank">Privacy Policy</a> |
+            <a href="terms.html" target="_blank">Terms of Service</a>
+        </p>
     </footer>
+
     <script src="js/main.js"></script>
 </body>
+
 </html>
