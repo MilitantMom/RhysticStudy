@@ -156,9 +156,10 @@ body {
 }
 
 .mission-vision-box:hover {
-    background-color: var(--hover-color);
     transform: translateY(-8px);
     box-shadow: 0 6px 25px rgba(255, 112, 67, 0.4);
+    border: 2px solid var(--hover-color);
+    background-color: var(--highlight-color);
 }
 
 /* =============================
