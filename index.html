@@ -24,9 +24,124 @@
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
+        }
+
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Title Styling */
+        .section-title,
+        .values-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .mission-title {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Mission & Vision Container */
+        .mission-vision-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .mission-vision-box {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .mission-vision-box:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .mission-vision-box p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        /* Values Section */
+        .values-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .value-box {
+            background-color: #fff;
+            padding: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .value-box:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .value-box h4 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        .value-box p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Add more padding and margin for better spacing */
+        .content-container {
+            padding: 40px;
+            background-color: #f9f9f9;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            text-align: center;
+            margin: 50px 0;
+            color: #333;
+            text-transform: uppercase;
+        }
+
+        .hero-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .scroll-indicator {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #777;
         }
     </style>
 </head>
@@ -77,12 +192,22 @@
 
                 <h3 class="values-title">Our Values: We Care</h3>
                 <div class="values-container">
-                    <ul>
-                        <li><strong>C</strong>ommunity: We foster inclusive, supportive, and collaborative spaces where players and creators come together to share, learn, and grow.</li>
-                        <li><strong>A</strong>ccessibility: We strive to make our games and apps accessible to all, ensuring that everyone, regardless of ability, can engage with and enjoy our experiences.</li>
-                        <li><strong>R</strong>espect: We value the unique perspectives and voices of everyone, ensuring that our products reflect diversity and are created with empathy.</li>
-                        <li><strong>E</strong>nvironment: We are committed to sustainable practices in both our development processes and the stories we tell, ensuring that our impact on the world is positive and lasting.</li>
-                    </ul>
+                    <div class="value-box">
+                        <h4>Community</h4>
+                        <p>We foster inclusive, supportive, and collaborative spaces where players and creators come together to share, learn, and grow.</p>
+                    </div>
+                    <div class="value-box">
+                        <h4>Accessibility</h4>
+                        <p>We strive to make our games and apps accessible to all, ensuring that everyone, regardless of ability, can engage with and enjoy our experiences.</p>
+                    </div>
+                    <div class="value-box">
+                        <h4>Respect</h4>
+                        <p>We value the unique perspectives and voices of everyone, ensuring that our products reflect diversity and are created with empathy.</p>
+                    </div>
+                    <div class="value-box">
+                        <h4>Environment</h4>
+                        <p>We are committed to sustainable practices in both our development processes and the stories we tell, ensuring that our impact on the world is positive and lasting.</p>
+                    </div>
                 </div>
             </div>
         </section>
