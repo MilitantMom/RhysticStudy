@@ -106,15 +106,6 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
     }
-
-    // Loading Spinner Logic
-    const loadingSpinner = document.getElementById('loading');
-    if (loadingSpinner) {
-        window.addEventListener('load', () => {
-            loadingSpinner.style.display = 'none'; // Hide spinner after page load.
-            document.body.classList.add('loaded'); // Trigger fade-in for the body content.
-        });
-    }
 });
 
 // Ensure the page is loaded and then hide loading spinner
