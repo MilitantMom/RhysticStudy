@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
     checkIfInView(); // Run on page load if it's already in view
 });
 
-// Ensure text animation starts after page loadff
+// Ensure text animation starts after page load
 window.addEventListener('load', () => {
     const animatedText = document.querySelectorAll('.animated-text');
     
@@ -80,16 +80,27 @@ window.addEventListener('load', () => {
         // Delay fade-in and typing animation for each element
         setTimeout(() => {
             text.style.opacity = '1'; // Make sure opacity is handled by CSS animation
-            // Trigger typing animation
-            text.classList.add('typing'); // Add typing class to initiate the animation
+            triggerTypingAnimation(text); // Trigger typing animation
         }, 2000 + index * 1000); // Add incremental delay for each element
     });
 
-    animatedText.forEach(text => {
-        text.addEventListener('animationiteration', () => {
-            text.style.animation = 'none'; // Stop the current animation
-            text.offsetHeight; // Trigger reflow to reset the element
-            text.style.animation = ''; // Restart the animation
-        });
-    });    
+    // Typing animation function
+    function triggerTypingAnimation(element) {
+        const text = element.getAttribute('data-text'); // Store the full text in a data attribute
+        let index = 0;
+        element.innerHTML = ''; // Clear any existing content
+
+        // Function to type next character
+        function typeNextCharacter() {
+            if (index < text.length) {
+                element.innerHTML += text.charAt(index); // Add next character to the element
+                index++;
+                setTimeout(typeNextCharacter, 100); // Adjust typing speed here
+            } else {
+                element.classList.add('typing-complete'); // Add class when typing is complete
+            }
+        }
+
+        typeNextCharacter(); // Start typing
+    }
 });
