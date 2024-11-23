@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(data => {
                 const container = document.getElementById(containerId);
                 container.innerHTML = data;
-                container.classList.add('loaded');  // Add 'loaded' class to trigger visibility
+                container.classList.add('loaded'); // Add 'loaded' class to trigger visibility
 
                 // After the header is loaded, highlight the active navigation link
                 if (containerId === 'header-container') {
@@ -29,7 +29,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to highlight the active navigation link
     function highlightActiveNavLink() {
         const navLinks = document.querySelectorAll('.nav-link');
-        const currentPage = window.location.pathname.split('/').pop(); // Get the current page file name (e.g., "index.html")
+        let currentPage = window.location.pathname.split('/').pop(); // Get the current page file name (e.g., "index.html")
+
+        // Treat root URL ("/") as equivalent to "index.html"
+        if (!currentPage || currentPage === '/') {
+            currentPage = 'index.html';
+        }
 
         navLinks.forEach(link => {
             const linkPage = link.getAttribute('href').split('/').pop(); // Get the file name from the link href
