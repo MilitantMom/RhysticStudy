@@ -129,4 +129,16 @@ document.addEventListener('DOMContentLoaded', function() {
             document.documentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     }
+
+    // Add/remove 'active' class for navigation links
+    const navLinks = document.querySelectorAll(".nav-link");
+    const currentPage = window.location.pathname;
+
+    navLinks.forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+        } else {
+            link.classList.remove("active");
+        }
+    });
 });
