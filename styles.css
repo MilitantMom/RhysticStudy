@@ -322,7 +322,7 @@ footer a {
 }
 
 footer a:hover {
-    color: var(--hover-color);
+    color: var(--highlight-text-color);
 }
 
 .footer-top {
