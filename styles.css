@@ -475,16 +475,33 @@ footer a:hover {
     color: var(--hover-color);
 }
 
+/* =============================
+   Back-to-Top Button Styles
+   ============================= */
 .back-to-top {
-    font-size: 2rem;
-    color: var(--text-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #2C2C2C; /* Circle background color */
+    color: #E0E0E0; /* Chevron color */
+    font-size: 1.5rem; /* Font size for chevron */
+    border-radius: 50%;
     text-decoration: none;
-    transition: color 0.3s ease;
-    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+/* Hover effect for Back-to-Top button */
 .back-to-top:hover {
-    color: var(--hover-color);
+    background-color: #2C2C2C;
+    color: #F0A6D6;
+}
+
+/* Adjust the font size of the chevron icon inside the circle (if using Font Awesome) */
+.back-to-top i {
+    font-size: 1.5rem; /* Adjust size as needed */
 }
 
 /* Footer Bottom Section with Policies and Logo */
