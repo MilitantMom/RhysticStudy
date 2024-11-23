@@ -168,7 +168,7 @@ body {
 
 /* Active link styling */
 .nav-container .active {
-    color: var(--primary-color);
+    color: var(--light-bg);
     font-size: 1.2rem;
     text-decoration: none;
 }
