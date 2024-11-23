@@ -212,13 +212,41 @@ body {
     z-index: -1;
 }
 
-/* This will ensure the content on top is not hidden and appears in front of the background */
 .hero-container {
-    position: relative;      /* So that the content stays above the background */
-    z-index: 1;              /* Ensure it stays above the parallax background */
-    padding: 80px 20px;
+    position: relative;
+    z-index: 1;
+    padding: 120px 20px;
     text-align: center;
     color: var(--text-color);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: var(--highlight-color);
+    margin-bottom: 40px;
+}
+
+.scroll-indicator {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--highlight-color);
+    font-size: 1.2rem;
+}
+
+.scroll-arrow {
+    font-size: 2rem;
+    margin-top: 10px;
+    color: var(--highlight-color);
 }
 
 /* =============================
