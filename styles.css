@@ -232,7 +232,7 @@ body {
 .hero-subtitle {
     font-size: 1.4rem;
     line-height: 1.6;
-    color: var(--highlight-color);
+    color: var(--text-color);
     margin-bottom: 40px;
 }
 
