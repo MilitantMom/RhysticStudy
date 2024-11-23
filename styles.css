@@ -16,6 +16,7 @@
     --secondary-color: #121212;      /* Darker background for cards, etc. */
     --accent-color: #2A2A2A;         /* Very dark grey background for borders and cards */
     --highlight-color: #F0A6D6;      /* Pink */
+    --highlight-color: #93CFF0;      /* Light Blue */
     --light-bg: #2C2C2C;             /* Slightly lighter grey for some backgrounds */
     --text-color: #E0E0E0;           /* Light grey text (for readability) */
     --highlight-text-color: #F0A6D6; /* Lighter, soft pink for highlighted text */
