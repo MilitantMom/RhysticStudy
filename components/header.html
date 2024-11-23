@@ -1,36 +1,56 @@
-<!-- Header with Navigation Bar -->
 <header>
+    <!-- Main Navigation Container -->
     <div class="nav-container">
+        
+        <!-- Left Navigation Section: Contains main site navigation links -->
         <nav class="left-nav">
+            <!-- Logo Image (used as a link to the homepage) -->
             <img src="RhysticStudyLogo.png" alt="Rhystic Study Logo" class="logo">
+            
+            <!-- Navigation Links for Main Pages -->
             <a href="index.html" class="nav-link">Home</a>
             <a href="about.html" class="nav-link">About</a>
             <a href="services.html" class="nav-link">Portfolio</a>
             <a href="contact.html" class="nav-link">Contact</a>
         </nav>
+
+        <!-- Right Navigation Section: Contains links related to user interaction (Shop, Cart, Profile) -->
         <nav class="right-nav">
+            <!-- Shop Link -->
             <a href="shop.html" class="nav-link">Shop</a>
-            <a href="cart.html" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
-            <a href="profile.html" class="nav-link"><i class="fas fa-user"></i></a>
+            
+            <!-- Shopping Cart Icon with FontAwesome icon -->
+            <a href="cart.html" class="nav-link">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+            
+            <!-- User Profile Icon with FontAwesome icon -->
+            <a href="profile.html" class="nav-link">
+                <i class="fas fa-user"></i>
+            </a>
         </nav>
     </div>
 </header>
 
-<!-- Your dynamic header.js script should load this header HTML -->
+<!-- JavaScript to Add "Active" Class to the Current Page Link -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Highlight active page link after header is loaded
+        // Get the current page name from the URL
         const currentPage = window.location.pathname.split('/').pop();
 
+        // Select all navigation links on the page
         const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            const linkPage = link.getAttribute('href').split('/').pop(); // Get the file name only
 
-            // Compare the link's href to the current page file name
+        // Iterate through each navigation link
+        navLinks.forEach(link => {
+            // Get the page linked to by the current nav item
+            const linkPage = link.getAttribute('href').split('/').pop();
+
+            // Compare the current page with the linked page to determine which link should be highlighted
             if (linkPage === currentPage) {
-                link.classList.add('active');
+                link.classList.add('active');  // Add 'active' class to the current link
             } else {
-                link.classList.remove('active');
+                link.classList.remove('active');  // Remove 'active' class from non-matching links
             }
         });
     });
