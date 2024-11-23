@@ -1,44 +1,76 @@
-<!-- Footer -->
 <footer>
+    <!-- Footer Top Section: Contains social media links and a back-to-top button -->
     <div class="footer-top">
+        
+        <!-- Social Media Icons with Links (each icon opens in a new tab) -->
         <div class="social-icons">
-            <a href="https://facebook.com/RhysticStudios" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.youtube.com/@RhysticStudios" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://discord.gg/w2vTMUYvaH" target="_blank"><i class="fab fa-discord"></i></a>
-            <a href="https://github.com/MilitantMom/" target="_blank"><i class="fab fa-github"></i></a>
+            <!-- Facebook Link -->
+            <a href="https://facebook.com/RhysticStudios" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <!-- YouTube Link -->
+            <a href="https://www.youtube.com/@RhysticStudios" target="_blank">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <!-- Discord Link -->
+            <a href="https://discord.gg/w2vTMUYvaH" target="_blank">
+                <i class="fab fa-discord"></i>
+            </a>
+            <!-- GitHub Link -->
+            <a href="https://github.com/MilitantMom/" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
         </div>
+
+        <!-- Back-to-Top Button: Scrolls the page back to the top -->
         <a href="#top" class="back-to-top">&#8593;</a>
     </div>
 
+    <!-- Footer Bottom Section: Contains links to important policies and a logo -->
     <div class="footer-bottom">
+        
+        <!-- Policy Links (opens each in a new tab) -->
         <div class="policies">
+            <!-- Terms of Service Link -->
             <a href="terms.html" class="policy-link" target="_blank">Terms of Service</a>
+            <!-- Privacy Policy Link -->
             <a href="privacy.html" class="policy-link" target="_blank">Privacy Policy</a>
+            <!-- Refund Policy Link -->
             <a href="refunds.html" class="policy-link" target="_blank">Refund Policy</a>
         </div>
 
+        <!-- Company Logo -->
         <div class="logo">
             <img src="RhysticStudyLogo.png" alt="Rhystic Study Logo">
         </div>
     </div>
 
+    <!-- Footer Text: Copyright notice -->
     <div class="footer-text">
         <p>&copy; 2024 The Rhystic Study | All rights reserved.</p>
     </div>
 </footer>
 
+<!-- JavaScript to Highlight Active Policy Link Based on Current Page -->
 <script>
     document.addEventListener('DOMContentLoaded', () => {
+        // Get the current page name from the URL
         const currentPage = window.location.pathname.split('/').pop();
 
+        // Select all policy links
         const policyLinks = document.querySelectorAll('.policy-link');
 
+        // Iterate through each policy link to check if it's the current page
         policyLinks.forEach(link => {
+            // Get the href attribute of the current link
             const linkPage = link.getAttribute('href');
             
+            // Compare the link's href to the current page URL
             if (linkPage === currentPage) {
+                // Add the 'active' class to highlight the current page link
                 link.classList.add('active');
             } else {
+                // Remove the 'active' class from other links
                 link.classList.remove('active');
             }
         });
