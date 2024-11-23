@@ -13,6 +13,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 const container = document.getElementById(containerId);
                 container.innerHTML = data;
                 container.classList.add('loaded');  // Add 'loaded' class to trigger visibility
+
+                // After the header is loaded, highlight the active navigation link
+                if (containerId === 'header-container') {
+                    highlightActiveNavLink();
+                }
             })
             .catch(error => console.error('Error loading HTML:', error));
     }
@@ -20,6 +25,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load header and footer dynamically
     loadHTML('components/header.html', 'header-container');
     loadHTML('components/footer.html', 'footer-container');
+
+    // Function to highlight the active navigation link
+    function highlightActiveNavLink() {
+        const navLinks = document.querySelectorAll('.nav-link');
+        const currentPage = window.location.pathname.split('/').pop(); // Get the current page file name (e.g., "index.html")
+
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href').split('/').pop(); // Get the file name from the link href
+
+            // Compare the current page with the link's href (file name only)
+            if (linkPage === currentPage) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    }
 
     // Implement smooth scrolling for anchor links that reference IDs on the same page
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -129,16 +151,4 @@ document.addEventListener('DOMContentLoaded', function() {
             document.documentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     }
-
-    // Add/remove 'active' class for navigation links
-    const navLinks = document.querySelectorAll(".nav-link");
-    const currentPage = window.location.pathname;
-
-    navLinks.forEach(link => {
-        if (link.getAttribute("href") === currentPage) {
-            link.classList.add("active");
-        } else {
-            link.classList.remove("active");
-        }
-    });
 });
