@@ -136,3 +136,22 @@ h1 {
         align-items: center;
     }
 }
+
+#back-to-top {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#back-to-top:hover {
+    background-color: #1558a7;
+}
