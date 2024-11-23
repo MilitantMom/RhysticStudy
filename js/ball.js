@@ -1,7 +1,10 @@
-// Ball Bounce Interaction
+// ball.js
+
+// Ball-related logic
 const canvas = document.getElementById('bouncing-ball');
 const ctx = canvas.getContext('2d');
 
+// Ball properties
 let ball = {
     x: canvas.width / 2,
     y: canvas.height / 2,
@@ -11,46 +14,47 @@ let ball = {
     color: '#ff5733'
 };
 
-let ballSound = new Audio('https://www.soundjay.com/button/beep-07.wav'); // Sound when the ball is clicked
+let ballSound = new Audio('https://www.soundjay.com/button/beep-07.wav'); // Sound on click
 
-// Draw ball
+// Function to draw the ball
 function drawBall() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
     ctx.beginPath();
-    ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+    ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2); // Draw the ball
     ctx.fillStyle = ball.color;
     ctx.fill();
     ctx.closePath();
 }
 
-// Update ball position
+// Function to update the ball position
 function updateBallPosition() {
     if (ball.x + ball.dx > canvas.width - ball.radius || ball.x + ball.dx < ball.radius) {
-        ball.dx = -ball.dx; // Bounce horizontally
+        ball.dx = -ball.dx; // Reverse horizontal direction on hit
     }
     if (ball.y + ball.dy > canvas.height - ball.radius || ball.y + ball.dy < ball.radius) {
-        ball.dy = -ball.dy; // Bounce vertically
+        ball.dy = -ball.dy; // Reverse vertical direction on hit
     }
 
-    ball.x += ball.dx;
-    ball.y += ball.dy;
+    ball.x += ball.dx; // Update x-coordinate
+    ball.y += ball.dy; // Update y-coordinate
 }
 
 // Click event to bounce the ball
 canvas.addEventListener('click', function() {
-    ballSound.play(); // Play sound
-    ball.dy = -ball.dy; // Reverse vertical direction for a fun bounce effect
+    ballSound.play(); // Play sound when ball is clicked
+    ball.dy = -ball.dy; // Reverse the vertical direction of the ball
     document.querySelector('.hint-text').innerText = "Boom! The ball’s alive!";
 });
 
 // Animate the ball
-function animate() {
-    drawBall();
-    updateBallPosition();
-    requestAnimationFrame(animate);
+function animateBall() {
+    drawBall(); // Draw the ball
+    updateBallPosition(); // Update its position
+    requestAnimationFrame(animateBall); // Continue the animation
 }
 
-animate();
+// Start the ball animation
+animateBall();
 
 // Easter Egg: Secret Message Clickable
 let secretMessage = document.querySelector('#secret-text');
