@@ -18,27 +18,73 @@
     <!-- Link to External CSS -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Google Ads Script (Asynchronous) -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3920209036805773" crossorigin="anonymous"></script>
-
     <!-- Font Awesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Rhystic Studios - Innovative Game & App Development Studio">
-    <meta property="og:description" content="Discover Rhystic Studios: A creative studio shaping the future of interactive entertainment with immersive games and apps.">
-    <meta property="og:image" content="https://rhystic.study/RhysticStudyLogo.png">
-    <meta property="og:url" content="https://rhystic.study">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Rhystic Studios">
-    <meta property="og:locale" content="en_US">
-    
-    <!-- Favicon and Icons -->
-    <link rel="icon" href="images/RhysticStudySmallIcon.png" type="image/png">
-    <link rel="apple-touch-icon" href="images/RhysticStudySmallIcon.png">
-    <link rel="canonical" href="https://rhystic.study/">
-    
+    <!-- Title -->
     <title>404 - Page Not Found</title>
+
+    <!-- Custom Styles for 404 -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #1c1c28, #2e3440);
+            color: #eceff4;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .error-container {
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 6rem;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.5rem;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background: #88c0d0;
+            color: #1c1c28;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .btn:hover {
+            background: #81a1c1;
+        }
+        .parallax {
+            background-image: url('images/404-background.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.7;
+        }
+        .interactive-area {
+            margin-top: 40px;
+        }
+        .interactive-area canvas {
+            border: 1px solid #4c566a;
+            background-color: #eceff4;
+        }
+    </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -46,26 +92,64 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager -->
 
-    <!-- Dynamic Header -->
-    <div id="header-placeholder"></div>
-    <header id="header-container" role="banner"></header>
+    <!-- Parallax Background -->
+    <div class="parallax"></div>
 
-    <!-- Main Content -->
-    <main>
-        <section class="error-section">
-            <div class="container">
-                <h1>404</h1>
-                <p>Oops! This page doesn’t exist. Maybe you took a wrong turn?</p>
-                <a href="/" class="btn">Return to Home</a>
-            </div>
-        </section>
-    </main>
+    <!-- Main Error Content -->
+    <div class="error-container">
+        <h1>404</h1>
+        <p>Oops! You seem to be lost. Don’t worry, we’ve got your back!</p>
+        <a href="/" class="btn">Return to Home</a>
+        <div class="interactive-area">
+            <canvas id="bouncing-ball" width="300" height="150"></canvas>
+            <p>Interactive fun: Click anywhere to bounce the ball!</p>
+        </div>
+    </div>
 
-    <!-- Dynamic Footer -->
+    <!-- Footer -->
     <div id="footer-placeholder"></div>
     <footer id="footer-container" role="contentinfo"></footer>
 
     <!-- External JavaScript -->
     <script src="js/main.js"></script>
+    <script>
+        // Bouncing Ball Game
+        const canvas = document.getElementById('bouncing-ball');
+        const ctx = canvas.getContext('2d');
+        let x = canvas.width / 2;
+        let y = canvas.height - 30;
+        let dx = 2;
+        let dy = -2;
+        const ballRadius = 10;
+
+        function drawBall() {
+            ctx.beginPath();
+            ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
+            ctx.fillStyle = "#88c0d0";
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function updateCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawBall();
+            if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
+                dx = -dx;
+            }
+            if (y + dy > canvas.height - ballRadius || y + dy < ballRadius) {
+                dy = -dy;
+            }
+            x += dx;
+            y += dy;
+            requestAnimationFrame(updateCanvas);
+        }
+
+        canvas.addEventListener('click', () => {
+            dx = (Math.random() - 0.5) * 6;
+            dy = (Math.random() - 0.5) * 6;
+        });
+
+        updateCanvas();
+    </script>
 </body>
 </html>
