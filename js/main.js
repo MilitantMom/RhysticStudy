@@ -73,18 +73,6 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', fadeInOnScroll);
     fadeInOnScroll(); // Check immediately on page load for elements in view
 
-    // Sticky Navigation Bar Implementation
-    const navbar = document.querySelector('.nav-container');
-    if (navbar) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('sticky');
-            } else {
-                navbar.classList.remove('sticky');
-            }
-        });
-    }
-
     // 'Coming Soon' Section Button Interaction
     const comingSoonButton = document.querySelector('.coming-soon .button');
     if (comingSoonButton) {
