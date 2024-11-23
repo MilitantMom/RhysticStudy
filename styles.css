@@ -189,15 +189,31 @@ body {
 }
 
 /* =============================
-   Parallax Section
+   Parallax Section Styling
    ============================= */
-.parallax {
-    background-image: url('path-to-your-image.jpg');
+
+.parallax-background {
+    background-image: url('/images/donuts.png');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    z-index: -1;
+}
+
+/* This will ensure the content on top is not hidden and appears in front of the background */
+.hero-container {
+    position: relative;      /* So that the content stays above the background */
+    z-index: 1;              /* Ensure it stays above the parallax background */
+    padding: 80px 20px;
+    text-align: center;
+    color: var(--text-color);
 }
 
 /* =============================
