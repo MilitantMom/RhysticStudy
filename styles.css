@@ -628,3 +628,37 @@ footer a:hover {
     opacity: 1;
 }
 
+/* Values Container Flexbox Styling */
+.values-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+/* Individual Value Box Styling */
+.value-box {
+    background: var(--dark-card-bg);
+    color: var(--text-color);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-light);
+    width: calc(33.33% - var(--spacing-lg));
+    min-width: 250px;
+    max-width: 400px;
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+    .value-box {
+        width: calc(50% - var(--spacing-lg));
+    }
+}
+
+@media (max-width: 480px) {
+    .value-box {
+        width: 100%;
+    }
+}
+
