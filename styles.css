@@ -21,7 +21,7 @@
     --highlight-text-color: #F0A6D6; /* Lighter, soft pink for highlighted text */
     --link-color: #D68DFF;           /* Same as highlight color, for consistency */
     --footer-color: #1A1A1A;         /* Footer background */
-    --hover-shadow-color: rgba(214, 141, 255, 0.3); /* Subtle pinkish hover shadow */
+    --hover-shadow-color: rgba(255, 255, 255, 0.05); /* Very subtle transparent white hover shadow */
     --box-color: #121212;            /* Color for boxes on page.*/
     
     /* Additional Complementary Dark Mode Colors */
