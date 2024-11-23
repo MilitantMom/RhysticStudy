@@ -16,17 +16,22 @@
     </div>
 </header>
 
+<!-- Your dynamic header.js script should load this header HTML -->
 <script>
-    const currentPage = window.location.pathname.split('/').pop();
+    document.addEventListener('DOMContentLoaded', function() {
+        // Highlight active page link after header is loaded
+        const currentPage = window.location.pathname.split('/').pop();
 
-    const navLinks = document.querySelectorAll('.nav-link');
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href').split('/').pop(); // Get the file name only
 
-    navLinks.forEach(link => {
-        const linkPage = link.getAttribute('href');
-        if (linkPage === currentPage) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
+            // Compare the link's href to the current page file name
+            if (linkPage === currentPage) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
     });
 </script>
