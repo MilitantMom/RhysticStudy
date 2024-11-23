@@ -3,8 +3,9 @@
 <head>
     <!-- Font Awesome Icons for UI Components -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <!-- Custom Blog CSS -->
-    <link rel="stylesheet" href="weblog.css">
+    
+    <!-- Custom Blog CSS (relative to site baseurl) -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/weblog.css">
 </head>
 <body>
     <!-- Main Navigation and Header Section (Dynamic Content) -->
@@ -12,6 +13,7 @@
 
     <main>
         <h1>Welcome to My Blog</h1>
+        
         <div class="posts">
             {% for post in site.blog_posts %}
                 <article class="post">
@@ -35,7 +37,7 @@
     <!-- Footer Section (Dynamic Content) -->
     <footer id="footer-container" role="contentinfo"></footer>
 
-    <!-- External JavaScript File -->
-    <script src="js/weblog.js"></script>
+    <!-- External JavaScript File (relative to site baseurl) -->
+    <script src="{{ site.baseurl }}/../js/weblog.js"></script>
 </body>
 </html>
