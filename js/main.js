@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Load header and footer dynamically
-    loadHTML('components/header.html', 'header-container');
-    loadHTML('components/footer.html', 'footer-container');
+    loadHTML('/components/header.html', 'header-container');
+    loadHTML('/components/footer.html', 'footer-container');
 
     // Function to highlight the active navigation link
     function highlightActiveNavLink() {
