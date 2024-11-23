@@ -1,6 +1,8 @@
 url: "https://rhystic.study"
 baseurl: "/blog"
-theme: jelyll-theme-minimal
+theme: jekyll-theme-minimal
+title: Rhystic Studios
+description: Crystals Blog Posts
 
 paginate: 5
 paginate_path: "/blog/page:num/"
