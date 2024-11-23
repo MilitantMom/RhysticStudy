@@ -278,45 +278,45 @@ body {
 /* =============================
    Mission and Vision Section
    ============================= */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--highlight-color);  /* Make section title stand out */
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
 .mission-vision-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
+    flex-wrap: wrap;
     padding: 60px 20px;
 }
 
 .mission-vision-box {
     background-color: var(--accent-color);
-    border-radius: 12px;
+    border-radius: var(--border-radius);
     padding: 30px;
     box-shadow: var(--box-shadow-medium);
-    flex: 1 1 300px;
-    max-width: 450px;
-    margin: 0 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    max-width: 500px;
+    flex-grow: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
 }
 
 .mission-vision-box h3 {
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--highlight-border-color);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-}
-
-.mission-vision-box p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--text-color);
-    margin-bottom: 0;
+    color: var(--highlight-color);
+    margin-bottom: 20px;
 }
 
 .mission-vision-box:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 6px 25px rgba(255, 255, 255, 0.1);
-    border: 2px solid var(--hover-color);
+    transform: translateY(-10px);
+    box-shadow: var(--box-shadow-light);
     background-color: var(--secondary-color);
 }
 
