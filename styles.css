@@ -15,7 +15,7 @@
     --primary-color: #181818;        /* Dark background (almost black) */
     --secondary-color: #121212;      /* Darker background for cards, etc. */
     --accent-color: #2A2A2A;         /* Very dark grey background for borders and cards */
-    --highlight-color: #D68DFF;      /* Soft, cheerful pink for accents */
+    --highlight-color: #2C2C2C;      /* Light Grey */
     --light-bg: #2C2C2C;             /* Slightly lighter grey for some backgrounds */
     --text-color: #E0E0E0;           /* Light grey text (for readability) */
     --highlight-text-color: #F0A6D6; /* Lighter, soft pink for highlighted text */
@@ -36,7 +36,7 @@
     --button-border: #444444;         /* Button border (matching dark grey) */
     
     /* Scrollbar Styling */
-    --scrollbar-bg: #3C3C3C;         /* Dark grey scrollbar background */
+    --scrollbar-bg: #2C2C2C;         /* Light grey scrollbar background */
     --scrollbar-thumb-bg: #D68DFF;   /* Soft pink scrollbar thumb */
     --scrollbar-thumb-hover-bg: #F1A1D9; /* Lighter pink on hover */
     
