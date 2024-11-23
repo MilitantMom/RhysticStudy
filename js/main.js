@@ -144,4 +144,22 @@ document.addEventListener('DOMContentLoaded', function() {
             document.documentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     }
+
+    // Sticky Navbar Logic
+    const nav = document.querySelector('.nav-container');
+    if (nav) {
+        const stickyPosition = nav.offsetTop;
+
+        // Function to handle sticky nav
+        function handleStickyNav() {
+            if (window.pageYOffset > stickyPosition) {
+                nav.classList.add("sticky");
+            } else {
+                nav.classList.remove("sticky");
+            }
+        }
+
+        window.addEventListener('scroll', handleStickyNav);
+        handleStickyNav(); // Check if the navbar should be sticky on page load
+    }
 });
