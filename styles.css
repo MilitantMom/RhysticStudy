@@ -11,18 +11,66 @@
    Root Variables
    ============================= */
 :root {
-    --primary-color: #4CAF50;        /* Green */
-    --secondary-color: #121212;      /* Dark background */
-    --accent-color: #2C6B2F;         /* Muted green */
-    --hover-color: #ff9900;          /* Hover Color */
-    --light-bg: #1E1E1E;             /* Dark gray background */
-    --text-color: #E0E0E0;           /* Light gray text */
-    --highlight-color: #333333;      /* Darker gray for contrast */
-    --highlight-text-color: #5C9B5A; /* Darkened green text highlight for better contrast */
-    --link-color: #66BB6A;           /* Lighter green for links */
-    --footer-color: #1D1D1D;         /* Footer background */
-    --highlight-border-color: #4CAF50; /* highlight color */
-    --hover-shadow-color: rgba(56, 142, 60, 0.4); /* Hover shadow */
+    /* Core Colors for Dark Mode */
+    --primary-color: #181818;        /* Dark background (almost black) */
+    --secondary-color: #121212;      /* Darker background for cards, etc. */
+    --accent-color: #2A2A2A;         /* Very dark grey background for borders and cards */
+    --highlight-color: #D68DFF;      /* Soft, cheerful pink for accents */
+    --light-bg: #2C2C2C;             /* Slightly lighter grey for some backgrounds */
+    --text-color: #E0E0E0;           /* Light grey text (for readability) */
+    --highlight-text-color: #F0A6D6; /* Lighter, soft pink for highlighted text */
+    --link-color: #D68DFF;           /* Same as highlight color, for consistency */
+    --footer-color: #1A1A1A;         /* Footer background */
+    --hover-shadow-color: rgba(214, 141, 255, 0.3); /* Subtle pinkish hover shadow */
+    
+    /* Additional Complementary Dark Mode Colors */
+    --dark-bg-alt: #1E1E1E;           /* Alternative background for emphasis */
+    --dark-card-bg: #232323;         /* Dark background for cards */
+    --dark-text-light: #B0B0B0;       /* Lighter text for less important content */
+    --border-color: #333333;         /* Very dark grey borders for separation */
+    
+    /* Accents and Interactive States */
+    --button-bg: #3C3C3C;             /* Button background (slightly lighter grey) */
+    --button-hover-bg: #4A4A4A;       /* Button hover background (dark grey with slight contrast) */
+    --button-text-color: #F1F1F1;     /* Button text color (off white) */
+    --button-border: #444444;         /* Button border (matching dark grey) */
+    
+    /* Scrollbar Styling */
+    --scrollbar-bg: #3C3C3C;         /* Dark grey scrollbar background */
+    --scrollbar-thumb-bg: #D68DFF;   /* Soft pink scrollbar thumb */
+    --scrollbar-thumb-hover-bg: #F1A1D9; /* Lighter pink on hover */
+    
+    /* Typography */
+    --font-family-primary: 'Roboto', sans-serif; /* Modern sans-serif for primary text */
+    --font-family-secondary: 'Merriweather', serif; /* Serif font for headings (optional) */
+    
+    /* Spacing and Layout */
+    --spacing-base: 16px;             /* Base spacing unit */
+    --spacing-lg: 32px;               /* Larger spacing (for margins or paddings) */
+    --spacing-sm: 8px;                /* Smaller spacing */
+    --container-width: 1200px;        /* Max width for the main content container */
+    
+    /* Borders and Shadows */
+    --border-radius: 8px;             /* Default border radius for rounded corners */
+    --box-shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for subtle elevation */
+    --box-shadow-medium: 0 6px 12px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+    --box-shadow-dark: 0 8px 16px rgba(0, 0, 0, 0.3); /* Strong shadow for larger elements */
+
+    /* Animation and Transition */
+    --transition-duration: 0.3s;       /* Default duration for transitions */
+    --transition-ease: ease-in-out;   /* Default timing function */
+    --animation-duration: 0.5s;       /* Duration for keyframe animations */
+
+    /* Alert/Notification Colors */
+    --success-color: #28a745;         /* Green for success messages */
+    --error-color: #dc3545;           /* Red for error messages */
+    --info-color: #17a2b8;            /* Blue for informational messages */
+    --warning-color: #ffc107;         /* Yellow for warning messages */
+
+    /* Dark Mode Variables */
+    --dark-bg: #121212;               /* Dark mode background */
+    --dark-text-color: #E0E0E0;        /* Dark mode text color */
+    --dark-primary-color: #D68DFF;    /* Soft pink for dark mode accents */
 }
 
 /* =============================
