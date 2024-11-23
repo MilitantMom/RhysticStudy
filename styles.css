@@ -75,6 +75,23 @@
 }
 
 /* =============================
+   Link Styling Overrides
+   ============================= */
+a {
+    color: #F0A6D6; /* Set normal link color */
+    text-decoration: none;
+}
+
+a:visited {
+    color: #E0E0E0; /* Set visited link color */
+}
+
+a:hover,
+a:focus {
+    color: var(--highlight-color); /* Change hover color */
+}
+
+/* =============================
    Body Styling
    ============================= */
 body {
