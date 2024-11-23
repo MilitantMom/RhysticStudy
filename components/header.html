@@ -1,17 +1,32 @@
 <!-- Header with Navigation Bar -->
-    <header>
-        <div class="nav-container">
-            <nav class="left-nav">
-                <img src="RhysticStudyLogo.png" alt="Rhystic Study Logo" class="logo">
-                <a href="index.html" class="active nav-link">Home</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="services.html" class="nav-link">Portfolio</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-            </nav>
-            <nav class="right-nav">
-                <a href="shop.html" class="nav-link">Shop</a>
-                <a href="cart.html" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
-                <a href="profile.html" class="nav-link"><i class="fas fa-user"></i></a>
-            </nav>
-        </div>
-    </header>
+<header>
+    <div class="nav-container">
+        <nav class="left-nav">
+            <img src="RhysticStudyLogo.png" alt="Rhystic Study Logo" class="logo">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="services.html" class="nav-link">Portfolio</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <nav class="right-nav">
+            <a href="shop.html" class="nav-link">Shop</a>
+            <a href="cart.html" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+            <a href="profile.html" class="nav-link"><i class="fas fa-user"></i></a>
+        </nav>
+    </div>
+</header>
+
+<script>
+    const currentPage = window.location.pathname.split('/').pop();
+
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        if (linkPage === currentPage) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+</script>
