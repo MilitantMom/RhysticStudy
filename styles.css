@@ -106,12 +106,14 @@ body {
    Navigation Bar
    ============================= */
 .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: sticky;
+    top: 0;
     background-color: #212121;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     padding: 15px 20px;
-    border-bottom: 2px solid var(--highlight-border-color);
+    transition: box-shadow 0.3s ease;
+    border-bottom: 2px solid var(--highlight-color);
 }
 
 /* Sticky Navbar Styles */
