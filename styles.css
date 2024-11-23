@@ -163,12 +163,12 @@ body {
 /* Hover effect for navigation links */
 .nav-container a:hover,
 .nav-container a:focus {
-    color: var(--hover-color);
+    color: var(--highlight-color);
 }
 
 /* Active link styling */
 .nav-container .active {
-    color: var(--highlight-color);
+    color: var(--primary-color);
     font-size: 1.2rem;
     text-decoration: none;
 }
@@ -238,7 +238,7 @@ body {
 }
 
 .mission-vision-box {
-    background-color: var(--secondary-color);
+    background-color: var(--accent-color);
     border-radius: 12px;
     padding: 30px;
     box-shadow: var(--box-shadow-medium);
@@ -266,7 +266,7 @@ body {
 
 .mission-vision-box:hover {
     transform: translateY(-8px);
-    box-shadow: 0 6px 25px rgba(255, 112, 67, 0.4);
+    box-shadow: 0 6px 25px rgba(255, 255, 255, 0.1);
     border: 2px solid var(--hover-color);
     background-color: var(--secondary-color);
 }
@@ -309,7 +309,7 @@ footer {
     background-color: var(--footer-color);
     color: var(--text-color);
     text-align: center;
-    padding: 40px 20px;
+    padding: 20px 20px;
     font-size: 1rem;
 }
 
@@ -329,13 +329,13 @@ footer a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     flex-wrap: wrap;
 }
 
 .social-icons {
     display: flex;
-    gap: 20px;
+    gap: 10px;
 }
 
 .social-icons a {
