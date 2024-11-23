@@ -78,17 +78,17 @@
    Link Styling Overrides
    ============================= */
 a {
-    color: #F0A6D6; /* Set normal link color */
+    color: #F0A6D6;
     text-decoration: none;
 }
 
 a:visited {
-    color: #E0E0E0; /* Set visited link color */
+    color: #E0E0E0;
 }
 
 a:hover,
 a:focus {
-    color: var(--highlight-color); /* Change hover color */
+    color: var(--highlight-color);
 }
 
 /* =============================
@@ -282,7 +282,7 @@ body {
 .section-title {
     font-size: 2.5rem;
     font-weight: bold;
-    color: var(--highlight-color);  /* Make section title stand out */
+    color: var(--highlight-color);
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -319,6 +319,71 @@ body {
     transform: translateY(-10px);
     box-shadow: var(--box-shadow-light);
     background-color: var(--secondary-color);
+}
+
+/* =============================
+   Value Box Styling
+   ============================= */
+.value-box {
+    background-color: var(--accent-color);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--box-shadow-medium);
+    max-width: 500px;
+    flex-grow: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.value-box h4 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--highlight-color);
+    margin-bottom: 20px;
+}
+
+.value-box:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--box-shadow-light);
+    background-color: var(--secondary-color);
+}
+
+/* =============================
+   Section Title Styling (for Mission & Vision)
+   ============================= */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--highlight-color);  /* Make section title stand out */
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    position: relative; /* Necessary for overlay */
+}
+
+/* =============================
+   Content Section Background Overlay for better text visibility
+   ============================= */
+.content-section {
+    position: relative;
+}
+
+.content-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay for better contrast */
+    z-index: -1; /* Ensures overlay is behind content */
+}
+
+/* Optional: Adding text shadow for improved readability */
+.section-title {
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* Dark shadow for better contrast */
 }
 
 /* =============================
