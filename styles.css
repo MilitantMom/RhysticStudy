@@ -15,13 +15,14 @@
     --primary-color: #181818;        /* Dark background (almost black) */
     --secondary-color: #121212;      /* Darker background for cards, etc. */
     --accent-color: #2A2A2A;         /* Very dark grey background for borders and cards */
-    --highlight-color: #2C2C2C;      /* Light Grey */
+    --highlight-color: #F0A6D6;      /* Pink */
     --light-bg: #2C2C2C;             /* Slightly lighter grey for some backgrounds */
     --text-color: #E0E0E0;           /* Light grey text (for readability) */
     --highlight-text-color: #F0A6D6; /* Lighter, soft pink for highlighted text */
     --link-color: #D68DFF;           /* Same as highlight color, for consistency */
     --footer-color: #1A1A1A;         /* Footer background */
     --hover-shadow-color: rgba(214, 141, 255, 0.3); /* Subtle pinkish hover shadow */
+    --box-color: #121212;            /* Color for boxes on page.*/
     
     /* Additional Complementary Dark Mode Colors */
     --dark-bg-alt: #1E1E1E;           /* Alternative background for emphasis */
@@ -220,7 +221,7 @@ body {
 }
 
 .mission-vision-box {
-    background-color: var(--highlight-color);
+    background-color: var(--secondary-color);
     border-radius: 12px;
     padding: 30px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
@@ -250,7 +251,7 @@ body {
     transform: translateY(-8px);
     box-shadow: 0 6px 25px rgba(255, 112, 67, 0.4);
     border: 2px solid var(--hover-color);
-    background-color: var(--highlight-color);
+    background-color: var(--secondary-color);
 }
 
 /* =============================
