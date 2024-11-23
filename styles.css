@@ -241,7 +241,7 @@ body {
     background-color: var(--secondary-color);
     border-radius: 12px;
     padding: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    box-shadow: var(--box-shadow-medium);
     flex: 1 1 300px;
     max-width: 450px;
     margin: 0 10px;
