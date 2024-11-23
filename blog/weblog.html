@@ -4,7 +4,7 @@
     <!-- Font Awesome Icons for UI Components -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <!-- Custom Blog CSS -->
-    <link rel="stylesheet" href="/blog/weblog.css">
+    <link rel="stylesheet" href="weblog.css">
 </head>
 <body>
     <!-- Main Navigation and Header Section (Dynamic Content) -->
@@ -20,8 +20,18 @@
                 </article>
             {% endfor %}
         </div>
-    </main>
 
+        <div class="pagination">
+            {% if paginator.previous_page %}
+                <a href="{{ paginator.previous_page_path }}">&laquo; Previous</a>
+            {% endif %}
+            <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+            {% if paginator.next_page %}
+                <a href="{{ paginator.next_page_path }}">Next &raquo;</a>
+            {% endif %}
+        </div>
+    </main>
+    
     <!-- Footer Section (Dynamic Content) -->
     <footer id="footer-container" role="contentinfo"></footer>
 
