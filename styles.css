@@ -16,7 +16,7 @@
     --secondary-color: #121212;      /* Darker background for cards, etc. */
     --accent-color: #2A2A2A;         /* Very dark grey background for borders and cards */
     --highlight-color: #F0A6D6;      /* Pink */
-    --highlight-color: #93CFF0;      /* Light Blue */
+    --highlight-color-blue: #93CFF0;      /* Light Blue */
     --light-bg: #2C2C2C;             /* Slightly lighter grey for some backgrounds */
     --text-color: #E0E0E0;           /* Light grey text (for readability) */
     --highlight-text-color: #F0A6D6; /* Lighter, soft pink for highlighted text */
@@ -116,9 +116,20 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid var(--highlight-color);
     width: 100%;
     transition: top 0.3s ease-in-out;
+    position: relative;
+}
+
+.nav-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, var(--highlight-color-blue), var(--highlight-color));
+    pointer-events: none;
 }
 
 /* Sticky Navbar Styles */
