@@ -386,7 +386,7 @@ footer a:hover {
 /* Footer Bottom Section with Policies and Logo */
 .footer-bottom {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
     margin-top: 20px;
@@ -400,6 +400,7 @@ footer a:hover {
 .footer-bottom .logo img {
     max-width: 50px;
     margin-top: 10px;
+    margin-left: 20px;
 }
 
 /* =============================
