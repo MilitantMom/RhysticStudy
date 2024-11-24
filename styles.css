@@ -671,3 +671,34 @@ footer a:hover {
         max-width: 90%;
     }
 }
+
+/* 404 Page Specific Typography */
+.error-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 6rem;
+    color: var(--highlight-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-bottom: var(--spacing-lg);
+}
+
+.error-message, .hint-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.secret-message {
+    font-family: 'Merriweather', serif;
+    font-size: 1.1rem;
+    color: var(--highlight-color);
+    margin-top: var(--spacing-lg);
+}
+
+/* Interactive Canvas */
+canvas#bouncing-ball {
+    border: 5px solid var(--highlight-color);
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.8);
+    margin: var(--spacing-lg) auto;
+    display: block;
+}
