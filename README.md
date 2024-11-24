@@ -19,7 +19,7 @@ We’re an indie startup dedicated to crafting games and apps that are accessibl
 This website is built with HTML and styled with CSS. Future updates will include interactivity using JavaScript and hosting for our apps and games.  
 
 ## 🌐 **Deployment**  
-The site is live at [Rhystic Studios](https://rhystic.studio) and is managed using GitHub Pages with Cloudflare for DNS.  
+The site is live at [Rhystic Studios](https://rhystic.study) and is managed using GitHub Pages with Cloudflare for DNS.  
 
 ## 🤝 **Contribute**  
 We welcome feedback and ideas! Reach out via our [Contact Page](https://rhystic.studio/contact.html) or open an issue in this repository.  
