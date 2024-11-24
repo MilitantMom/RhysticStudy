@@ -1,7 +1,9 @@
 /* =============================
-   General Reset
+   Global Reset
    ============================= */
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -11,76 +13,76 @@
    Root Variables
    ============================= */
 :root {
-    /* Core Colors for Dark Mode */
-    --primary-color: #181818;        /* Dark background (almost black) */
-    --secondary-color: #121212;      /* Darker background for cards, etc. */
-    --accent-color: #2A2A2A;         /* Very dark grey background for borders and cards */
-    --highlight-color: #F0A6D6;      /* Pink */
-    --highlight-color-blue: #93CFF0;      /* Light Blue */
-    --light-bg: #2C2C2C;             /* Slightly lighter grey for some backgrounds */
-    --text-color: #E0E0E0;           /* Light grey text (for readability) */
-    --highlight-text-color: #F0A6D6; /* Lighter, soft pink for highlighted text */
-    --link-color: #D68DFF;           /* Same as highlight color, for consistency */
-    --footer-color: #1A1A1A;         /* Footer background */
-    --hover-shadow-color: rgba(255, 255, 255, 0.05); /* Very subtle transparent white hover shadow */
-    --box-color: #121212;            /* Color for boxes on page.*/
+    /* Core Dark Mode Colors */
+    --primary-color: #181818;          /* Dark background (almost black) */
+    --secondary-color: #121212;        /* Darker background for elements like cards */
+    --accent-color: #2A2A2A;           /* Very dark grey for borders and UI elements */
+    --highlight-color: #F0A6D6;        /* Soft pink for highlights and accents */
+    --highlight-color-blue: #93CFF0;   /* Light blue for additional accents */
+    --light-bg: #2C2C2C;               /* Light grey background for sections */
+    --text-color: #E0E0E0;             /* Light grey text for readability */
+    --highlight-text-color: #F0A6D6;   /* Soft pink for highlighted text */
+    --link-color: #D68DFF;             /* Purple link color for consistency */
+    --footer-color: #1A1A1A;           /* Footer background color */
+    --hover-shadow-color: rgba(255, 255, 255, 0.05); /* Subtle hover shadow */
+    --box-color: #121212;              /* Dark background for containers and boxes */
     
-    /* Additional Complementary Dark Mode Colors */
-    --dark-bg-alt: #1E1E1E;           /* Alternative background for emphasis */
-    --dark-card-bg: #232323;         /* Dark background for cards */
-    --dark-text-light: #B0B0B0;       /* Lighter text for less important content */
-    --border-color: #333333;         /* Very dark grey borders for separation */
+    /* Additional Dark Mode Colors */
+    --dark-bg-alt: #1E1E1E;            /* Alternative background for emphasis */
+    --dark-card-bg: #232323;           /* Background color for dark cards */
+    --dark-text-light: #B0B0B0;         /* Lighter text color for less important content */
+    --border-color: #333333;           /* Dark grey borders for separation */
     
-    /* Accents and Interactive States */
-    --button-bg: #3C3C3C;             /* Button background (slightly lighter grey) */
-    --button-hover-bg: #4A4A4A;       /* Button hover background (dark grey with slight contrast) */
-    --button-text-color: #F1F1F1;     /* Button text color (off white) */
-    --button-border: #444444;         /* Button border (matching dark grey) */
+    /* Button & Interactive States */
+    --button-bg: #3C3C3C;              /* Button background (slightly lighter grey) */
+    --button-hover-bg: #4A4A4A;        /* Button hover background */
+    --button-text-color: #F1F1F1;      /* Button text color */
+    --button-border: #444444;          /* Button border color */
     
     /* Scrollbar Styling */
-    --scrollbar-bg: #2C2C2C;         /* Light grey scrollbar background */
-    --scrollbar-thumb-bg: #D68DFF;   /* Soft pink scrollbar thumb */
-    --scrollbar-thumb-hover-bg: #F1A1D9; /* Lighter pink on hover */
+    --scrollbar-bg: #2C2C2C;           /* Scrollbar background */
+    --scrollbar-thumb-bg: #D68DFF;     /* Scrollbar thumb color */
+    --scrollbar-thumb-hover-bg: #F1A1D9; /* Hover color for scrollbar thumb */
     
     /* Typography */
-    --font-family-primary: 'Roboto', sans-serif; /* Modern sans-serif for primary text */
-    --font-family-secondary: 'Merriweather', serif; /* Serif font for headings (optional) */
+    --font-family-primary: 'Roboto', sans-serif;   /* Primary sans-serif font */
+    --font-family-secondary: 'Merriweather', serif; /* Secondary serif font for headings */
     
-    /* Spacing and Layout */
-    --spacing-base: 16px;             /* Base spacing unit */
-    --spacing-lg: 32px;               /* Larger spacing (for margins or paddings) */
-    --spacing-sm: 8px;                /* Smaller spacing */
-    --container-width: 1200px;        /* Max width for the main content container */
+    /* Spacing & Layout */
+    --spacing-base: 16px;               /* Base spacing unit */
+    --spacing-lg: 32px;                 /* Larger spacing for sections */
+    --spacing-sm: 8px;                  /* Smaller spacing for finer control */
+    --container-width: 1200px;          /* Max width for the main content container */
     
-    /* Borders and Shadows */
-    --border-radius: 8px;             /* Default border radius for rounded corners */
+    /* Borders & Shadows */
+    --border-radius: 8px;               /* Default border radius for rounded corners */
     --box-shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for subtle elevation */
-    --box-shadow-medium: 0 6px 12px rgba(0, 0, 0, 0.2); /* More prominent shadow */
-    --box-shadow-dark: 0 8px 16px rgba(0, 0, 0, 0.3); /* Strong shadow for larger elements */
-
-    /* Animation and Transition */
-    --transition-duration: 0.3s;       /* Default duration for transitions */
-    --transition-ease: ease-in-out;   /* Default timing function */
-    --animation-duration: 0.5s;       /* Duration for keyframe animations */
-
-    /* Alert/Notification Colors */
-    --success-color: #28a745;         /* Green for success messages */
-    --error-color: #dc3545;           /* Red for error messages */
-    --info-color: #17a2b8;            /* Blue for informational messages */
-    --warning-color: #ffc107;         /* Yellow for warning messages */
-
+    --box-shadow-medium: 0 6px 12px rgba(0, 0, 0, 0.2); /* Medium shadow */
+    --box-shadow-dark: 0 8px 16px rgba(0, 0, 0, 0.3); /* Strong shadow for large elements */
+    
+    /* Transitions & Animations */
+    --transition-duration: 0.3s;        /* Default transition duration */
+    --transition-ease: ease-in-out;    /* Default timing function */
+    --animation-duration: 0.5s;        /* Keyframe animation duration */
+    
+    /* Notification Colors */
+    --success-color: #28a745;           /* Green for success messages */
+    --error-color: #dc3545;             /* Red for error messages */
+    --info-color: #17a2b8;              /* Blue for informational messages */
+    --warning-color: #ffc107;           /* Yellow for warning messages */
 }
 
 /* =============================
-   Link Styling Overrides
+   Link Styling
    ============================= */
 a {
-    color: #F0A6D6;
+    color: var(--link-color);
     text-decoration: none;
+    transition: color var(--transition-duration);
 }
 
 a:visited {
-    color: #E0E0E0;
+    color: var(--text-color);
 }
 
 a:hover,
@@ -92,7 +94,7 @@ a:focus {
    Body Styling
    ============================= */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family-primary);
     background-color: var(--light-bg);
     color: var(--text-color);
     line-height: 1.8;
@@ -107,13 +109,13 @@ body {
     top: 0;
     background-color: #212121;
     z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--box-shadow-light);
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    transition: top 0.3s ease-in-out;
+    transition: top var(--transition-duration) var(--transition-ease);
     position: relative;
 }
 
@@ -128,7 +130,7 @@ body {
     pointer-events: none;
 }
 
-/* Sticky Navbar Styles */
+/* Sticky Navbar */
 .nav-container.sticky {
     position: fixed;
     top: 0;
@@ -136,30 +138,27 @@ body {
     width: 100%;
     z-index: 1000;
     background-color: var(--secondary-color);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--box-shadow-light);
     padding: 10px 20px;
-    transition: top 0.3s ease-in-out;
+    transition: top var(--transition-duration) var(--transition-ease);
 }
 
-/* Left Navigation (Logo + Links) */
+/* Left Navigation: Logo + Links */
 .left-nav {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: var(--spacing-lg);
     flex-grow: 1;
 }
 
 .left-nav .logo {
-    width: auto;
     max-height: 50px;
 }
 
-/* Center Navigation Links (Home, About, etc.) */
+/* Center Navigation Links */
 .center-nav {
     display: flex;
-    justify-content: flex-start;
-    gap: 20px;
-    flex-grow: 1;
+    gap: var(--spacing-lg);
     text-align: left;
 }
 
@@ -171,20 +170,18 @@ body {
     font-weight: bold;
     font-size: 1.1rem;
     letter-spacing: 0.5px;
-    transition: color 0.3s ease, font-size 0.3s ease;
+    transition: color var(--transition-duration), font-size var(--transition-duration);
 }
 
-/* Hover effect for navigation links */
 .nav-container a:hover,
 .nav-container a:focus {
     color: var(--highlight-color);
 }
 
-/* Active link styling */
+/* Active Link Styling */
 .nav-container .active {
     color: var(--light-bg);
     font-size: 1.2rem;
-    text-decoration: none;
 }
 
 /* Right Navigation (Icons) */
@@ -195,7 +192,7 @@ body {
 
 .right-nav a {
     font-size: 1.2rem;
-    margin-left: 20px;
+    margin-left: var(--spacing-lg);
 }
 
 .right-nav a i {
@@ -206,6 +203,7 @@ body {
    Parallax Section Styling
    ============================= */
 
+/* Parallax Background */
 .parallax-background {
     background-image: url('/images/donuts.png');
     background-attachment: fixed;
@@ -221,6 +219,7 @@ body {
     z-index: -1;
 }
 
+/* Hero Container */
 .hero-container {
     position: relative;
     z-index: 1;
@@ -230,6 +229,7 @@ body {
     background: rgba(0, 0, 0, 0.5);
 }
 
+/* Hero Title */
 .hero-title {
     font-size: 4rem;
     font-weight: bold;
@@ -238,6 +238,7 @@ body {
     margin-bottom: 20px;
 }
 
+/* Hero Subtitle */
 .hero-subtitle {
     font-size: 1.4rem;
     line-height: 1.6;
@@ -245,6 +246,7 @@ body {
     margin-bottom: 40px;
 }
 
+/* Scroll Indicator */
 .scroll-indicator {
     display: inline-block;
     margin-top: 20px;
@@ -252,6 +254,7 @@ body {
     font-size: 1.2rem;
 }
 
+/* Scroll Arrow */
 .scroll-arrow {
     font-size: 2rem;
     margin-top: 10px;
@@ -261,29 +264,36 @@ body {
 /* =============================
    Scroll Animations
    ============================= */
+
+/* Base Animation for Scroll Effects */
 .animate-on-scroll {
     opacity: 0;
     transition: opacity 1s ease, transform 1s ease;
 }
 
+/* Visible state of Animated Element */
 .animate-on-scroll.visible {
     opacity: 1;
     transform: translateX(0);
 }
 
+/* Slide-in from Left Animation */
 .animate-left {
     animation: slideInFromLeft 1s ease-out forwards;
 }
 
+/* Slide-in from Right Animation */
 .animate-right {
     animation: slideInFromRight 1s ease-out forwards;
 }
 
+/* Keyframe for Slide-in from Left */
 @keyframes slideInFromLeft {
     0% { opacity: 0; transform: translateX(-50px); }
     100% { opacity: 1; transform: translateX(0); }
 }
 
+/* Keyframe for Slide-in from Right */
 @keyframes slideInFromRight {
     0% { opacity: 0; transform: translateX(50px); }
     100% { opacity: 1; transform: translateX(0); }
@@ -292,11 +302,13 @@ body {
 /* =============================
    Footer Styling
    ============================= */
+
+/* Footer Container */
 footer {
     background-color: var(--footer-color);
     color: var(--text-color);
     text-align: center;
-    padding: 20px 20px;
+    padding: 20px;
     font-size: 1rem;
     position: relative;
     overflow: hidden;
@@ -304,6 +316,7 @@ footer {
     border: none;
 }
 
+/* Footer Top Border */
 #footer-container::before {
     content: '';
     position: absolute;
@@ -315,6 +328,7 @@ footer {
     z-index: 0;
 }
 
+/* Footer Links */
 footer a {
     font-size: 1.1rem;
     color: var(--highlight-border-color);
@@ -327,6 +341,7 @@ footer a:hover {
     color: var(--highlight-text-color);
 }
 
+/* Footer Top Section */
 .footer-top {
     display: flex;
     justify-content: space-between;
@@ -335,11 +350,13 @@ footer a:hover {
     flex-wrap: wrap;
 }
 
+/* Social Icons */
 .social-icons {
     display: flex;
     gap: 10px;
 }
 
+/* Social Icon Styling */
 .social-icons a {
     font-size: 1.5rem;
     color: var(--text-color);
@@ -351,35 +368,41 @@ footer a:hover {
 }
 
 /* =============================
-   Back-to-Top Button Styles
+   Back-to-Top Button
    ============================= */
+
+/* Back-to-Top Button */
 .back-to-top {
     display: inline-flex;
     justify-content: center;
     align-items: center;
     width: 50px;
     height: 50px;
-    background-color: #2C2C2C;
-    color: #E0E0E0;
+    background-color: var(--box-color);
+    color: var(--text-color);
     font-size: 1.2rem;
     border-radius: 50%;
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--box-shadow-light);
 }
 
-/* Hover effect for Back-to-Top button */
+/* Back-to-Top Button Hover */
 .back-to-top:hover {
-    background-color: #2C2C2C;
-    color: #F0A6D6;
+    background-color: var(--box-color);
+    color: var(--highlight-color);
 }
 
-/* Adjust the font size of the chevron icon inside the circle (if using Font Awesome) */
+/* Chevron Icon Inside Back-to-Top Button */
 .back-to-top i {
-    font-size: 1.5rem; /* Adjust size as needed */
+    font-size: 1.5rem;
 }
 
-/* Footer Bottom Section with Policies and Logo */
+/* =============================
+   Footer Bottom Section with Policies and Logo
+   ============================= */
+
+/* Footer Bottom Section */
 .footer-bottom {
     display: flex;
     justify-content: flex-start;
@@ -388,37 +411,43 @@ footer a:hover {
     margin-top: 20px;
 }
 
+/* Footer Policies Links */
 .policies {
     display: flex;
-    gap: 20px;
+    gap: var(--spacing-lg);
 }
 
+/* Footer Logo */
 .footer-bottom .logo img {
     max-width: 50px;
     margin-top: 10px;
-    margin-left: 20px;
+    margin-left: var(--spacing-lg);
 }
 
 /* =============================
    Media Queries for Footer Responsiveness
    ============================= */
 @media (max-width: 768px) {
+    /* Footer Top Section */
     .footer-top {
         flex-direction: column;
         align-items: center;
     }
 
+    /* Social Icons */
     .social-icons {
-        margin-bottom: 20px;
+        margin-bottom: var(--spacing-lg);
     }
 
+    /* Footer Bottom Section */
     .footer-bottom {
         flex-direction: column;
         align-items: center;
     }
 
+    /* Footer Policies */
     .policies {
-        margin-bottom: 20px;
+        margin-bottom: var(--spacing-lg);
     }
 }
 
@@ -426,42 +455,49 @@ footer a:hover {
    Media Queries for Mobile Responsiveness
    ============================= */
 @media (max-width: 768px) {
+    /* Navigation Container */
     .nav-container {
         flex-direction: column;
         align-items: center;
-        padding: 10px 0;
+        padding: var(--spacing-sm) 0;
     }
 
+    /* Navigation Links */
     .nav-container a {
-        margin: 10px 0;
+        margin: var(--spacing-sm) 0;
     }
 
+    /* Logo */
     .logo {
         max-height: 40px;
     }
 
+    /* Header Section */
     .header-section {
         padding: 60px 20px;
     }
 
+    /* Mission & Vision Container */
     .mission-vision-container {
         flex-direction: column;
     }
 
     .mission-vision-box {
         width: 90%;
-        margin-bottom: 20px;
+        margin-bottom: var(--spacing-lg);
     }
-   
-       .embed-container {
+
+    /* Embed Container */
+    .embed-container {
         flex-direction: column;
     }
 
     .embed-container > div {
         flex: 1 1 100%;
-        margin-bottom: 20px;
+        margin-bottom: var(--spacing-lg);
     }
 
+    /* Embed iframe */
     .embed-container iframe {
         height: 400px;
     }
@@ -490,8 +526,8 @@ footer a:hover {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 20px;
-    margin-top: 20px;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
 }
 
 .embed-container > div {
@@ -503,7 +539,7 @@ footer a:hover {
     width: 100%;
     height: 500px;
     border: none;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
 }
 
 /* =============================
@@ -511,8 +547,8 @@ footer a:hover {
    ============================= */
 .google-form-container {
     background-color: #2c2f36;
-    padding: 20px;
-    border-radius: 8px;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
 }
 
 /* =============================
@@ -521,10 +557,6 @@ footer a:hover {
 #header-container, #footer-container {
     width: 100%;
     display: block;
-}
-
-/* For initial visibility of injected content */
-#header-container, #footer-container {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
@@ -605,30 +637,37 @@ footer a:hover {
     padding: var(--spacing-lg);
 }
 
-/* Media Queries for Responsiveness */
+/* =============================
+   Media Queries for Responsiveness
+   ============================= */
 @media (max-width: 768px) {
+    /* Mission & Vision & Values Container */
     .mission-vision-container, .values-container {
         flex-direction: column;
         align-items: center;
     }
     
+    /* Content Container */
     .content-container {
         padding: var(--spacing-md);
     }
 }
 
 @media (max-width: 480px) {
+    /* Box Element */
     .box {
         max-width: 100%;
         padding: var(--spacing-sm);
     }
-    
+
+    /* Section Title */
     .section-title {
         font-size: 1.5rem;
     }
 
+    /* Mission & Value Boxes */
     .mission-vision-box,
     .value-box {
-        max-width: 90%;/
+        max-width: 90%;
     }
 }
