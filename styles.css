@@ -82,7 +82,7 @@ a {
 }
 
 a:visited {
-    color: var(--text-color);
+    color: var(--highlight-color-blue);
 }
 
 a:hover,
