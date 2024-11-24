@@ -308,7 +308,7 @@ footer {
     border: none;
 }
 
-footer::before {
+#footer-container::before {
     content: '';
     position: absolute;
     top: 0;
