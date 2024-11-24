@@ -69,10 +69,6 @@
     --info-color: #17a2b8;            /* Blue for informational messages */
     --warning-color: #ffc107;         /* Yellow for warning messages */
 
-    /* Dark Mode Variables */
-    --dark-bg: #121212;               /* Dark mode background */
-    --dark-text-color: #E0E0E0;        /* Dark mode text color */
-    --dark-primary-color: #D68DFF;    /* Soft pink for dark mode accents */
 }
 
 /* =============================
@@ -557,14 +553,82 @@ footer a:hover {
     background-color: var(--secondary-color);
 }
 
-.value-box {
-    background-color: var(--dark-card-bg);
-    color: var(--text-color);
-    padding: var(--spacing-lg);
-    margin: var(--spacing-sm) 0;
+/* Mission & Vision Section */
+.mission-vision-container {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-top: var(--spacing-lg);
 }
 
 .mission-vision-box {
     max-width: 400px;
     margin-bottom: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Values Section (Flexbox Layout) */
+.values-container {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-top: var(--spacing-lg);
+}
+
+.value-box {
+    background-color: var(--dark-card-bg);
+    color: var(--text-color);
+    padding: var(--spacing-lg);
+    margin: var(--spacing-sm);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    flex-grow: 1;
+}
+
+/* Content Section - Ensure Centered Headers */
+.content-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: var(--spacing-lg);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .mission-vision-container, .values-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .content-container {
+        padding: var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .box {
+        max-width: 100%;
+        padding: var(--spacing-sm);
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .mission-vision-box,
+    .value-box {
+        max-width: 90%;/
+    }
 }
