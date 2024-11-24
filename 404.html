@@ -10,19 +10,20 @@
 </head>
 <body>
     <!-- Main Navigation and Header Section (Dynamic Content) -->
-    <div id="header-placeholder"></div> <!-- Placeholder for dynamic header content -->
-    <header id="header-container" role="banner"></header> <!-- Header element with role 'banner' for accessibility -->
+    <div id="header-placeholder"></div>
+    <header id="header-container" role="banner"></header>
 
     <!-- Parallax Background -->
     <div class="parallax"></div>
 
     <!-- Main Error Content -->
     <div class="error-container">
-        <h1>404 <span class="sad-face">:(</span></h1>
-        <p class="error-message">Uh-oh! This page is lost in the pixel void. Try as you might, but this one is a *game over*.</p>
-        
-        <p>Don't give up yet, hero. Return to the <a href="/">home screen</a> to begin your next quest!</p>
-        
+        <div class="error-message-container">
+            <h1 class="error-title">404 <span class="sad-face">:(</span></h1>
+            <p class="error-message">Uh-oh! This page is lost in the void. Try as you might, but this one is a *game over*.</p>
+            <p>Don't give up yet, hero. Return to the <a href="/">home screen</a> to begin your next quest!</p>
+        </div>
+
         <div class="interactive-area">
             <canvas id="bouncing-ball" width="300" height="150"></canvas>
             <p class="hint-text">Click anywhere to summon a magical ball of fun! <i class="fas fa-basketball-ball"></i></p>
