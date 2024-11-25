@@ -15,10 +15,57 @@
         </div>
     </div>
 
-    <!-- Solitaire -->
+    <!-- Main Game Area -->
     <div id="solitaire-game-container">
         <h2>Play Solitaire to Pass the Time!</h2>
         <div id="game-board">
+            <!-- Tableau Stacks -->
+            <div class="card-stack" id="stack1">
+                <div class="card" style="background-image: url('images/cards/card_back.png');"></div>
+                <div class="card" style="background-image: url('images/cards/10_clubs.png');"></div>
+            </div>
+            <div class="card-stack" id="stack2">
+                <div class="card" style="background-image: url('images/cards/card_back.png');"></div>
+                <div class="card" style="background-image: url('images/cards/2_hearts.png');"></div>
+                <div class="card" style="background-image: url('images/cards/3_spades.png');"></div>
+            </div>
+            <div class="card-stack" id="stack3">
+                <div class="card" style="background-image: url('images/cards/card_back.png');"></div>
+                <div class="card" style="background-image: url('images/cards/4_diamonds.png');"></div>
+                <div class="card" style="background-image: url('images/cards/5_clubs.png');"></div>
+                <div class="card" style="background-image: url('images/cards/6_hearts.png');"></div>
+            </div>
+            <div class="card-stack" id="stack4">
+                <div class="card" style="background-image: url('images/cards/card_back.png');"></div>
+                <div class="card" style="background-image: url('images/cards/7_spades.png');"></div>
+                <div class="card" style="background-image: url('images/cards/8_clubs.png');"></div>
+                <div class="card" style="background-image: url('images/cards/9_hearts.png');"></div>
+                <div class="card" style="background-image: url('images/cards/10_diamonds.png');"></div>
+            </div>
+            <div class="card-stack" id="stack5">
+                <div class="card" style="background-image: url('images/cards/card_back.png');"></div>
+                <div class="card" style="background-image: url('images/cards/Jack_clubs.png');"></div>
+            </div>
+            <div class="card-stack" id="stack6">
+                <div class="card" style="background-image: url('images/cards/card_back.png');"></div>
+                <div class="card" style="background-image: url('images/cards/Queen_spades.png');"></div>
+            </div>
+            <div class="card-stack" id="stack7">
+                <div class="card" style="background-image: url('images/cards/card_back.png');"></div>
+                <div class="card" style="background-image: url('images/cards/Kings_hearts.png');"></div>
+            </div>
+
+            <!-- Foundation Piles -->
+            <div class="foundation" id="foundation-clubs"></div>
+            <div class="foundation" id="foundation-diamonds"></div>
+            <div class="foundation" id="foundation-hearts"></div>
+            <div class="foundation" id="foundation-spades"></div>
+
+            <!-- Stock and Waste Piles -->
+            <div class="stock-pile" id="stock-pile">
+                <div class="card" style="background-image: url('images/cards/card_back.png');"></div>
+            </div>
+            <div class="waste-pile" id="waste-pile"></div>
         </div>
     </div>
 
