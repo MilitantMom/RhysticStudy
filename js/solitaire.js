@@ -153,3 +153,63 @@ window.onload = () => {
     dealCards();
     renderGame();
 };
+// Get all the card elements and the tableau stacks
+const cards = document.querySelectorAll('.card');
+const cardStacks = document.querySelectorAll('.card-stack');
+const foundationPiles = document.querySelectorAll('.foundation');
+
+// Make the cards draggable
+cards.forEach(card => {
+    card.setAttribute('draggable', true);
+    
+    card.addEventListener('dragstart', (e) => {
+        e.dataTransfer.setData('text', e.target.id); // Store the id of the dragged card
+        e.target.classList.add('dragging');  // Add visual cue for dragging
+    });
+
+    card.addEventListener('dragend', (e) => {
+        e.target.classList.remove('dragging');  // Remove visual cue when drag ends
+    });
+});
+
+// Allow dropping onto the tableau stacks or foundation piles
+const allowDrop = (e) => {
+    e.preventDefault();
+};
+
+// Handle the drop event
+const handleDrop = (e) => {
+    e.preventDefault();
+    const draggedCardId = e.dataTransfer.getData('text');
+    const draggedCard = document.getElementById(draggedCardId);
+    
+    const targetStack = e.target.closest('.card-stack, .foundation');
+    
+    if (targetStack && draggedCard) {
+        // Move the dragged card to the target stack or foundation
+        targetStack.appendChild(draggedCard);
+
+        // If needed, update the card's state (e.g., face-up/face-down, visibility, etc.)
+        updateCardState(draggedCard, targetStack);
+    }
+};
+
+// Add event listeners for each stack
+cardStacks.forEach(stack => {
+    stack.addEventListener('dragover', allowDrop);
+    stack.addEventListener('drop', handleDrop);
+});
+
+foundationPiles.forEach(foundation => {
+    foundation.addEventListener('dragover', allowDrop);
+    foundation.addEventListener('drop', handleDrop);
+});
+
+// Function to update the card's state after being dropped (example)
+function updateCardState(card, targetStack) {
+    // Logic to update the card's face (e.g., face-up or face-down based on rules)
+    // Example: If it's in a foundation pile, it becomes face-up
+    if (targetStack.classList.contains('foundation')) {
+        card.style.backgroundImage = 'url("images/cards/' + card.id + '.png")'; // Assuming the ID is set correctly
+    }
+}
