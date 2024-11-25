@@ -1,66 +1,120 @@
-/* Basic styles for the game board */
+/* =====================
+   Game Board Styles
+   ===================== */
+
+/* The main game board container, which holds all elements of the game */
 #game-board {
     position: relative;
     width: 100%;
     height: 100%;
-    margin-top: 20px;
-}
-
-/* Styles for the card stack (tableau) */
-.card-stack {
-    position: relative;
-    width: 100px; /* Adjust width to match card size */
-    height: 140px;
-    margin-right: 10px;
-    margin-bottom: 20px;
-}
-
-/* General card styles */
-.card {
-    width: 100px;
-    height: 140px;
-    background-color: #fff;
-    border: 1px solid #333;
-    border-radius: 5px;
-    overflow: hidden;
-    margin-bottom: 5px;
-    cursor: pointer;
-}
-
-.card img {
-    width: 100%;
-    height: 140px;
-}
-
-/* Class for card back */
-.card-back {
-    background-color: #000;
-}
-
-/* Style for the foundation piles */
-.foundation {
-    width: 100px;
-    height: 140px;
-    border: 1px solid #333;
-    margin: 10px;
-    display: inline-block;
-    vertical-align: top;
-    background-color: #f0f0f0;
-}
-
-/* Stack cards on top of each other in tableau */
-.card-stack .card {
-    position: absolute;
-}
-
-/* Styling for the game board when loaded */
-#game-board {
+    margin-top: 20px; /* Space above the game board */
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: flex-start;
+    justify-content: space-evenly; /* Space out the tableau piles evenly */
+    align-items: flex-start; /* Align items to the top */
 }
 
+/* =====================
+   Card Stack (Tableau) Styles
+   ===================== */
+
+/* Individual card stack (tableau) container */
+.card-stack {
+    position: relative;
+    width: 100px; /* Fixed width for card stack (matches card size) */
+    height: 140px; /* Fixed height for card stack */
+    margin-right: 10px; /* Space between stacks horizontally */
+    margin-bottom: 20px; /* Space below each stack */
+}
+
+/* Cards within the tableau stack, stacked on top of each other */
+.card-stack .card {
+    position: absolute; /* Position cards on top of each other */
+}
+
+/* =====================
+   Card Styles
+   ===================== */
+
+/* General styles for individual cards */
+.card {
+    width: 100px; /* Card width */
+    height: 140px; /* Card height */
+    background-color: #fff; /* White background for face-up cards */
+    border: 1px solid #333; /* Dark border for card */
+    border-radius: 5px; /* Slightly rounded corners */
+    overflow: hidden; /* Prevent card content from overflowing */
+    margin-bottom: 5px; /* Small margin between stacked cards */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Image within the card (full size to fill the card) */
+.card img {
+    width: 100%;
+    height: 140px; /* Ensure the image fills the card's area */
+}
+
+/* Class for cards that are face-down (card back) */
+.card-back {
+    background-color: #000; /* Dark background for card back */
+}
+
+/* =====================
+   Foundation Pile Styles
+   ===================== */
+
+/* Foundation piles (where cards are dropped to complete the game) */
+.foundation {
+    width: 100px; /* Foundation pile width */
+    height: 140px; /* Foundation pile height */
+    border: 1px solid #333; /* Border around each foundation pile */
+    margin: 10px; /* Margin around the foundation pile */
+    display: inline-block; /* Align foundation piles horizontally */
+    vertical-align: top; /* Align foundation piles to the top */
+    background-color: #f0f0f0; /* Light gray background for foundation piles */
+}
+
+/* =====================
+   Drag and Drop Styles
+   ===================== */
+
+/* Style for cards when they are being dragged */
 .card.dragging {
-    opacity: 0.5;
+    opacity: 0.5; /* Make the card semi-transparent when dragging */
+}
+
+/* =====================
+   Visual Cues for Interaction
+   ===================== */
+
+/* Highlight a card or pile on hover to indicate it's draggable */
+.card:hover {
+    border-color: #007bff; /* Change border color when hovered */
+    cursor: move; /* Change cursor to indicate drag */
+}
+
+/* Foundation piles highlight when a valid card can be dropped */
+.foundation:hover {
+    background-color: #e6e6e6; /* Light background color on hover */
+    border-color: #007bff; /* Highlight border color */
+}
+
+/* =====================
+   Responsive Design
+   ===================== */
+
+/* Adjust layout on smaller screens (e.g., mobile devices) */
+@media (max-width: 768px) {
+    #game-board {
+        flex-direction: column; /* Stack tableau piles vertically */
+        align-items: center; /* Center the game elements */
+    }
+
+    .card-stack {
+        margin-bottom: 10px; /* Reduce margin between card stacks */
+    }
+
+    .foundation {
+        margin: 5px; /* Reduce margin between foundation piles */
+    }
 }
