@@ -1,129 +1,62 @@
-/* Basic reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Basic styles for the game board */
+#game-board {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #2c3e50;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
-}
-
-#error-container {
-    text-align: center;
+/* Styles for the card stack (tableau) */
+.card-stack {
+    position: relative;
+    width: 100px; /* Adjust width to match card size */
+    height: 140px;
+    margin-right: 10px;
     margin-bottom: 20px;
 }
 
-#error-title {
-    font-size: 4rem;
-    margin-bottom: 10px;
-}
-
-.sad-face {
-    font-size: 3rem;
-}
-
-.error-message {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
-#solitaire-game-container {
-    margin-top: 20px;
-    text-align: center;
-}
-
-/* Game Board */
-#game-board {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-/* Stack of Cards */
-.card-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-/* Single Card Style */
+/* General card styles */
 .card {
     width: 100px;
     height: 140px;
-    border-radius: 10px;
     background-color: #fff;
-    border: 1px solid #ccc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #333;
-    font-weight: bold;
-    font-size: 1.2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #333;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 5px;
     cursor: pointer;
-    transition: transform 0.2s ease-in-out;
 }
 
-.card:hover {
-    transform: scale(1.1);
+.card img {
+    width: 100%;
+    height: 140px;
 }
 
-/* Card Colors for Suits */
-.card.hearts,
-.card.diamonds {
-    background-color: #e74c3c; /* Red suits */
-    color: #fff;
+/* Class for card back */
+.card-back {
+    background-color: #000;
 }
 
-.card.clubs,
-.card.spades {
-    background-color: #34495e; /* Black suits */
-    color: #fff;
-}
-
-/* Special styles for Foundation stacks */
+/* Style for the foundation piles */
 .foundation {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 100px;
     height: 140px;
-    border: 2px solid #7f8c8d;
-    border-radius: 10px;
-    background-color: #ecf0f1;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #333;
+    margin: 10px;
+    display: inline-block;
+    vertical-align: top;
+    background-color: #f0f0f0;
 }
 
-/* Styling for the Parallax Background */
-.parallax {
-    background-image: url('https://www.example.com/parallax-image.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
-    width: 100%;
+/* Stack cards on top of each other in tableau */
+.card-stack .card {
     position: absolute;
-    z-index: -1;
 }
 
-/* Footer */
-footer {
-    position: absolute;
-    bottom: 20px;
-    text-align: center;
-    width: 100%;
-    font-size: 1rem;
-    color: #bdc3c7;
+/* Styling for the game board when loaded */
+#game-board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
 }
