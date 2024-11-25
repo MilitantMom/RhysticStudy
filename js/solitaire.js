@@ -78,6 +78,7 @@ function renderGame() {
             const cardElement = createCardElement(card, cardIndex);
             stack.appendChild(cardElement); // Append card to stack
         });
+        stack.addEventListener('dragover', allowDrop); // Allow dragging onto tableau
         gameBoard.appendChild(stack); // Add stack to the game board
     });
 
@@ -191,6 +192,7 @@ function dropCard(e, suit) {
         e.target.appendChild(createCardElement(card)); // Display card in the foundation
         updateTableauAfterMove(card); // Remove the card from tableau
         renderGame(); // Re-render the game to reflect the new state
+        handleWin(); // Check if the player has won
     }
 }
 
@@ -229,10 +231,33 @@ function updateTableauAfterMove(card) {
     });
 }
 
-// Initialize the game when the page loads
-window.onload = () => {
-    initializeGame(); // Initialize the game
-};
+/**
+ * Event listener for clicking on a tableau pile.
+ * @param {Event} e - The click event.
+ * @param {number} tableauIndex - The index of the clicked tableau pile.
+ */
+function onTableauPileClick(e, tableauIndex) {
+    const tableauPile = tableau[tableauIndex];
+    const card = tableauPile[tableauPile.length - 1]; // Get the top card in the tableau pile
+
+    // Check if the card can be moved to any other tableau pile or foundation pile
+    if (card.faceUp) {
+        tableauPile.pop(); // Remove the card from the tableau pile
+        renderGame(); // Re-render the game to reflect the new tableau state
+    }
+}
+/**
+ * Event listener for clicking on the waste pile.
+ * @param {Event} e - The click event.
+ */
+function onWastePileClick(e) {
+    if (wastePile.length > 0) {
+        const card = wastePile.pop();
+        moveCardToTableau(card, 0); // Move card to tableau (example for tableau index 0)
+        renderGame(); // Re-render to reflect the current game state
+        handleWin(); // Check if the player has won after the move
+    }
+}
 
 /**
  * Draw a card from the stock pile and add it to the waste pile.
@@ -328,34 +353,6 @@ function handleWin() {
         setTimeout(() => {
             alert("You win! All foundations are complete.");
         }, 500); // Delay to allow for final move animations
-    }
-}
-
-/**
- * Event listener for clicking on a tableau pile.
- * @param {Event} e - The click event.
- * @param {number} tableauIndex - The index of the clicked tableau pile.
- */
-function onTableauPileClick(e, tableauIndex) {
-    const pile = tableau[tableauIndex];
-    const topCard = pile[pile.length - 1];
-    
-    if (topCard && wastePile.length > 0) {
-        moveCardToTableau(topCard, tableauIndex);
-        handleWin(); // Check if the player has won after the move
-    }
-}
-
-/**
- * Event listener for clicking on the waste pile.
- * @param {Event} e - The click event.
- */
-function onWastePileClick(e) {
-    if (wastePile.length > 0) {
-        const card = wastePile.pop();
-        // Let user interact with tableau piles after moving a card from the waste pile
-        renderGame(); // Re-render to reflect the current game state
-        handleWin(); // Check if the player has won after the move
     }
 }
 
