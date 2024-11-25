@@ -3,7 +3,9 @@ let deck = [];
 let foundations = { hearts: [], diamonds: [], clubs: [], spades: [] };
 let tableau = [[], [], [], [], [], [], []]; // Seven tableau piles
 
-// Create a new deck of cards
+/**
+ * Creates a new shuffled deck of cards.
+ */
 function createDeck() {
     const suits = ['hearts', 'diamonds', 'clubs', 'spades'];
     const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
@@ -18,7 +20,10 @@ function createDeck() {
     shuffleDeck(deck);
 }
 
-// Shuffle the deck using Fisher-Yates algorithm
+/**
+ * Shuffle the deck using Fisher-Yates algorithm.
+ * @param {Array} deck - The deck of cards to shuffle.
+ */
 function shuffleDeck(deck) {
     for (let i = deck.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -26,9 +31,11 @@ function shuffleDeck(deck) {
     }
 }
 
-// Deal cards to tableau and setup foundations
+/**
+ * Deal cards to tableau and set up foundations.
+ */
 function dealCards() {
-    tableau = [[], [], [], [], [], [], []];
+    tableau = [[], [], [], [], [], [], []]; // Clear tableau
     for (let i = 0; i < 7; i++) {
         for (let j = 0; j <= i; j++) {
             const card = deck.pop();
@@ -40,7 +47,9 @@ function dealCards() {
     }
 }
 
-// Render the game on the page
+/**
+ * Render the game on the page, including tableau and foundation piles.
+ */
 function renderGame() {
     const gameBoard = document.getElementById('game-board');
     gameBoard.innerHTML = ''; // Clear previous content
@@ -56,24 +65,29 @@ function renderGame() {
         gameBoard.appendChild(stack);
     });
 
-    // Render foundations (empty for now)
+    // Render foundations
     Object.keys(foundations).forEach(suit => {
         const foundationElement = createFoundationElement(suit);
         gameBoard.appendChild(foundationElement);
     });
 }
 
-// Create individual card element with face and back images
+/**
+ * Create and return an HTML element for a card.
+ * @param {Object} card - The card data (suit, rank, faceUp).
+ * @param {number} index - The index of the card within its tableau pile.
+ * @returns {HTMLElement} - The card element.
+ */
 function createCardElement(card, index) {
     const cardElement = document.createElement('div');
-    cardElement.classList.add('card');
-    cardElement.classList.add(card.suit);
+    cardElement.classList.add('card', card.suit);
+    cardElement.setAttribute('id', card.id); // Set unique ID for drag and drop
 
     // Position the cards in the tableau with slight offsets for stacking
     cardElement.style.position = 'absolute';
-    cardElement.style.top = `${index * 20}px`; // Stack cards with slight vertical offsets
+    cardElement.style.top = `${index * 20}px`;
 
-    // If face-up, show card face, otherwise show card back
+    // Set the card image based on whether it's face-up or face-down
     const cardImg = document.createElement('img');
     if (card.faceUp) {
         cardImg.src = `images/cards/${card.rank}_${card.suit}.png`; // Path to the card face image
@@ -91,38 +105,60 @@ function createCardElement(card, index) {
     return cardElement;
 }
 
-// Create foundation element
+/**
+ * Create and return an HTML element for a foundation pile.
+ * @param {string} suit - The suit of the foundation.
+ * @returns {HTMLElement} - The foundation element.
+ */
 function createFoundationElement(suit) {
     const foundationElement = document.createElement('div');
     foundationElement.classList.add('foundation');
     foundationElement.setAttribute('data-suit', suit);
-    foundationElement.addEventListener('dragover', (e) => allowDrop(e));
+    foundationElement.addEventListener('dragover', allowDrop);
     foundationElement.addEventListener('drop', (e) => dropCard(e, suit));
     return foundationElement;
 }
 
-// Handle dragging the card
+/**
+ * Handle the start of dragging a card.
+ * @param {Event} e - The drag event.
+ * @param {Object} card - The card being dragged.
+ */
 function dragStart(e, card) {
-    e.dataTransfer.setData('card', JSON.stringify(card));
+    e.dataTransfer.setData('card', JSON.stringify(card)); // Store card data
+    e.target.classList.add('dragging'); // Add visual cue for dragging
 }
 
-// Allow dropping a card on a foundation
+/**
+ * Allow dropping of cards.
+ * @param {Event} e - The dragover event.
+ */
 function allowDrop(e) {
     e.preventDefault(); // Necessary to allow dropping
 }
 
-// Drop the card on a foundation
+/**
+ * Drop the card onto a foundation pile and update game state.
+ * @param {Event} e - The drop event.
+ * @param {string} suit - The suit of the foundation pile.
+ */
 function dropCard(e, suit) {
     const cardData = e.dataTransfer.getData('card');
     const card = JSON.parse(cardData);
     if (isValidMoveToFoundation(card, suit)) {
-        foundations[suit].push(card);
-        e.target.appendChild(createCardElement(card));
-        updateTableauAfterMove(card);
+        foundations[suit].push(card); // Add card to foundation pile
+        e.target.appendChild(createCardElement(card)); // Add card to visual display
+        updateTableauAfterMove(card); // Remove card from tableau
+        renderGame(); // Re-render the game board
     }
 }
 
-// Check if a move to the foundation is valid (for simplicity)
+/**
+ * Check if a card move to the foundation is valid.
+ * @param {Object} card - The card to be moved.
+ * @param {string} suit - The suit of the foundation pile.
+ * @returns {boolean} - True if the move is valid, otherwise false.
+ */
 function isValidMoveToFoundation(card, suit) {
     const foundation = foundations[suit];
     if (foundation.length === 0 && card.rank === 'A') {
@@ -136,7 +172,10 @@ function isValidMoveToFoundation(card, suit) {
     return false;
 }
 
-// Update tableau after a card is moved to the foundation
+/**
+ * Update the tableau after a card has been moved to the foundation.
+ * @param {Object} card - The card that was moved.
+ */
 function updateTableauAfterMove(card) {
     tableau.forEach(pile => {
         const index = pile.findIndex(c => c === card);
@@ -144,40 +183,35 @@ function updateTableauAfterMove(card) {
             pile.splice(index, 1); // Remove the card from the tableau
         }
     });
-    renderGame();
 }
 
-// Initialize the game when the page loads
+/**
+ * Initialize the game when the page loads.
+ */
 window.onload = () => {
     createDeck();
     dealCards();
     renderGame();
 };
-// Get all the card elements and the tableau stacks
-const cards = document.querySelectorAll('.card');
-const cardStacks = document.querySelectorAll('.card-stack');
-const foundationPiles = document.querySelectorAll('.foundation');
 
-// Make the cards draggable
-cards.forEach(card => {
-    card.setAttribute('draggable', true);
-    
+// Add event listeners for all card elements in tableau
+document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('dragstart', (e) => {
-        e.dataTransfer.setData('text', e.target.id); // Store the id of the dragged card
-        e.target.classList.add('dragging');  // Add visual cue for dragging
+        e.dataTransfer.setData('text', e.target.id); // Store the card ID for drag-and-drop
+        e.target.classList.add('dragging'); // Add visual cue for dragging
     });
 
     card.addEventListener('dragend', (e) => {
-        e.target.classList.remove('dragging');  // Remove visual cue when drag ends
+        e.target.classList.remove('dragging'); // Remove the visual cue when drag ends
     });
 });
 
-// Allow dropping onto the tableau stacks or foundation piles
+// Allow dropping onto tableau stacks or foundation piles
 const allowDrop = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Allow dropping on target
 };
 
-// Handle the drop event
+// Handle the drop event on tableau or foundation
 const handleDrop = (e) => {
     e.preventDefault();
     const draggedCardId = e.dataTransfer.getData('text');
@@ -186,30 +220,14 @@ const handleDrop = (e) => {
     const targetStack = e.target.closest('.card-stack, .foundation');
     
     if (targetStack && draggedCard) {
-        // Move the dragged card to the target stack or foundation
-        targetStack.appendChild(draggedCard);
-
-        // If needed, update the card's state (e.g., face-up/face-down, visibility, etc.)
-        updateCardState(draggedCard, targetStack);
+        targetStack.appendChild(draggedCard); // Move the dragged card to the target stack or foundation
+        updateCardState(draggedCard, targetStack); // Update card state if needed
     }
 };
 
-// Add event listeners for each stack
-cardStacks.forEach(stack => {
-    stack.addEventListener('dragover', allowDrop);
-    stack.addEventListener('drop', handleDrop);
-});
-
-foundationPiles.forEach(foundation => {
-    foundation.addEventListener('dragover', allowDrop);
-    foundation.addEventListener('drop', handleDrop);
-});
-
-// Function to update the card's state after being dropped (example)
+// Update card's visual state after being dropped (e.g., face-up/face-down)
 function updateCardState(card, targetStack) {
-    // Logic to update the card's face (e.g., face-up or face-down based on rules)
-    // Example: If it's in a foundation pile, it becomes face-up
     if (targetStack.classList.contains('foundation')) {
-        card.style.backgroundImage = 'url("images/cards/' + card.id + '.png")'; // Assuming the ID is set correctly
+        card.style.backgroundImage = `url("images/cards/${card.id}.png")`; // Update card face image
     }
 }
