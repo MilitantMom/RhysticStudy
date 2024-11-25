@@ -11,7 +11,7 @@ function createDeck() {
 
     suits.forEach(suit => {
         ranks.forEach(rank => {
-            deck.push({ suit, rank, faceUp: false });
+            deck.push({ suit, rank, faceUp: false, id: `${rank}_${suit}` });
         });
     });
 
@@ -49,8 +49,8 @@ function renderGame() {
     tableau.forEach((pile, index) => {
         const stack = document.createElement('div');
         stack.classList.add('card-stack');
-        pile.forEach(card => {
-            const cardElement = createCardElement(card);
+        pile.forEach((card, cardIndex) => {
+            const cardElement = createCardElement(card, cardIndex);
             stack.appendChild(cardElement);
         });
         gameBoard.appendChild(stack);
@@ -63,16 +63,27 @@ function renderGame() {
     });
 }
 
-// Create individual card element
-function createCardElement(card) {
+// Create individual card element with face and back images
+function createCardElement(card, index) {
     const cardElement = document.createElement('div');
-    cardElement.classList.add('card', card.suit);
+    cardElement.classList.add('card');
+    cardElement.classList.add(card.suit);
+
+    // Position the cards in the tableau with slight offsets for stacking
+    cardElement.style.position = 'absolute';
+    cardElement.style.top = `${index * 20}px`; // Stack cards with slight vertical offsets
+
+    // If face-up, show card face, otherwise show card back
+    const cardImg = document.createElement('img');
     if (card.faceUp) {
-        cardElement.innerHTML = `${card.rank}<br>${card.suit.charAt(0).toUpperCase()}`;
+        cardImg.src = `images/cards/${card.rank}_${card.suit}.png`; // Path to the card face image
+        cardImg.alt = `${card.rank} of ${card.suit}`;
     } else {
-        cardElement.classList.add('card-back');
-        cardElement.innerHTML = 'Back';
+        cardImg.src = 'images/cards/card_back.png'; // Path to the card back image
+        cardImg.alt = 'Card back';
     }
+
+    cardElement.appendChild(cardImg);
     cardElement.draggable = true;
 
     // Allow cards to be dragged
@@ -111,7 +122,7 @@ function dropCard(e, suit) {
     }
 }
 
-// Check if a move to the foundation is valid
+// Check if a move to the foundation is valid (for simplicity)
 function isValidMoveToFoundation(card, suit) {
     const foundation = foundations[suit];
     if (foundation.length === 0 && card.rank === 'A') {
