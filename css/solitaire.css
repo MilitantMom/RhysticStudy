@@ -16,7 +16,7 @@
 /* The main game board container, which holds all elements of the game */
 #game-board {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack upper section and tableau vertically */
     justify-content: flex-start;
     align-items: center; /* Center game content horizontally */
     width: 100%;
@@ -34,6 +34,7 @@
     justify-content: space-evenly; /* Evenly space foundation and stock piles */
     width: 80%; /* Use 80% width to give some space around the edges */
     margin-bottom: 30px; /* Add space between upper section and tableau */
+    align-items: center;
 }
 
 /* Foundation piles (where cards are dropped to complete the game) */
@@ -69,6 +70,15 @@
 /* =====================
    Tableau (Card Stack) Styles
    ===================== */
+
+/* The container for all 7 card stacks (tableau) */
+#tableau {
+    display: flex;
+    justify-content: center; /* Center all the stacks horizontally */
+    align-items: flex-start; /* Align stacks to the top */
+    width: 80%; /* Use 80% width to keep the stacks centered */
+    flex-wrap: nowrap; /* Prevent wrapping of the stacks */
+}
 
 /* Individual card stack (tableau) container */
 .card-stack {
@@ -165,5 +175,10 @@
 
     .foundation, .stock-pile, .waste-pile {
         margin: 5px 0; /* Reduce margin between piles */
+    }
+
+    #tableau {
+        flex-direction: column; /* Stack tableau piles vertically on small screens */
+        align-items: center; /* Center the tableau piles */
     }
 }
