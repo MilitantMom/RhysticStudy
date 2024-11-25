@@ -15,45 +15,35 @@
 
 /* The main game board container, which holds all elements of the game */
 #game-board {
-    position: relative;
-    width: 100%;
-    height: 600px; /* Fixed height for the game board */
-    margin-top: 20px; /* Space above the game board */
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center elements horizontally */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; /* Center game content horizontally */
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    padding-top: 20px; /* Space from the top */
 }
 
 /* =====================
-   Upper Section (Foundation and Stock Piles) Styles
+   Upper Section (Foundation, Stock, Waste) Styles
    ===================== */
 
 /* This container holds the foundation piles and stock/waste piles above the tableau */
 #upper-section {
     display: flex;
     justify-content: space-evenly; /* Evenly space foundation and stock piles */
-    width: 100%;
-    margin-bottom: 20px; /* Space between the upper section and tableau */
+    width: 80%; /* Use 80% width to give some space around the edges */
+    margin-bottom: 30px; /* Add space between upper section and tableau */
 }
-
-/* =====================
-   Foundation Pile Styles
-   ===================== */
 
 /* Foundation piles (where cards are dropped to complete the game) */
 .foundation {
     width: 100px; /* Foundation pile width */
     height: 140px; /* Foundation pile height */
     border: 1px solid #333; /* Border around each foundation pile */
-    margin: 10px; /* Margin around the foundation pile */
-    display: inline-block; /* Align foundation piles horizontally */
-    vertical-align: top; /* Align foundation piles to the top */
+    margin: 0 15px; /* Space between foundation piles */
     background-color: #f0f0f0; /* Light gray background for foundation piles */
 }
-
-/* =====================
-   Stock and Waste Pile Styles
-   ===================== */
 
 /* Stock pile */
 .stock-pile {
@@ -61,7 +51,7 @@
     height: 140px; /* Same height as foundation piles */
     background-color: #ddd; /* Light gray background */
     border: 1px solid #333;
-    margin: 10px;
+    margin: 0 15px; /* Space between stock pile and other piles */
     display: inline-block;
     cursor: pointer;
 }
@@ -72,12 +62,12 @@
     height: 140px; /* Same height as foundation piles */
     background-color: #f9f9f9; /* Light background for waste pile */
     border: 1px solid #333;
-    margin: 10px;
+    margin: 0 15px; /* Space between waste pile and other piles */
     display: inline-block;
 }
 
 /* =====================
-   Card Stack (Tableau) Styles
+   Tableau (Card Stack) Styles
    ===================== */
 
 /* Individual card stack (tableau) container */
@@ -85,7 +75,7 @@
     position: relative;
     width: 100px; /* Fixed width for card stack (matches card size) */
     height: 140px; /* Fixed height for card stack */
-    margin-right: 20px; /* Space between stacks horizontally */
+    margin-right: 15px; /* Space between stacks horizontally */
     margin-bottom: 20px; /* Space below each stack */
     overflow: visible; /* Allow cards to extend outside the container */
 }
@@ -166,5 +156,14 @@
 
     .foundation {
         margin: 5px; /* Reduce margin between foundation piles */
+    }
+
+    #upper-section {
+        flex-direction: column; /* Stack upper section vertically on smaller screens */
+        align-items: center; /* Center all piles */
+    }
+
+    .foundation, .stock-pile, .waste-pile {
+        margin: 5px 0; /* Reduce margin between piles */
     }
 }
