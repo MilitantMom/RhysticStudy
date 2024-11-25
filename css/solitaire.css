@@ -19,7 +19,7 @@
     justify-content: space-evenly; /* Space the card stacks evenly across the width */
     align-items: flex-start; /* Align all stacks to the top */
     width: 80%;
-    height: 80vh; /* Limit height to 80% of the viewport */
+    height: 60vh; /* Limit height to 60% of the viewport */
     margin-top: 40px; /* Space between error message and game board */
 }
 
@@ -34,6 +34,7 @@
     width: 80%;
     margin-bottom: 20px;
     align-items: center;
+    margin-top: 40px; /* Space between error message and game board */
 }
 
 /* Foundation piles (where cards are dropped to complete the game) */
@@ -85,6 +86,7 @@
     position: absolute; /* Cards stack on top of each other */
     width: 100px;
     height: 140px;
+    transition: top 0.3s ease-in-out; /* Smooth transition for dragging */
 }
 
 /* =====================
@@ -146,6 +148,7 @@
 #control-buttons button:hover {
     background-color: #45a049;
 }
+
 /* =====================
    Error Message Styles
    ===================== */
