@@ -60,3 +60,7 @@
     justify-content: space-evenly;
     align-items: flex-start;
 }
+
+.card.dragging {
+    opacity: 0.5;
+}
