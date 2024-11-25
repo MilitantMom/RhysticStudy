@@ -1,4 +1,15 @@
 /* =====================
+   General Reset and Layout
+   ===================== */
+
+/* Basic reset for margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensure consistent box sizing */
+}
+
+/* =====================
    Game Board Styles
    ===================== */
 
@@ -6,11 +17,11 @@
 #game-board {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 600px; /* Fixed height for the game board */
     margin-top: 20px; /* Space above the game board */
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly; /* Space out the tableau piles evenly */
+    flex-wrap: nowrap; /* Prevent wrapping of piles */
+    justify-content: flex-start; /* Left-align tableau piles */
     align-items: flex-start; /* Align items to the top */
 }
 
@@ -23,13 +34,16 @@
     position: relative;
     width: 100px; /* Fixed width for card stack (matches card size) */
     height: 140px; /* Fixed height for card stack */
-    margin-right: 10px; /* Space between stacks horizontally */
+    margin-right: 20px; /* Space between stacks horizontally */
     margin-bottom: 20px; /* Space below each stack */
+    overflow: visible; /* Allow cards to extend outside the container */
 }
 
 /* Cards within the tableau stack, stacked on top of each other */
 .card-stack .card {
-    position: absolute; /* Position cards on top of each other */
+    position: absolute; /* Cards stack on top of each other */
+    width: 100px; /* Match the card width */
+    height: 140px; /* Match the card height */
 }
 
 /* =====================
