@@ -16,12 +16,11 @@
 /* The main game board container, which holds all elements of the game */
 #game-board {
     display: flex;
-    flex-direction: column; /* Stack upper section and tableau vertically */
-    justify-content: flex-start;
-    align-items: center; /* Center game content horizontally */
-    width: 100%;
-    height: 100vh; /* Full viewport height */
-    padding-top: 20px; /* Space from the top */
+    justify-content: space-evenly; /* Space the card stacks evenly across the width */
+    align-items: flex-start; /* Align all stacks to the top */
+    width: 80%;
+    height: 80vh; /* Limit height to 80% of the viewport */
+    margin-top: 40px; /* Space between error message and game board */
 }
 
 /* =====================
@@ -31,39 +30,39 @@
 /* This container holds the foundation piles and stock/waste piles above the tableau */
 #upper-section {
     display: flex;
-    justify-content: space-evenly; /* Evenly space foundation and stock piles */
-    width: 80%; /* Use 80% width to give some space around the edges */
-    margin-bottom: 30px; /* Add space between upper section and tableau */
+    justify-content: space-evenly;
+    width: 80%;
+    margin-bottom: 20px;
     align-items: center;
 }
 
 /* Foundation piles (where cards are dropped to complete the game) */
 .foundation {
-    width: 100px; /* Foundation pile width */
-    height: 140px; /* Foundation pile height */
-    border: 1px solid #333; /* Border around each foundation pile */
-    margin: 0 15px; /* Space between foundation piles */
-    background-color: #f0f0f0; /* Light gray background for foundation piles */
+    width: 100px;
+    height: 140px;
+    border: 1px solid #333;
+    margin: 0 15px;
+    background-color: #f0f0f0;
 }
 
 /* Stock pile */
 .stock-pile {
-    width: 100px; /* Same size as foundation piles */
-    height: 140px; /* Same height as foundation piles */
-    background-color: #ddd; /* Light gray background */
+    width: 100px;
+    height: 140px;
+    background-color: #ddd;
     border: 1px solid #333;
-    margin: 0 15px; /* Space between stock pile and other piles */
+    margin: 0 15px;
     display: inline-block;
     cursor: pointer;
 }
 
 /* Waste pile */
 .waste-pile {
-    width: 100px; /* Same size as foundation piles */
-    height: 140px; /* Same height as foundation piles */
-    background-color: #f9f9f9; /* Light background for waste pile */
+    width: 100px;
+    height: 140px;
+    background-color: #f9f9f9;
     border: 1px solid #333;
-    margin: 0 15px; /* Space between waste pile and other piles */
+    margin: 0 15px;
     display: inline-block;
 }
 
@@ -72,29 +71,20 @@
    ===================== */
 
 /* The container for all 7 card stacks (tableau) */
-#tableau {
-    display: flex;
-    justify-content: center; /* Center all the stacks horizontally */
-    align-items: flex-start; /* Align stacks to the top */
-    width: 80%; /* Use 80% width to keep the stacks centered */
-    flex-wrap: nowrap; /* Prevent wrapping of the stacks */
-}
-
-/* Individual card stack (tableau) container */
 .card-stack {
     position: relative;
-    width: 100px; /* Fixed width for card stack (matches card size) */
-    height: 140px; /* Fixed height for card stack */
-    margin-right: 15px; /* Space between stacks horizontally */
-    margin-bottom: 20px; /* Space below each stack */
+    width: 100px;
+    height: 140px;
+    margin-right: 15px;
+    margin-bottom: 20px;
     overflow: visible; /* Allow cards to extend outside the container */
 }
 
 /* Cards within the tableau stack, stacked on top of each other */
 .card-stack .card {
     position: absolute; /* Cards stack on top of each other */
-    width: 100px; /* Match the card width */
-    height: 140px; /* Match the card height */
+    width: 100px;
+    height: 140px;
 }
 
 /* =====================
@@ -103,25 +93,25 @@
 
 /* General styles for individual cards */
 .card {
-    width: 100px; /* Card width */
-    height: 140px; /* Card height */
-    background-color: #fff; /* White background for face-up cards */
-    border: 1px solid #333; /* Dark border for card */
-    border-radius: 5px; /* Slightly rounded corners */
-    overflow: hidden; /* Prevent card content from overflowing */
-    margin-bottom: 5px; /* Small margin between stacked cards */
-    cursor: pointer; /* Pointer cursor on hover */
+    width: 100px;
+    height: 140px;
+    background-color: #fff;
+    border: 1px solid #333;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 5px;
+    cursor: pointer;
 }
 
 /* Image within the card (full size to fill the card) */
 .card img {
     width: 100%;
-    height: 140px; /* Ensure the image fills the card's area */
+    height: 140px;
 }
 
 /* Class for cards that are face-down (card back) */
 .card-back {
-    background-color: #000; /* Dark background for card back */
+    background-color: #000;
 }
 
 /* =====================
@@ -130,55 +120,159 @@
 
 /* Style for cards when they are being dragged */
 .card.dragging {
-    opacity: 0.5; /* Make the card semi-transparent when dragging */
+    opacity: 0.5;
 }
 
 /* =====================
-   Visual Cues for Interaction
+   Control Buttons Styles
    ===================== */
 
-/* Highlight a card or pile on hover to indicate it's draggable */
-.card:hover {
-    border-color: #007bff; /* Change border color when hovered */
-    cursor: move; /* Change cursor to indicate drag */
+#control-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }
 
-/* Foundation piles highlight when a valid card can be dropped */
-.foundation:hover {
-    background-color: #e6e6e6; /* Light background color on hover */
-    border-color: #007bff; /* Highlight border color */
+#control-buttons button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#control-buttons button:hover {
+    background-color: #45a049;
+}
+/* =====================
+   Error Message Styles
+   ===================== */
+
+/* Error message that appears when the user does something wrong */
+#error-message {
+    color: #f00; /* Red color for errors */
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
 }
 
 /* =====================
-   Responsive Design
+   Background and Global Styles
    ===================== */
 
-/* Adjust layout on smaller screens (e.g., mobile devices) */
-@media (max-width: 768px) {
+/* Set a light background color for the entire page */
+body {
+    background-color: #f4f4f9;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Add some margin below the header and control buttons */
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* =====================
+   Animation Styles
+   ===================== */
+
+/* Simple fade-in animation for the game board and elements */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#game-board, #control-buttons {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* =====================
+   Responsive Design for Mobile
+   ===================== */
+
+/* Adjust layout for smaller screens (less than 768px) */
+@media screen and (max-width: 768px) {
     #game-board {
-        flex-direction: column; /* Stack tableau piles vertically */
-        align-items: center; /* Center the game elements */
-    }
-
-    .card-stack {
-        margin-bottom: 10px; /* Reduce margin between card stacks */
-    }
-
-    .foundation {
-        margin: 5px; /* Reduce margin between foundation piles */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: auto;
     }
 
     #upper-section {
-        flex-direction: column; /* Stack upper section vertically on smaller screens */
-        align-items: center; /* Center all piles */
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
     }
 
     .foundation, .stock-pile, .waste-pile {
-        margin: 5px 0; /* Reduce margin between piles */
+        margin-bottom: 10px;
     }
 
-    #tableau {
-        flex-direction: column; /* Stack tableau piles vertically on small screens */
-        align-items: center; /* Center the tableau piles */
+    .card-stack {
+        width: 80px; /* Slightly reduce width on mobile */
+        height: 110px;
     }
+
+    .card {
+        width: 80px; /* Match card size to stack size */
+        height: 110px;
+    }
+
+    #control-buttons button {
+        font-size: 14px; /* Smaller buttons for mobile */
+    }
+}
+
+/* =====================
+   Win Screen Styles
+   ===================== */
+
+/* Style for when the user wins the game */
+#win-screen {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#win-screen.active {
+    display: block;
+}
+
+#win-screen button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#win-screen button:hover {
+    background-color: #45a049;
 }
