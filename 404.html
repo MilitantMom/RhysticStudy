@@ -18,31 +18,32 @@
     </div>
 
     <!-- Main Game Area -->
-    <div id="solitaire-game-container">
-        <h2>Play Solitaire to Pass the Time!</h2>
-        <div id="game-board">
-            <!-- Tableau Stacks -->
-            <div class="card-stack" id="stack1"></div>
-            <div class="card-stack" id="stack2"></div>
-            <div class="card-stack" id="stack3"></div>
-            <div class="card-stack" id="stack4"></div>
-            <div class="card-stack" id="stack5"></div>
-            <div class="card-stack" id="stack6"></div>
-            <div class="card-stack" id="stack7"></div>
+<div id="solitaire-game-container">
+    <h2>Play Solitaire to Pass the Time!</h2>
 
-            <!-- Foundation Piles -->
-            <div class="foundation" id="foundation-clubs" data-suit="clubs"></div>
-            <div class="foundation" id="foundation-diamonds" data-suit="diamonds"></div>
-            <div class="foundation" id="foundation-hearts" data-suit="hearts"></div>
-            <div class="foundation" id="foundation-spades" data-suit="spades"></div>
-
-            <!-- Stock and Waste Piles -->
-            <div class="stock-pile" id="stock-pile" draggable="true">
-                <div class="card" draggable="true" style="background-image: url('images/cards/card_back.png');"></div>
-            </div>
-            <div class="waste-pile" id="waste-pile"></div>
+    <!-- Upper section containing foundation, stock, and waste piles -->
+    <div id="upper-section">
+        <div class="foundation" id="foundation-clubs" data-suit="clubs"></div>
+        <div class="foundation" id="foundation-diamonds" data-suit="diamonds"></div>
+        <div class="foundation" id="foundation-hearts" data-suit="hearts"></div>
+        <div class="foundation" id="foundation-spades" data-suit="spades"></div>
+        <div class="stock-pile" id="stock-pile" draggable="true">
+            <div class="card" draggable="true" style="background-image: url('images/cards/card_back.png');"></div>
         </div>
+        <div class="waste-pile" id="waste-pile"></div>
     </div>
+
+    <!-- Game Board for Tableau Stacks -->
+    <div id="game-board">
+        <div class="card-stack" id="stack1"></div>
+        <div class="card-stack" id="stack2"></div>
+        <div class="card-stack" id="stack3"></div>
+        <div class="card-stack" id="stack4"></div>
+        <div class="card-stack" id="stack5"></div>
+        <div class="card-stack" id="stack6"></div>
+        <div class="card-stack" id="stack7"></div>
+    </div>
+</div>
 
     <!-- External JavaScript -->
     <script src="js/main.js"></script>
