@@ -20,9 +20,60 @@
     height: 600px; /* Fixed height for the game board */
     margin-top: 20px; /* Space above the game board */
     display: flex;
-    flex-wrap: nowrap; /* Prevent wrapping of piles */
-    justify-content: flex-start; /* Left-align tableau piles */
-    align-items: flex-start; /* Align items to the top */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements horizontally */
+}
+
+/* =====================
+   Upper Section (Foundation and Stock Piles) Styles
+   ===================== */
+
+/* This container holds the foundation piles and stock/waste piles above the tableau */
+#upper-section {
+    display: flex;
+    justify-content: space-evenly; /* Evenly space foundation and stock piles */
+    width: 100%;
+    margin-bottom: 20px; /* Space between the upper section and tableau */
+}
+
+/* =====================
+   Foundation Pile Styles
+   ===================== */
+
+/* Foundation piles (where cards are dropped to complete the game) */
+.foundation {
+    width: 100px; /* Foundation pile width */
+    height: 140px; /* Foundation pile height */
+    border: 1px solid #333; /* Border around each foundation pile */
+    margin: 10px; /* Margin around the foundation pile */
+    display: inline-block; /* Align foundation piles horizontally */
+    vertical-align: top; /* Align foundation piles to the top */
+    background-color: #f0f0f0; /* Light gray background for foundation piles */
+}
+
+/* =====================
+   Stock and Waste Pile Styles
+   ===================== */
+
+/* Stock pile */
+.stock-pile {
+    width: 100px; /* Same size as foundation piles */
+    height: 140px; /* Same height as foundation piles */
+    background-color: #ddd; /* Light gray background */
+    border: 1px solid #333;
+    margin: 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Waste pile */
+.waste-pile {
+    width: 100px; /* Same size as foundation piles */
+    height: 140px; /* Same height as foundation piles */
+    background-color: #f9f9f9; /* Light background for waste pile */
+    border: 1px solid #333;
+    margin: 10px;
+    display: inline-block;
 }
 
 /* =====================
@@ -71,21 +122,6 @@
 /* Class for cards that are face-down (card back) */
 .card-back {
     background-color: #000; /* Dark background for card back */
-}
-
-/* =====================
-   Foundation Pile Styles
-   ===================== */
-
-/* Foundation piles (where cards are dropped to complete the game) */
-.foundation {
-    width: 100px; /* Foundation pile width */
-    height: 140px; /* Foundation pile height */
-    border: 1px solid #333; /* Border around each foundation pile */
-    margin: 10px; /* Margin around the foundation pile */
-    display: inline-block; /* Align foundation piles horizontally */
-    vertical-align: top; /* Align foundation piles to the top */
-    background-color: #f0f0f0; /* Light gray background for foundation piles */
 }
 
 /* =====================
