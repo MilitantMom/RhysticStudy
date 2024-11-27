@@ -702,3 +702,84 @@ canvas#bouncing-ball {
     margin: var(--spacing-lg) auto;
     display: block;
 }
+
+/* =============================
+   Shop Page Layout for Decks
+   ============================= */
+
+/* Decks Grid Layout */
+.decks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on larger screens */
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    justify-items: center;
+    margin-top: var(--spacing-lg);
+}
+
+/* Deck Card Styling */
+.deck-card {
+    background-color: var(--dark-card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-medium);
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.deck-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--box-shadow-light);
+}
+
+/* Deck Image */
+.deck-image {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid var(--border-color);
+}
+
+/* Deck Info (Name, Description, Price) */
+.deck-info {
+    padding: var(--spacing-sm);
+    color: var(--text-color);
+}
+
+.deck-info h4 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.deck-info p {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.deck-price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--highlight-color);
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .decks-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .decks-grid {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+    }
+    
+    .deck-info h4 {
+        font-size: 1.3rem;
+    }
+
+    .deck-info p {
+        font-size: 1rem;
+    }
+}
