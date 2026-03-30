@@ -45,7 +45,16 @@
     /* Transitions */
     --transition: 0.3s ease-in-out;
 }
-
+/* Hero Canvas Overlay */
+#hero-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* So it doesn't block mouse interactions */
+    z-index: 0; /* Behind text */
+}
 /* =============================
    Body Styling
    ============================= */
